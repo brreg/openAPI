@@ -1,0 +1,408 @@
+openapi: 3.0.0
+servers:
+- url: https://data.brreg.no/enhetsregisteret/api
+  description: Produksjon
+info:
+  description: |
+    Teknisk beskrivelse av REST-tjenestene i Åpne Data fra Enhetsregisteret - Work in progress
+    ---
+
+    ## Ordbok
+    ### Enhetsregisteret
+    Register over grunndata om juridiske personer og andre enheter. Enhetsregisteret tildeler organisasjonsnummer for entydig identifisering av enheter.
+
+    ### Organisasjonsnummer
+    Nisifret nummer som entydig identifiserer enheter i Enhetsregisteret.
+
+    ### Enhet
+    Enhet på øverste nivå i registreringsstrukturen i Enhetsregisteret. Eksempelvis enkeltpersonforetak, foreninger, selskap, sameier og andre som er registrert i Enhetsregisteret. Identifiseres med organisasjonsnummer.
+
+    ### Underenhet
+    Enhet på laveste nivå i registreringsstrukturen i Enhetsregisteret. En underenhet kan ikke eksistere alene og har alltid knytning til en hovedenhet. Identifiseres med organisasjonsnummer.
+
+    ### Organisasjonsform
+    Organisasjonsform er virksomhetens formelle organisering og gir retningslinjer overfor blant annet ansvarsforhold, skatt, revisjonsplikt, rettigheter og plikter.
+
+    ### Næringskode
+    [Næringskoder]: https://www.brreg.no/bedrift/naeringskoder/
+    [Næringskoder]  på brreg.no
+
+    [Standard for næringsgruppering]: https://www.ssb.no/klass/klassifikasjoner/6
+    [Standard for næringsgruppering]
+    ---
+
+    ## Versjonering
+    Du kan velge major versjon ved å spesifisere HTTP Accept-headeren. Bruk headeren spesifisert i tabellen under. Hvis versjon ikke spesifiseres, vil man få siste versjon.
+    <table>
+      <thead>
+        <tr>
+          <th>API</th>
+          <th>Header</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>/</td>
+          <td>application/vnd.enhetsregisteret.v1+json</td>
+        </tr>
+        <tr>
+          <td>/organisasjonsformer</td>
+          <td>application/vnd.enhetsregisteret.organisasjonsform.v1+json</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    ### Strategi
+    Vi skal normalt ikke bryte bakoverkompabiliteten med våre brukere. Likevel kan det være nødvendig i enkelte situasjoner, av for eksempel juridiske årsaker eller vedlikehold, å gjøre endringer som medfører et slikt brudd. Vi vil i dette tilfellet versjonere tjenesten slik at nyeste versjon vil være tilgjengelig sammen med forrige versjon.
+
+    #### Dersom man ikke benytter versjonering i accept header, vil man få siste versjon.
+
+    Eldre versjon vil anses som utdatert/deprecated, og vil på sikt bli tatt bort. Ved behov for denne typen endringer vil vi forsøke å gi bruker god tid, og varsle om endringen i forkant. Se punkt om varsling.
+
+    ### Når innføres ny versjon
+    Vi vil innføre en ny versjon når vi introduserer en endring som påvirker bakoverkompabiliteten. Mindre endringer og patcher vil ikke medføre versjonsendring i header.
+
+    ### Når fjernes en versjon
+    Vi vil legge ut varsel/driftsmeldinger i god tid på følgende steder:
+    - [Driftsmeldinger]: https://www.brreg.no/om-oss/driftsmeldinger/
+    [Driftsmeldinger]
+    - [RSS-feed]: https://www.brreg.no/produkter-og-tjenester/rss-feed/
+    [RSS-feed].
+
+    Eksempel på endring som medfører versjonering:
+
+    - Fjerne eller endre navn på et attributt i HTTP-responsen.
+
+    - Fjerne eller endre navn på et REST endepunkt.
+
+    ---
+
+    ## Endringslogg
+    <table>
+      <thead>
+        <tr>
+          <th>Versjon</th>
+          <th>Dato</th>
+          <th>Endring</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1.1.0</td>
+          <td>14. august 2018</td>
+          <td>Ny tjeneste /oppdateringer/enheter og /oppdateringer/underenheter</td>
+        </tr>
+        <tr>
+          <td>1.0.0</td>
+          <td>6. april 2018</td>
+          <td>Produksjonssetting av ny åpne data tjeneste for Enhetsregisteret</td>
+        </tr>
+      </tbody>
+    </table>
+
+  version: "1.0.0"
+  title: Åpne Data fra Enhetsregisteret - API Dokumentasjon
+  contact:
+    name: Forenkling og Brukerdialog hos Brønnøysundregistrene
+    email: opendata@brreg.no
+  license:
+    name: Norsk lisens for offentlige data (NLOD)
+    url: https://data.norge.no/nlod/no/
+paths:
+  /:
+    get:
+      operationId: listTjenester
+      description: Hent alle tjenester
+      responses:
+        '200':
+          description: Tjenester mot åpne data fra Enhetsregisteret
+        default:
+          description: Udefinert feil
+  /enheter:
+    parameters:
+    - name: size
+      in: query
+      description: Antall ønskede treff i response. Default verdi er 20. Max dypde (page*size) er 10 000.
+      schema:
+        type: integer
+    - name: page
+      in: query
+      description: Hvilken side som ønskes av resultatsettet. Default verdi er 0. Max dypde (page*size) er 10 000
+      schema:
+        type: integer
+    - name: navn
+      in: query
+      description: Filtrer på navn. Sammensatt søk på likhet. Resultat sorteres pr default etter score
+      required: false
+      schema:
+        type: string
+    - name: sort
+      in: query
+      description: Sorter resultatsett på feltnavn. Merk at navn må sorteres på navn.norwegian
+      required: false
+      schema:
+        type: string
+    - name: organisasjonsform
+      in: query
+      description: Filtrer på organisasjonsformkode. Kommaseparert liste.
+      required: false
+      schema:
+        type: string
+    - name: naeringskode
+      in: query
+      description: Filtrer på næringskode. Valgfritt nivå. Kommaseparert liste.
+      required: false
+      schema:
+        type: string
+    - name: kommunenummer
+      in: query
+      description: Filtrer på kommunenummer 4 siffer.
+      required: false
+      schema:
+        type: string
+    - name: overordnetEnhet
+      in: query
+      description: Organisasjonsnummeret til overordnet enhet
+      required: false
+      schema:
+        type: string
+    - name: fraRegistreringsdatoEnhetsregisteret
+      in: query
+      description: Filtrer på fra registreringsdato i Enhetsregisteret.
+      required: false
+      schema:
+        type: string
+        format: date (ISO-8601)
+    - name: tilRegistreringsdatoEnhetsregisteret
+      in: query
+      description: Filtrer på til registreringsdato i Enhetsregisteret.
+      required: false
+      schema:
+        type: string
+        format: date (ISO-8601)
+    - name: registrertIMvaregisteret
+      in: query
+      description: Filtrer på om enheten er registrert i Merverdiregisteret
+      required: false
+      schema:
+        type: boolean
+    - name: konkurs
+      in: query
+      description: Filtrer på om enheten er registrert konkurs
+      required: false
+      schema:
+        type: boolean
+    - name: fraAntallAnsatte
+      in: query
+      description: Filtrer på fra antall ansatte
+      required: false
+      schema:
+        type: integer
+    - name: tilAntallAnsatte
+      in: query
+      description: Filtrer på til antall ansatte
+      required: false
+      schema:
+        type: integer
+    get:
+      operationId: listEnheter
+      description: Hent alle enheter
+      responses:
+        '200':
+          description: Enheter fra Enhetsregisteret
+        '400':
+          description: Ugyldig forespørsel
+        default:
+          description: Udefinert feil
+  /enheter/{organisasjonsnummer}:
+    parameters:
+    - name: organisasjonsnummer
+      in: path
+      description: Organisasjonsnummeret til enheten - 9 siffer
+      required: true
+      schema:
+        type: string
+    get:
+      operationId: hentEnhet
+      description: Hent detaljer om enhet
+      responses:
+        '200':
+          description: Enhet fra Enhetsregisteret
+        '404':
+          description: Enheten finnes ikke
+        '410':
+          description: Enheten er fjernet
+        default:
+          description: Udefinert feil
+  /underenheter:
+    parameters:
+    - name: size
+      in: query
+      description: Antall ønskede treff i response. Default verdi er 20. Max dypde (page*size) er 10 000.
+      schema:
+        type: integer
+    - name: page
+      in: query
+      description: Hvilken side som ønskes av resultatsettet. Default verdi er 0. Max dypde (page*size) er 10 000
+      schema:
+        type: integer
+    - name: navn
+      in: query
+      description: Filtrer på navn. Sammensatt søk på likhet. Resultat sorteres pr default etter score
+      required: false
+      schema:
+        type: string
+    - name: sort
+      in: query
+      description: Sorter resultatsett på feltnavn. Merk at navn må sorteres på navn.norwegian
+      required: false
+      schema:
+        type: string
+    - name: organisasjonsform
+      in: query
+      description: Filtrer på organisasjonsformkode. Kommaseparert liste.
+      required: false
+      schema:
+        type: string
+    - name: naeringskode
+      in: query
+      description: Filtrer på næringskode. Valgfritt nivå. Kommaseparert liste.
+      required: false
+      schema:
+        type: string
+    - name: kommunenummer
+      in: query
+      description: Filtrer på kommunenummer 4 siffer.
+      required: false
+      schema:
+        type: string
+    - name: overordnetEnhet
+      in: query
+      description: Organisasjonsnummeret til overordnet enhet
+      required: false
+      schema:
+        type: string
+    get:
+      operationId: listUnderenheter
+      description: Hent alle underenheter
+      responses:
+        '200':
+          description: Underenheter fra Enhetsregisteret
+        default:
+          description: Udefinert feil
+  /underenheter/{organisasjonsnummer}:
+    parameters:
+    - name: organisasjonsnummer
+      in: path
+      description: Organisasjonsnummeret til underenheten - 9 siffer
+      required: true
+      schema:
+        type: string
+    get:
+      operationId: hentUnderenhet
+      description: Hent detaljer om underenhet
+      responses:
+        '200':
+          description: Underenhet fra Enhetsregisteret
+        '404':
+          description: Underenhet finnes ikke
+        '410':
+          description: Underenhet er fjernet
+        default:
+          description: Udefinert feil
+  /oppdateringer/enheter:
+    get:
+      operationId: listOppdateringerEnhet
+      description: Hent oppdateringer på enheter
+      responses:
+        '200':
+          description:  Oppdateringer på enheter fra Enhetsregisteret
+        default:
+          description: Udefinert feil
+  /oppdateringer/underenheter:
+    get:
+      operationId: listOppdateringerUnderenhet
+      description: Hent oppdateringer på underenheter
+      responses:
+        '200':
+          description:  Oppdateringer på underenheter fra Enhetsregisteret
+        default:
+          description: Udefinert feil
+  /organisasjonsformer:
+    get:
+      operationId: listOrganisasjonsformer
+      description: Hent alle organisasjonsformer
+      responses:
+        '200':
+          description: Organisasjonsformer fra Enhetsregisteret
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_Organisasjonsformer'
+            application/vnd.enhetsregisteret.organisasjonsform.v1+json:
+              schema:
+                $ref: '#/components/schemas/_Organisasjonsformer'
+        default:
+          description: Udefinert feil
+  /organisasjonsformer/{orgformKode}:
+    parameters:
+    - name: orgformKode
+      in: path
+      description: Kode for organisasjonsform
+      required: true
+      schema:
+        type: string
+      examples:
+        AS:
+          summary: Organisasjonsformkode for Aksjeselskap
+          value: AS
+    get:
+      operationId: hentOrganisasjonsform
+      description: Hent en enkelt organisasjonsform fra kode
+      responses:
+        '200':
+          description: Organisasjonsform fra Enhetsregisteret
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Organisasjonsform'
+            application/vnd.enhetsregisteret.organisasjonsform.v1+json:
+              schema:
+                $ref: '#/components/schemas/Organisasjonsform'
+        '404':
+          description: Organisasjonsformen eksisterer ikke
+        default:
+          description: Udefinert feil
+components:
+  schemas:
+    _Organisasjonsformer:
+      properties:
+        embedded:
+          $ref: '#/components/schemas/Organisasjonsformer'
+    Organisasjonsformer:
+      properties:
+        organisasjonsformer:
+          type: array
+          items:
+            $ref: '#/components/schemas/Organisasjonsform'
+    Organisasjonsform:
+      properties:
+        kode:
+          type: string
+        beskrivelse:
+          type: string
+        links:
+          $ref: '#/components/schemas/SelfLink'
+    SelfLink:
+      properties:
+        _links:
+          $ref: '#/components/schemas/Self'
+    Self:
+      properties:
+        self:
+          $ref: '#/components/schemas/Href'
+    Href:
+      properties:
+        href:
+          type: string
