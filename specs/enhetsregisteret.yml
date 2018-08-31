@@ -1,7 +1,7 @@
 openapi: 3.0.0
 servers:
-- url: https://data.brreg.no/enhetsregisteret/api
-  description: Produksjon
+  - url: https://data.brreg.no/enhetsregisteret/api
+    description: Produksjon
 info:
   description: |
     Teknisk beskrivelse av REST-tjenestene i Åpne Data fra Enhetsregisteret - Work in progress
@@ -121,90 +121,90 @@ paths:
           description: Udefinert feil
   /enheter:
     parameters:
-    - name: size
-      in: query
-      description: Antall ønskede treff i response. Default verdi er 20. Max dypde (page*size) er 10 000.
-      schema:
-        type: integer
-    - name: page
-      in: query
-      description: Hvilken side som ønskes av resultatsettet. Default verdi er 0. Max dypde (page*size) er 10 000
-      schema:
-        type: integer
-    - name: navn
-      in: query
-      description: Filtrer på navn. Sammensatt søk på likhet. Resultat sorteres pr default etter score
-      required: false
-      schema:
-        type: string
-    - name: sort
-      in: query
-      description: Sorter resultatsett på feltnavn. Merk at navn må sorteres på navn.norwegian
-      required: false
-      schema:
-        type: string
-    - name: organisasjonsform
-      in: query
-      description: Filtrer på organisasjonsformkode. Kommaseparert liste.
-      required: false
-      schema:
-        type: string
-    - name: naeringskode
-      in: query
-      description: Filtrer på næringskode. Valgfritt nivå. Kommaseparert liste.
-      required: false
-      schema:
-        type: string
-    - name: kommunenummer
-      in: query
-      description: Filtrer på kommunenummer 4 siffer.
-      required: false
-      schema:
-        type: string
-    - name: overordnetEnhet
-      in: query
-      description: Organisasjonsnummeret til overordnet enhet
-      required: false
-      schema:
-        type: string
-    - name: fraRegistreringsdatoEnhetsregisteret
-      in: query
-      description: Filtrer på fra registreringsdato i Enhetsregisteret.
-      required: false
-      schema:
-        type: string
-        format: date (ISO-8601)
-    - name: tilRegistreringsdatoEnhetsregisteret
-      in: query
-      description: Filtrer på til registreringsdato i Enhetsregisteret.
-      required: false
-      schema:
-        type: string
-        format: date (ISO-8601)
-    - name: registrertIMvaregisteret
-      in: query
-      description: Filtrer på om enheten er registrert i Merverdiregisteret
-      required: false
-      schema:
-        type: boolean
-    - name: konkurs
-      in: query
-      description: Filtrer på om enheten er registrert konkurs
-      required: false
-      schema:
-        type: boolean
-    - name: fraAntallAnsatte
-      in: query
-      description: Filtrer på fra antall ansatte
-      required: false
-      schema:
-        type: integer
-    - name: tilAntallAnsatte
-      in: query
-      description: Filtrer på til antall ansatte
-      required: false
-      schema:
-        type: integer
+      - name: size
+        in: query
+        description: Antall ønskede treff i response. Default verdi er 20. Max dypde (page*size) er 10 000.
+        schema:
+          type: integer
+      - name: page
+        in: query
+        description: Hvilken side som ønskes av resultatsettet. Default verdi er 0. Max dypde (page*size) er 10 000
+        schema:
+          type: integer
+      - name: navn
+        in: query
+        description: Filtrer på navn. Sammensatt søk på likhet. Resultat sorteres pr default etter score
+        required: false
+        schema:
+          type: string
+      - name: sort
+        in: query
+        description: Sorter resultatsett på feltnavn. Merk at navn må sorteres på navn.norwegian
+        required: false
+        schema:
+          type: string
+      - name: organisasjonsform
+        in: query
+        description: Filtrer på organisasjonsformkode. Kommaseparert liste.
+        required: false
+        schema:
+          type: string
+      - name: naeringskode
+        in: query
+        description: Filtrer på næringskode. Valgfritt nivå. Kommaseparert liste.
+        required: false
+        schema:
+          type: string
+      - name: kommunenummer
+        in: query
+        description: Filtrer på kommunenummer 4 siffer.
+        required: false
+        schema:
+          type: string
+      - name: overordnetEnhet
+        in: query
+        description: Organisasjonsnummeret til overordnet enhet
+        required: false
+        schema:
+          type: string
+      - name: fraRegistreringsdatoEnhetsregisteret
+        in: query
+        description: Filtrer på fra registreringsdato i Enhetsregisteret.
+        required: false
+        schema:
+          type: string
+          format: date (ISO-8601)
+      - name: tilRegistreringsdatoEnhetsregisteret
+        in: query
+        description: Filtrer på til registreringsdato i Enhetsregisteret.
+        required: false
+        schema:
+          type: string
+          format: date (ISO-8601)
+      - name: registrertIMvaregisteret
+        in: query
+        description: Filtrer på om enheten er registrert i Merverdiregisteret
+        required: false
+        schema:
+          type: boolean
+      - name: konkurs
+        in: query
+        description: Filtrer på om enheten er registrert konkurs
+        required: false
+        schema:
+          type: boolean
+      - name: fraAntallAnsatte
+        in: query
+        description: Filtrer på fra antall ansatte
+        required: false
+        schema:
+          type: integer
+      - name: tilAntallAnsatte
+        in: query
+        description: Filtrer på til antall ansatte
+        required: false
+        schema:
+          type: integer
     get:
       operationId: listEnheter
       description: Hent alle enheter
@@ -217,18 +217,25 @@ paths:
           description: Udefinert feil
   /enheter/{organisasjonsnummer}:
     parameters:
-    - name: organisasjonsnummer
-      in: path
-      description: Organisasjonsnummeret til enheten - 9 siffer
-      required: true
-      schema:
-        type: string
+      - name: organisasjonsnummer
+        in: path
+        description: Organisasjonsnummeret til enheten - 9 siffer
+        required: true
+        schema:
+          type: string
     get:
       operationId: hentEnhet
       description: Hent detaljer om enhet
       responses:
         '200':
           description: Enhet fra Enhetsregisteret
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Enhet'
+            application/vnd.enhetsregisteret.enhet.v1+json:
+              schema:
+                $ref: '#/components/schemas/Enhet'
         '404':
           description: Enheten finnes ikke
         '410':
@@ -237,52 +244,52 @@ paths:
           description: Udefinert feil
   /underenheter:
     parameters:
-    - name: size
-      in: query
-      description: Antall ønskede treff i response. Default verdi er 20. Max dypde (page*size) er 10 000.
-      schema:
-        type: integer
-    - name: page
-      in: query
-      description: Hvilken side som ønskes av resultatsettet. Default verdi er 0. Max dypde (page*size) er 10 000
-      schema:
-        type: integer
-    - name: navn
-      in: query
-      description: Filtrer på navn. Sammensatt søk på likhet. Resultat sorteres pr default etter score
-      required: false
-      schema:
-        type: string
-    - name: sort
-      in: query
-      description: Sorter resultatsett på feltnavn. Merk at navn må sorteres på navn.norwegian
-      required: false
-      schema:
-        type: string
-    - name: organisasjonsform
-      in: query
-      description: Filtrer på organisasjonsformkode. Kommaseparert liste.
-      required: false
-      schema:
-        type: string
-    - name: naeringskode
-      in: query
-      description: Filtrer på næringskode. Valgfritt nivå. Kommaseparert liste.
-      required: false
-      schema:
-        type: string
-    - name: kommunenummer
-      in: query
-      description: Filtrer på kommunenummer 4 siffer.
-      required: false
-      schema:
-        type: string
-    - name: overordnetEnhet
-      in: query
-      description: Organisasjonsnummeret til overordnet enhet
-      required: false
-      schema:
-        type: string
+      - name: size
+        in: query
+        description: Antall ønskede treff i response. Default verdi er 20. Max dypde (page*size) er 10 000.
+        schema:
+          type: integer
+      - name: page
+        in: query
+        description: Hvilken side som ønskes av resultatsettet. Default verdi er 0. Max dypde (page*size) er 10 000
+        schema:
+          type: integer
+      - name: navn
+        in: query
+        description: Filtrer på navn. Sammensatt søk på likhet. Resultat sorteres pr default etter score
+        required: false
+        schema:
+          type: string
+      - name: sort
+        in: query
+        description: Sorter resultatsett på feltnavn. Merk at navn må sorteres på navn.norwegian
+        required: false
+        schema:
+          type: string
+      - name: organisasjonsform
+        in: query
+        description: Filtrer på organisasjonsformkode. Kommaseparert liste.
+        required: false
+        schema:
+          type: string
+      - name: naeringskode
+        in: query
+        description: Filtrer på næringskode. Valgfritt nivå. Kommaseparert liste.
+        required: false
+        schema:
+          type: string
+      - name: kommunenummer
+        in: query
+        description: Filtrer på kommunenummer 4 siffer.
+        required: false
+        schema:
+          type: string
+      - name: overordnetEnhet
+        in: query
+        description: Organisasjonsnummeret til overordnet enhet
+        required: false
+        schema:
+          type: string
     get:
       operationId: listUnderenheter
       description: Hent alle underenheter
@@ -293,12 +300,12 @@ paths:
           description: Udefinert feil
   /underenheter/{organisasjonsnummer}:
     parameters:
-    - name: organisasjonsnummer
-      in: path
-      description: Organisasjonsnummeret til underenheten - 9 siffer
-      required: true
-      schema:
-        type: string
+      - name: organisasjonsnummer
+        in: path
+        description: Organisasjonsnummeret til underenheten - 9 siffer
+        required: true
+        schema:
+          type: string
     get:
       operationId: hentUnderenhet
       description: Hent detaljer om underenhet
@@ -347,16 +354,16 @@ paths:
           description: Udefinert feil
   /organisasjonsformer/{orgformKode}:
     parameters:
-    - name: orgformKode
-      in: path
-      description: Kode for organisasjonsform
-      required: true
-      schema:
-        type: string
-      examples:
-        AS:
-          summary: Organisasjonsformkode for Aksjeselskap
-          value: AS
+      - name: orgformKode
+        in: path
+        description: Kode for organisasjonsform
+        required: true
+        schema:
+          type: string
+        examples:
+          AS:
+            summary: Organisasjonsformkode for Aksjeselskap
+            value: AS
     get:
       operationId: hentOrganisasjonsform
       description: Hent en enkelt organisasjonsform fra kode
@@ -376,6 +383,82 @@ paths:
           description: Udefinert feil
 components:
   schemas:
+    Enhet:
+      properties:
+        organisasjonsnummer:
+          type: string
+        navn:
+          type: string
+        organisasjonsform:
+          $ref: '#/components/schemas/Organisasjonsform'
+        postadresse:
+          $ref: '#/components/schemas/Adresse'
+        registreringsdatoEnhetsregisteret:
+          type: string
+        registrertIMvaregisteret:
+          type: boolean
+        naeringskode1:
+          $ref: '#/components/schemas/Naeringskode'
+        naeringskode2:
+          $ref: '#/components/schemas/Naeringskode'
+        naeringskode3:
+          $ref: '#/components/schemas/Naeringskode'
+        antallAnsatte:
+          type: integer
+        forretningsadresse:
+          $ref: '#/components/schemas/Adresse'
+        stiftelsedato:
+          type: string
+        institusjonellSektorkode:
+          $ref: '#/components/schemas/Sektorkode'
+        registrertIForetaksregisteret:
+          type: boolean
+        registrertIStiftelsesregisteret:
+          type: boolean
+        registrertIFrivillighetsregisteret:
+          type: boolean
+        sisteInnsendteAarsregnskap:
+          type: string
+        konkurs:
+          type: boolean
+        underAvvikling:
+          type: boolean
+        underTvangsavviklingEllerTvangsopplosning:
+          type: boolean
+        maalform:
+          type: string
+        _links:
+          $ref: '#/components/schemas/Self'
+    Adresse:
+      properties:
+        land:
+          type: string
+        landkode:
+          type: string
+        postnummer:
+          type: string
+        poststed:
+          type: string
+        adresse:
+          type: array
+          items:
+            type: string
+        kommune:
+          type: string
+        kommunenummer:
+          type: string
+    Naeringskode:
+      properties:
+        kode:
+          type: string
+        beskrivelse:
+          type: string
+    Sektorkode:
+      properties:
+        kode:
+          type: string
+        beskrivelse:
+          type: string
     _Organisasjonsformer:
       properties:
         embedded:
@@ -392,10 +475,6 @@ components:
           type: string
         beskrivelse:
           type: string
-        links:
-          $ref: '#/components/schemas/SelfLink'
-    SelfLink:
-      properties:
         _links:
           $ref: '#/components/schemas/Self'
     Self:
