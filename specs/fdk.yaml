@@ -1,0 +1,954 @@
+openapi: 3.0.0
+info:
+  description: Provides a basic search api against the National Data Directory of Norway
+  version: '1.0'
+  title: National Data Directory Search API
+  termsOfService: 'https://fellesdatakatalog.brreg.no/about'
+  contact:
+    name: Brønnøysundregistrene
+    url: 'https://fellesdatakatalog.brreg.no'
+    email: fellesdatakatalog@brreg.no
+  license:
+    name: License of API
+    url: 'http://data.norge.no/nlod/no/2.0'
+tags:
+  - name: catalog-service
+    description: Catalog Service
+  - name: datasets-query-service
+    description: Datasets Query Service
+  - name: harvest-query-service
+    description: Harvest Query Service
+  - name: publisher-query-service
+    description: Publisher Query Service
+  - name: terms-query-service
+    description: Terms Query Service
+paths:
+  /aggregateDataset:
+    get:
+      tags:
+        - datasets-query-service
+      summary: Aggregates dataset count per organization path.
+      operationId: aggregateDatasetsUsingGET
+      parameters:
+        - name: q
+          in: query
+          description: q
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /catalogs:
+    get:
+      tags:
+        - catalog-service
+      summary: >-
+        Returns a specific harvested catalog according to the DCAT-AP-NO
+        standard in one out of the three supported RDF formats.
+      description: >-
+        The three formats are: text/turtle, application/ld+json and
+        application/rdf+xml
+      operationId: getCatalogDcatUsingGET
+      parameters:
+        - name: Accept
+          in: header
+          description: >-
+            The result's format. Alternative to format query string:
+            text/turtle, application/ld+json, application/rdf+xml
+          required: false
+          schema:
+            type: string
+        - name: id
+          in: query
+          description: The URI of the catalog as used in harvested file
+          required: true
+          schema:
+            type: string
+        - name: format
+          in: query
+          description: >-
+            The result's format. An alternative to Accept header: json for
+            json-ld, ttl -for turtle, xml or rdf for rdf-xml
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Catalog'
+            application/rdf+xml:
+              schema:
+                $ref: '#/components/schemas/Catalog'
+            text/turtle:
+              schema:
+                $ref: '#/components/schemas/Catalog'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /dataset:
+    get:
+      tags:
+        - catalog-service
+      summary: >-
+        Returns a specific dataset in accordance with the DCAT-AP-NO standard in
+        one out of the three supported RDF formats.
+      description: >-
+        The three formats are: text/turtle, application/ld+json and
+        application/rdf+xml
+      operationId: getDatasetDcatUsingGET
+      parameters:
+        - name: id
+          in: query
+          description: >-
+            The id of the dataset. The id is a uuid given by the harvester
+            application.
+          required: false
+          schema:
+            type: string
+        - name: format
+          in: query
+          description: >-
+            The result's format. An alternative to Accept header: json for
+            json-ld, ttl -for turtle, xml or rdf for rdf-xml
+          required: false
+          schema:
+            type: string
+        - name: Accept
+          in: header
+          description: >-
+            The result's format. Alternative to format query string:
+            text/turtle, application/ld+json, application/rdf+xml
+          required: false
+          schema:
+            type: string
+            default: '*/*'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Dataset'
+            application/rdf+xml:
+              schema:
+                $ref: '#/components/schemas/Dataset'
+            text/turtle:
+              schema:
+                $ref: '#/components/schemas/Dataset'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /datasets:
+    get:
+      tags:
+        - datasets-query-service
+      summary: Queries the catalog for datasets.
+      description: >-
+        Returns a list of matching datasets wrapped in a elasticsearch response.
+        Max number returned by a single query is 100. Size parameters greater
+        than 100 will not return more than 100 datasets. In order to access all
+        datasets, use multiple queries and increment from parameter.
+      operationId: searchUsingGET
+      parameters:
+        - name: q
+          in: query
+          description: the query string
+          required: false
+          schema:
+            type: string
+        - name: theme
+          in: query
+          description: 'Filters on specified theme(s). ex. GOVE, or GOVE,SOCI'
+          required: false
+          schema:
+            type: string
+        - name: publisher
+          in: query
+          description: Filters on publisher name
+          required: false
+          schema:
+            type: string
+        - name: accessrights
+          in: query
+          description: 'Filters on accessrights, codes are PUBLIC, RESTRICTED or NON_PUBLIC '
+          required: false
+          schema:
+            type: string
+        - name: orgPath
+          in: query
+          description: >-
+            Filters on publisher's organization path (orgPath), e.g.
+            /STAT/972417858/971040238
+          required: false
+          schema:
+            type: string
+        - name: firstHarvested
+          in: query
+          description: >-
+            Filters datasets that were first harvested x-days ago, e.g. a value
+            of 100 will result in datasets that were harvested more than 100
+            days ago
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 0
+        - name: lastHarvested
+          in: query
+          description: >-
+            Filters datasets that were last harvested x-days ago, e.g. 10 will
+            result in datasets that have not been harvested for the last 10
+            days.
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 0
+        - name: lastChanged
+          in: query
+          description: >-
+            Filters datasets that has changed within the last x-days, e.g. a
+            value of 10 will result in datasets that were changed during 10
+            days, i.e. its values have changed within the last 10 days
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 0
+        - name: from
+          in: query
+          description: >-
+            Returns datatasets from position x in the result set, 0 is the
+            default value. A value of 150 will return the 150th dataset in the
+            resultset
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 0
+        - name: size
+          in: query
+          description: >-
+            Specifies the size, i.e. the number of datasets to return in one
+            request. The default is 10, the maximum number of datasets returned
+            is 100
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 10
+        - name: lang
+          in: query
+          description: >-
+            Specifies the language elements of the datasets to search in,
+            default is nb
+          required: false
+          schema:
+            type: string
+            default: nb
+        - name: sortfield
+          in: query
+          description: >-
+            Specifies the sort field, at the present we support title, modified
+            and publisher. Default is no value
+          required: false
+          schema:
+            type: string
+        - name: sortdirection
+          in: query
+          description: >-
+            Specifies the sort direction of the sorted result. The directions
+            are: asc for ascending and desc for descending
+          required: false
+          schema:
+            type: string
+        - name: subject
+          in: query
+          description: Filters datasets according their referred subjects
+          required: false
+          schema:
+            type: string
+        - name: provenance
+          in: query
+          description: >-
+            Filters datasets according to their provenance code, e.g. NASJONAL -
+            nasjonal building block, VEDTAK - governmental decisions, BRUKER -
+            user collected data and TREDJEPART - third party data
+          required: false
+          schema:
+            type: string
+        - name: spatial
+          in: query
+          description: 'Filters datasets according to their spatial label, e.g. Oslo, Norge'
+          required: false
+          schema:
+            type: string
+        - name: opendata
+          in: query
+          description: >-
+            Filters on distribution license and access rights. If true the
+            distribution licence is open and the access rights are public.
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dataset'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /datasets/**:
+    get:
+      tags:
+        - datasets-query-service
+      summary: Get a specific dataset.
+      description: You must specify the dataset's identifier
+      operationId: detailUsingGET
+      responses:
+        '200':
+          description: OK
+          content:
+            application/ld+json:
+              schema:
+                $ref: '#/components/schemas/Dataset'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dataset'
+            application/rdf+xml:
+              schema:
+                $ref: '#/components/schemas/Dataset'
+            text/turtle:
+              schema:
+                $ref: '#/components/schemas/Dataset'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /harvest/catalog:
+    get:
+      tags:
+        - harvest-query-service
+      summary: Finds all harvest catalog records for a given orgpath.
+      operationId: listCatalogHarvestRecordsUsingGET
+      parameters:
+        - name: q
+          in: query
+          description: 'The orgpath of the publisher, e.g. /STAT or /FYLKE'
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /publisher:
+    get:
+      tags:
+        - publisher-query-service
+      summary: Query for publishers.
+      description: Returns the elasticsearch response with matching publishers
+      operationId: publishersUsingGET
+      parameters:
+        - name: q
+          in: query
+          description: A query string to match a publisher name
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Publisher'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /publisher/hierarchy:
+    get:
+      tags:
+        - publisher-query-service
+      summary: Returns all publishers in a hierarchy.
+      operationId: publisherNamesUsingGET
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PublisherHit'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /publishercount:
+    get:
+      tags:
+        - datasets-query-service
+      summary: Aggregate dataset count per publisher.
+      description: >-
+        Returns a list of publishers and the total number of dataset for each of
+        them
+      operationId: publisherCountUsingGET
+      parameters:
+        - name: publisher
+          in: query
+          description: publisher
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /terms:
+    get:
+      tags:
+        - terms-query-service
+      summary: Query for terms (concepts).
+      description: 'Returns the elasticsearch response with matching terms (dct:subject)'
+      operationId: searchUsingGET_1
+      parameters:
+        - name: q
+          in: query
+          description: The query to match a concept
+          required: false
+          schema:
+            type: string
+        - name: creator
+          in: query
+          description: Search for the creator (owner) of the term
+          required: false
+          schema:
+            type: string
+        - name: orgPath
+          in: query
+          description: Search for concepts based on orgpath
+          required: false
+          schema:
+            type: string
+        - name: from
+          in: query
+          description: The index position of the result set to start return concepts for
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 0
+        - name: size
+          in: query
+          description: The size of the result set
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 10
+        - name: lang
+          in: query
+          description: The language to search in
+          required: false
+          schema:
+            type: string
+            default: nb
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Subject'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /themecount:
+    get:
+      tags:
+        - datasets-query-service
+      summary: Aggregate dataset count per theme.
+      description: >-
+        Returns a list of themes and the total number of datasets for each of
+        them
+      operationId: themecountUsingGET
+      parameters:
+        - name: code
+          in: query
+          description: code
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SkosConcept'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+servers:
+  - url: 'https://fellesdatakatalog.brreg.no'
+components:
+  schemas:
+    Catalog:
+      type: object
+      properties:
+        dataset:
+          type: array
+          items:
+            $ref: '#/components/schemas/Dataset'
+        description:
+          type: object
+          additionalProperties:
+            type: string
+        id:
+          type: string
+        issued:
+          type: string
+          format: date-time
+        language:
+          type: string
+        modified:
+          type: string
+          format: date-time
+        publisher:
+          $ref: '#/components/schemas/Publisher'
+        themeTaxonomy:
+          type: array
+          items:
+            type: string
+        title:
+          type: object
+          additionalProperties:
+            type: string
+        uri:
+          type: string
+    ConceptSchema:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: object
+          additionalProperties:
+            type: string
+        versioninfo:
+          type: string
+        versionnumber:
+          type: string
+    Contact:
+      type: object
+      properties:
+        email:
+          type: string
+        fullname:
+          type: string
+        hasTelephone:
+          type: string
+        hasURL:
+          type: string
+        id:
+          type: string
+        organizationName:
+          type: string
+        organizationUnit:
+          type: string
+        uri:
+          type: string
+    DataTheme:
+      type: object
+      properties:
+        code:
+          type: string
+        conceptSchema:
+          $ref: '#/components/schemas/ConceptSchema'
+        id:
+          type: string
+        numberOfHits:
+          type: integer
+          format: int32
+        pickedDate:
+          type: string
+        startUse:
+          type: string
+        title:
+          type: object
+          additionalProperties:
+            type: string
+        uri:
+          type: string
+    Dataset:
+      type: object
+      properties:
+        accessRights:
+          $ref: '#/components/schemas/SkosCode'
+        accessRightsComment:
+          type: array
+          items:
+            type: string
+        accrualPeriodicity:
+          $ref: '#/components/schemas/SkosCode'
+        admsIdentifier:
+          type: array
+          items:
+            type: string
+        catalog:
+          $ref: '#/components/schemas/Catalog'
+        conformsTo:
+          type: array
+          items:
+            $ref: '#/components/schemas/SkosConcept'
+        contactPoint:
+          type: array
+          items:
+            $ref: '#/components/schemas/Contact'
+        description:
+          type: object
+          additionalProperties:
+            type: string
+        descriptionFormatted:
+          type: object
+          additionalProperties:
+            type: string
+        distribution:
+          type: array
+          items:
+            $ref: '#/components/schemas/Distribution'
+        harvest:
+          $ref: '#/components/schemas/HarvestMetadata'
+        hasAccuracyAnnotation:
+          $ref: '#/components/schemas/QualityAnnotation'
+        hasAvailabilityAnnotation:
+          $ref: '#/components/schemas/QualityAnnotation'
+        hasCompletenessAnnotation:
+          $ref: '#/components/schemas/QualityAnnotation'
+        hasCurrentnessAnnotation:
+          $ref: '#/components/schemas/QualityAnnotation'
+        hasRelevanceAnnotation:
+          $ref: '#/components/schemas/QualityAnnotation'
+        id:
+          type: string
+        identifier:
+          type: array
+          items:
+            type: string
+        informationModel:
+          type: array
+          items:
+            $ref: '#/components/schemas/SkosConcept'
+        issued:
+          type: string
+          format: date-time
+        keyword:
+          type: array
+          items:
+            $ref: '#/components/schemas/Map_string_string_'
+        landingPage:
+          type: array
+          items:
+            type: string
+        language:
+          type: array
+          items:
+            $ref: '#/components/schemas/SkosCode'
+        legalBasisForAccess:
+          type: array
+          items:
+            $ref: '#/components/schemas/SkosConcept'
+        legalBasisForProcessing:
+          type: array
+          items:
+            $ref: '#/components/schemas/SkosConcept'
+        legalBasisForRestriction:
+          type: array
+          items:
+            $ref: '#/components/schemas/SkosConcept'
+        modified:
+          type: string
+          format: date-time
+        objective:
+          type: object
+          additionalProperties:
+            type: string
+        page:
+          type: array
+          items:
+            type: string
+        provenance:
+          $ref: '#/components/schemas/SkosCode'
+        provenanceSort:
+          type: string
+        publisher:
+          $ref: '#/components/schemas/Publisher'
+        references:
+          type: array
+          items:
+            $ref: '#/components/schemas/Reference'
+        sample:
+          type: array
+          items:
+            $ref: '#/components/schemas/Distribution'
+        source:
+          type: string
+        spatial:
+          type: array
+          items:
+            $ref: '#/components/schemas/SkosCode'
+        subject:
+          type: array
+          items:
+            $ref: '#/components/schemas/Subject'
+        temporal:
+          type: array
+          items:
+            $ref: '#/components/schemas/PeriodOfTime'
+        theme:
+          type: array
+          items:
+            $ref: '#/components/schemas/DataTheme'
+        title:
+          type: object
+          additionalProperties:
+            type: string
+        type:
+          type: string
+        uri:
+          type: string
+    Distribution:
+      type: object
+      properties:
+        accessURL:
+          type: array
+          items:
+            type: string
+        conformsTo:
+          type: array
+          items:
+            $ref: '#/components/schemas/SkosConcept'
+        description:
+          type: object
+          additionalProperties:
+            type: string
+        downloadURL:
+          type: array
+          items:
+            type: string
+        format:
+          type: array
+          items:
+            type: string
+        id:
+          type: string
+        license:
+          $ref: '#/components/schemas/SkosConcept'
+        openLicense:
+          type: boolean
+        page:
+          type: array
+          items:
+            $ref: '#/components/schemas/SkosConcept'
+        title:
+          type: object
+          additionalProperties:
+            type: string
+        type:
+          type: string
+        uri:
+          type: string
+    HarvestMetadata:
+      type: object
+      properties:
+        changed:
+          type: array
+          items:
+            type: string
+            format: date-time
+        firstHarvested:
+          type: string
+          format: date-time
+        lastChanged:
+          type: string
+          format: date-time
+        lastHarvested:
+          type: string
+          format: date-time
+    Hits:
+      type: object
+      properties:
+        hits:
+          type: array
+          items:
+            $ref: '#/components/schemas/PublisherHit'
+    PeriodOfTime:
+      type: object
+      properties:
+        endDate:
+          type: string
+          format: date-time
+        id:
+          type: string
+        name:
+          type: string
+        startDate:
+          type: string
+          format: date-time
+    Publisher:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        orgPath:
+          type: string
+        uri:
+          type: string
+    PublisherHit:
+      type: object
+      properties:
+        children:
+          type: array
+          items:
+            $ref: '#/components/schemas/PublisherHit'
+        name:
+          type: string
+        orgPath:
+          type: string
+    QualityAnnotation:
+      type: object
+      properties:
+        hasBody:
+          type: object
+          additionalProperties:
+            type: string
+        inDimension:
+          type: string
+        motivatedBy:
+          type: string
+    Reference:
+      type: object
+      properties:
+        referenceType:
+          $ref: '#/components/schemas/SkosCode'
+        source:
+          $ref: '#/components/schemas/SkosConcept'
+    SkosCode:
+      type: object
+      properties:
+        code:
+          type: string
+        prefLabel:
+          type: object
+          additionalProperties:
+            type: string
+        uri:
+          type: string
+    SkosConcept:
+      type: object
+      properties:
+        extraType:
+          type: string
+        prefLabel:
+          type: object
+          additionalProperties:
+            type: string
+        uri:
+          type: string
+    Subject:
+      type: object
+      properties:
+        altLabel:
+          type: array
+          items:
+            $ref: '#/components/schemas/Map_string_string_'
+        creator:
+          $ref: '#/components/schemas/Publisher'
+        datasets:
+          type: array
+          items:
+            $ref: '#/components/schemas/Dataset'
+        definition:
+          type: object
+          additionalProperties:
+            type: string
+        identifier:
+          type: string
+        inScheme:
+          type: array
+          items:
+            type: string
+        note:
+          type: object
+          additionalProperties:
+            type: string
+        prefLabel:
+          type: object
+          additionalProperties:
+            type: string
+        source:
+          type: string
+        uri:
+          type: string
+    Map_string_string_:
+      type: object
+      additionalProperties:
+        type: string
