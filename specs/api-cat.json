@@ -1,0 +1,141 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "description": "Provides a basic search api against the National API Directory of Norway",
+    "version": "1.0",
+    "title": "National API Directory Search API",
+    "termsOfService": "https://fellesdatakatalog.brreg.no/about",
+    "contact": {
+      "name": "Brønnøysundregistrene",
+      "url": "https://fellesdatakatalog.brreg.no",
+      "email": "fellesdatakatalog@brreg.no"
+    },
+    "license": {
+      "name": "License of API",
+      "url": "http://data.norge.no/nlod/no/2.0"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://fellesdatakatalog.brreg.no/api-cat",
+      "description": "The production API server"
+    }
+  ],
+  "tags": [
+    {
+      "name": "search-controller",
+      "description": "Search Controller"
+    },
+    {
+      "name": "get-controller",
+      "description": "Get Controller"
+    }
+  ],
+  "paths": {
+    "/api/search": {
+      "get": {
+        "tags": [
+          "search-controller"
+        ],
+        "summary": "Queries the api catalog for api specifications",
+        "description": "So far only simple queries is supported",
+        "operationId": "searchUsingGET",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "description": "the query string",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QueryResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/{id}": {
+      "get": {
+        "tags": [
+          "get-controller"
+        ],
+        "summary": "Get a specific api",
+        "operationId": "getApiDocumentUsingGET",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiDocument"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "QueryResponse": {
+        "type": "object",
+        "properties": {
+          "aggregations": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Aggregation"
+            }
+          },
+          "hits": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiDocument"
+            }
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "Aggregation": {
+        "type": "object"
+      },
+      "ApiDocument": {
+        "type": "object"
+      }
+    }
+  }
+}
