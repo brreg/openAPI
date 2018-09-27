@@ -15,10 +15,10 @@ servers:
   - url: 'https://fellesdatakatalog.brreg.no/api-cat'
     description: The production API server
 tags:
-  - name: search-controller
-    description: Search Controller
   - name: get-controller
     description: Get Controller
+  - name: search-controller
+    description: Search Controller
 paths:
   /api/search:
     get:
@@ -65,7 +65,7 @@ paths:
           description: Unauthorized
         '403':
           description: Forbidden
-        '404': 
+        '404':
           description: Not Found
 components:
   schemas:

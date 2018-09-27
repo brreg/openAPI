@@ -23,12 +23,12 @@
   ],
   "tags": [
     {
-      "name": "search-controller",
-      "description": "Search Controller"
-    },
-    {
       "name": "get-controller",
       "description": "Get Controller"
+    },
+    {
+      "name": "search-controller",
+      "description": "Search Controller"
     }
   ],
   "paths": {
