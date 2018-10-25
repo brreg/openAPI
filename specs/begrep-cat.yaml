@@ -1,0 +1,89 @@
+openapi: 3.0.1
+info:
+  description: Provides a basic search api against the National Concept Directory of Norway
+  version: '1.0'
+  title: National Concept Directory Search API
+  termsOfService: 'https://fellesdatakatalog.brreg.no/about'
+  contact:
+    name: Brønnøysundregistrene
+    url: 'https://fellesdatakatalog.brreg.no'
+    email: fellesdatakatalog@brreg.no
+  license:
+    name: License of API
+    url: 'http://data.norge.no/nlod/no/2.0'
+servers:
+  - url: 'https://fellesdatakatalog.brreg.no/concept-cat'
+    description: The production Concept server
+tags:
+  - name: get-controller
+    description: Get Controller
+  - name: search-controller
+    description: Search Controller
+paths:
+  /concept/search:
+    get:
+      tags:
+      - search-controller
+      summary: Queries the concept catalog for concept document
+      description: So far only simple queries is supported
+      operationId: searchUsingGET
+      parameters:
+        - name: q
+          in: query
+          description: the query string
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/QueryResponse"
+  /concept/{id}:
+    get:
+      tags:
+      - get-controller
+      summary: Get a specific concept
+      operationId: getConceptDocumentUsingGET
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ConceptDocument"
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+components:
+  schemas:
+    QueryResponse:
+      type: object
+      properties:
+        aggregations:
+          type: object
+          additionalProperties:
+            $ref: "#/components/schemas/Aggregation"
+        hits:
+          type: array
+          items:
+            $ref: "#/components/schemas/ConceptDocument"
+        total:
+          type: integer
+          format: int64
+    Aggregation:
+      type: object
+    ConceptDocument:
+      type: object
