@@ -12,7 +12,7 @@ info:
     name: License of API
     url: 'http://data.norge.no/nlod/no/2.0'
 servers:
-  - url: 'https://fellesdatakatalog.brreg.no/api-cat'
+  - url: 'https://fellesdatakatalog.brreg.no/api-cat/apis'
     description: The production API server
 tags:
   - name: get-controller
@@ -20,7 +20,7 @@ tags:
   - name: search-controller
     description: Search Controller
 paths:
-  /api/search:
+  /search:
     get:
       tags:
       - search-controller
@@ -41,7 +41,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/QueryResponse"
-  /api/{id}:
+  /{id}:
     get:
       tags:
       - get-controller

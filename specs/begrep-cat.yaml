@@ -12,13 +12,13 @@ info:
     name: License of API
     url: 'http://data.norge.no/nlod/no/2.0'
 servers:
-  - url: 'https://fellesdatakatalog.brreg.no/concept-cat'
+  - url: 'https://fellesdatakatalog.brreg.no/api/concepts'
     description: The production Concept server
 tags:
   - name: concept
     description: Concept operations
 paths:
-  /concepts:
+  /:
     get:
       tags:
         - concept
@@ -45,7 +45,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/QueryResponse"
-  /concepts/{id}:
+  /{id}:
     get:
       tags:
         - concept

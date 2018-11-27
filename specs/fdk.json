@@ -770,7 +770,7 @@
             }
           },
           "description": {
-            "type": "string",
+            "type": "string"
           },
           "id": {
             "type": "string"
@@ -796,7 +796,7 @@
             }
           },
           "title": {
-            "type": "string",
+            "type": "string"
           },
           "uri": {
             "type": "string"
@@ -810,7 +810,7 @@
             "type": "string"
           },
           "title": {
-            "type": "string",
+            "type": "string"
           },
           "versioninfo": {
             "type": "string"
@@ -872,7 +872,7 @@
             "type": "string"
           },
           "title": {
-            "type": "string",
+            "type": "string"
           },
           "uri": {
             "type": "string"
@@ -916,10 +916,10 @@
             }
           },
           "description": {
-            "type": "string",
+            "type": "string"
           },
           "descriptionFormatted": {
-            "type": "string",
+            "type": "string"
           },
           "distribution": {
             "type": "array",
@@ -1005,7 +1005,7 @@
             "format": "date-time"
           },
           "objective": {
-            "type": "string",
+            "type": "string"
           },
           "page": {
             "type": "array",
@@ -1062,7 +1062,7 @@
             }
           },
           "title": {
-            "type": "string",
+            "type": "string"
           },
           "type": {
             "type": "string"
@@ -1088,7 +1088,7 @@
             }
           },
           "description": {
-            "type": "string",
+            "type": "string"
           },
           "downloadURL": {
             "type": "array",
@@ -1118,7 +1118,7 @@
             }
           },
           "title": {
-            "type": "string",
+            "type": "string"
           },
           "type": {
             "type": "string"
@@ -1220,7 +1220,7 @@
         "type": "object",
         "properties": {
           "hasBody": {
-            "type": "string",
+            "type": "string"
           },
           "inDimension": {
             "type": "string"
@@ -1248,7 +1248,7 @@
             "type": "string"
           },
           "prefLabel": {
-            "type": "string",
+            "type": "string"
           },
           "uri": {
             "type": "string"
@@ -1262,7 +1262,7 @@
             "type": "string"
           },
           "prefLabel": {
-            "type": "string",
+            "type": "string"
           },
           "uri": {
             "type": "string"
@@ -1288,7 +1288,7 @@
             }
           },
           "definition": {
-            "type": "string",
+            "type": "string"
           },
           "identifier": {
             "type": "string"
@@ -1300,10 +1300,10 @@
             }
           },
           "note": {
-            "type": "string",
+            "type": "string"
           },
           "prefLabel": {
-            "type": "string",
+            "type": "string"
           },
           "source": {
             "type": "string"
@@ -1314,7 +1314,7 @@
         }
       },
       "Map_string_string_": {
-        "type": "string",
+        "type": "string"
       }
     }
   }

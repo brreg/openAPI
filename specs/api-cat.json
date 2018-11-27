@@ -17,7 +17,7 @@
   },
   "servers": [
     {
-      "url": "https://fellesdatakatalog.brreg.no/api-cat",
+      "url": "https://fellesdatakatalog.brreg.no/api-cat/apis",
       "description": "The production API server"
     }
   ],
@@ -32,7 +32,7 @@
     }
   ],
   "paths": {
-    "/api/search": {
+    "/search": {
       "get": {
         "tags": [
           "search-controller"
@@ -65,7 +65,7 @@
         }
       }
     },
-    "/api/{id}": {
+    "/{id}": {
       "get": {
         "tags": [
           "get-controller"
@@ -113,7 +113,7 @@
         "type": "object",
         "properties": {
           "aggregations": {
-              "$ref": "#/components/schemas/Aggregation"
+            "$ref": "#/components/schemas/Aggregation"
           },
           "hits": {
             "type": "array",
