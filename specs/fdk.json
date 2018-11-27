@@ -770,10 +770,7 @@
             }
           },
           "description": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "type": "string",
           },
           "id": {
             "type": "string"
@@ -799,10 +796,7 @@
             }
           },
           "title": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "type": "string",
           },
           "uri": {
             "type": "string"
@@ -816,10 +810,7 @@
             "type": "string"
           },
           "title": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "type": "string",
           },
           "versioninfo": {
             "type": "string"
@@ -881,10 +872,7 @@
             "type": "string"
           },
           "title": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "type": "string",
           },
           "uri": {
             "type": "string"
@@ -928,16 +916,10 @@
             }
           },
           "description": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "type": "string",
           },
           "descriptionFormatted": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "type": "string",
           },
           "distribution": {
             "type": "array",
@@ -1023,10 +1005,7 @@
             "format": "date-time"
           },
           "objective": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "type": "string",
           },
           "page": {
             "type": "array",
@@ -1083,10 +1062,7 @@
             }
           },
           "title": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "type": "string",
           },
           "type": {
             "type": "string"
@@ -1112,10 +1088,7 @@
             }
           },
           "description": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "type": "string",
           },
           "downloadURL": {
             "type": "array",
@@ -1145,10 +1118,7 @@
             }
           },
           "title": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "type": "string",
           },
           "type": {
             "type": "string"
@@ -1250,10 +1220,7 @@
         "type": "object",
         "properties": {
           "hasBody": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "type": "string",
           },
           "inDimension": {
             "type": "string"
@@ -1281,10 +1248,7 @@
             "type": "string"
           },
           "prefLabel": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "type": "string",
           },
           "uri": {
             "type": "string"
@@ -1298,10 +1262,7 @@
             "type": "string"
           },
           "prefLabel": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "type": "string",
           },
           "uri": {
             "type": "string"
@@ -1327,10 +1288,7 @@
             }
           },
           "definition": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "type": "string",
           },
           "identifier": {
             "type": "string"
@@ -1342,16 +1300,10 @@
             }
           },
           "note": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "type": "string",
           },
           "prefLabel": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "type": "string",
           },
           "source": {
             "type": "string"
@@ -1362,10 +1314,7 @@
         }
       },
       "Map_string_string_": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        }
+        "type": "string",
       }
     }
   }

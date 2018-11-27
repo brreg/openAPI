@@ -77,9 +77,7 @@ components:
       type: object
       properties:
         aggregations:
-          type: object
-          additionalProperties:
-            $ref: "#/components/schemas/Aggregation"
+          $ref: "#/components/schemas/Aggregation"
         hits:
           type: array
           items:

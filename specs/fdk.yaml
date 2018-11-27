@@ -557,9 +557,7 @@ components:
           items:
             $ref: '#/components/schemas/Dataset'
         description:
-          type: object
-          additionalProperties:
-            type: string
+          type: string
         id:
           type: string
         issued:
@@ -577,9 +575,7 @@ components:
           items:
             type: string
         title:
-          type: object
-          additionalProperties:
-            type: string
+          type: string
         uri:
           type: string
     ConceptSchema:
@@ -588,9 +584,7 @@ components:
         id:
           type: string
         title:
-          type: object
-          additionalProperties:
-            type: string
+          type: string
         versioninfo:
           type: string
         versionnumber:
@@ -631,9 +625,7 @@ components:
         startUse:
           type: string
         title:
-          type: object
-          additionalProperties:
-            type: string
+          type: string
         uri:
           type: string
     Dataset:
@@ -662,13 +654,9 @@ components:
           items:
             $ref: '#/components/schemas/Contact'
         description:
-          type: object
-          additionalProperties:
-            type: string
+          type: string
         descriptionFormatted:
-          type: object
-          additionalProperties:
-            type: string
+          type: string
         distribution:
           type: array
           items:
@@ -726,9 +714,7 @@ components:
           type: string
           format: date-time
         objective:
-          type: object
-          additionalProperties:
-            type: string
+          type: string
         page:
           type: array
           items:
@@ -766,9 +752,7 @@ components:
           items:
             $ref: '#/components/schemas/DataTheme'
         title:
-          type: object
-          additionalProperties:
-            type: string
+          type: string
         type:
           type: string
         uri:
@@ -785,9 +769,7 @@ components:
           items:
             $ref: '#/components/schemas/SkosConcept'
         description:
-          type: object
-          additionalProperties:
-            type: string
+          type: string
         downloadURL:
           type: array
           items:
@@ -807,9 +789,7 @@ components:
           items:
             $ref: '#/components/schemas/SkosConcept'
         title:
-          type: object
-          additionalProperties:
-            type: string
+          type: string
         type:
           type: string
         uri:
@@ -877,9 +857,7 @@ components:
       type: object
       properties:
         hasBody:
-          type: object
-          additionalProperties:
-            type: string
+          type: string
         inDimension:
           type: string
         motivatedBy:
@@ -897,9 +875,7 @@ components:
         code:
           type: string
         prefLabel:
-          type: object
-          additionalProperties:
-            type: string
+          type: string
         uri:
           type: string
     SkosConcept:
@@ -908,9 +884,7 @@ components:
         extraType:
           type: string
         prefLabel:
-          type: object
-          additionalProperties:
-            type: string
+          type: string
         uri:
           type: string
     Subject:
@@ -927,9 +901,7 @@ components:
           items:
             $ref: '#/components/schemas/Dataset'
         definition:
-          type: object
-          additionalProperties:
-            type: string
+          type: string
         identifier:
           type: string
         inScheme:
@@ -937,18 +909,12 @@ components:
           items:
             type: string
         note:
-          type: object
-          additionalProperties:
-            type: string
+          type: string
         prefLabel:
-          type: object
-          additionalProperties:
-            type: string
+          type: string
         source:
           type: string
         uri:
           type: string
     Map_string_string_:
-      type: object
-      additionalProperties:
-        type: string
+      type: string
