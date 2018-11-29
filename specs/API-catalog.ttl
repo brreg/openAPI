@@ -1,0 +1,12 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+<https://github.com/brreg/openAPI/tree/master/specs> a adms:AssetRepository ;
+  dcterms:created "2018-11-29"^^xsd:date ;
+  dcterms:description "A complete catalog of API decriptions created by Brønnøysund Register Centre"@en ;
+  dcterms:publisher <https://data.brreg.no/enhetsregisteret/enhet/974760673> ;
+  dcat:dataset <https://raw.githubusercontent.com/brreg/openAPI/master/specs/api-cat.json> ;
+  dcat:dataset <https://raw.githubusercontent.com/brreg/openAPI/master/specs/enhetsregisteret.json> ;
+  dcat:dataset <https://raw.githubusercontent.com/brreg/openAPI/master/specs/fdk.json> ;
+  dcterms:title "API catalog Brønnøysund Register Centre"@en .
