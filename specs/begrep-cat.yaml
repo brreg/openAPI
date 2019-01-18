@@ -22,13 +22,13 @@ paths:
     get:
       tags:
         - concept
-      summary: Queries the concept catalog for concept document
+      summary: Query the concept catalog for concept document
       description: So far only simple queries is supported
       operationId: searchUsingGET
       parameters:
         - name: q
           in: query
-          description: the query string
+          description: the word to search for in our concept collection
           required: false
           schema:
             type: string
@@ -65,12 +65,12 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ConceptDocument"
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
         '404':
           description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
 components:
   schemas:
     QueryResponse:
@@ -88,4 +88,6 @@ components:
     Aggregation:
       type: object
     ConceptDocument:
+      type: object
+    ErrorMessage:
       type: object
