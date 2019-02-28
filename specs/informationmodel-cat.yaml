@@ -1,0 +1,145 @@
+openapi: 3.0.1
+info:
+  description: Provides a basic search api against the National Information Model Directory of Norway
+  version: '0.1'
+  title: National Information Model Directory Search API
+  termsOfService: 'https://fellesdatakatalog.brreg.no/about'
+  contact:
+    name: Brønnøysundregistrene
+    url: 'https://fellesdatakatalog.brreg.no'
+    email: fellesdatakatalog@brreg.no
+  license:
+    name: License of API
+    url: 'http://data.norge.no/nlod/no/2.0'
+servers:
+  - url: 'https://fellesdatakatalog.brreg.no/api/informationmodels'
+    description: The production Information Model server
+tags:
+  - name: informationmodel
+    description: Information Model operations
+paths:
+  /:
+    get:
+      tags:
+        - informationmodel
+      summary: Query the information model catalog for information model document
+      description: So far only simple queries is supported
+      operationId: searchUsingGET
+      parameters:
+        - name: q
+          in: query
+          description: the word to search for in our information model collection
+          required: false
+          schema:
+            type: string
+        - name: aggregations
+          in: query
+          description: If you want aggregations, set to true.
+          required: false
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/QueryResponse"
+  /{id}:
+    get:
+      tags:
+        - informationmodel
+      summary: Get a specific information model
+      operationId: getInformationModelDocumentUsingGET
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InformationModelDocument"
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+components:
+  schemas:
+    QueryResponse:
+      type: object
+      properties:
+        aggregations:
+          $ref: "#/components/schemas/Aggregation"
+        hits:
+          type: array
+          items:
+            $ref: "#/components/schemas/InformationModelDocument"
+        total:
+          type: integer
+          format: int64
+    Aggregation:
+      type: object
+    InformationModelDocument:
+      type: object
+      properties:
+        id:
+          type: string
+          description:
+            The id given by the harvest system
+        publisher:
+          $ref: "#/components/schemas/Publisher"
+        harvestSourceUri:
+          type: string
+          description:
+            The source where the record was harvested from
+        harvest:
+          $ref: "#/components/schemas/Harvest"
+        title:
+          type: string
+          description:
+            The title of the information model
+        schema:
+          type: string
+          description:
+            The model itself, expressed in JSON-SCHEMA
+    Publisher:
+      type: object
+      description:
+        The publisher of the information model
+      properties:
+        uri:
+          type: string
+        id:
+          type: string
+        name:
+          type: string
+        orgPath:
+          type: string
+        prefLabel:
+          $ref: "#/components/schemas/PrefLabel"
+    PrefLabel:
+      type: object
+      properties:
+        no:
+          type: string
+          description:
+            The name of the publisher in Norwegian
+    Harvest:
+      type: object
+      description:
+        Information about when the model was first and last harvested by the system
+      properties:
+        firstHarvested:
+          type: string
+        lastHarvested:
+          type: string
+    ErrorMessage:
+      type: object

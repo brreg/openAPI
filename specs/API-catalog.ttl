@@ -10,4 +10,5 @@
   dcat:dataset <https://raw.githubusercontent.com/brreg/openAPI/master/specs/enhetsregisteret.json> ;
   dcat:dataset <https://raw.githubusercontent.com/brreg/openAPI/master/specs/fdk.json> ;
   dcat:dataset <https://raw.githubusercontent.com/brreg/openAPI/master/specs/concept-cat.json> ;
+  dcat:dataset <https://raw.githubusercontent.com/brreg/openAPI/master/specs/informationmodel-cat.json> ;
   dcterms:title "API catalog Brønnøysund Register Centre"@en .
