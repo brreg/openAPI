@@ -23,7 +23,7 @@ tags:
   - name: search-controller
     description: Search Controller
 paths:
-  /search:
+  /:
     get:
       tags:
       - search-controller
@@ -70,6 +70,32 @@ paths:
           description: Forbidden
         '404':
           description: Not Found
+  /{id}/schema:
+    get:
+      tags:
+      - get-controller
+      summary: Get a specific api's specification
+      operationId: getApiSpecUsingGET
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiSpec"
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
 components:
   schemas:
     QueryResponse:
@@ -88,3 +114,116 @@ components:
       type: object
     ApiDocument:
       type: object
+      properties:
+        id:
+          type: string
+          description: The id given by the harvest system
+        harvestSourceUri:
+          type: string
+          description: The source where the record was harvested from
+        apiSpecUrl:
+          type: string
+          description: The url of the specification which are used to harvest the specification
+        apiSpec:
+          $ref: "#/components/schemas/ApiSpec"
+        apiSpecification:
+          $ref: "#/components/schemas/ApiSpecification"
+        harvest:
+          $ref: "#/components/schemas/Harvest"
+        title:
+          type: string
+          description: The title of the api, can be specified in multiple langauges [dct:title]
+        description:
+          type: string
+          description: The description of the api, can be specified in multiple languages [dct:description]
+        formats:
+          type: array
+          items:
+            type: string
+          description: A list of formats returned by the api
+        publisher:
+          $ref: "#/components/schemas/Publisher"
+        contactPoint:
+          type: array
+          items:
+            $ref: "#/components/schemas/Contact"
+        datasetReference:
+          type: array
+          description: A list of references to the datasets that can be returned by the API
+          items:
+            $ref: "#/components/schemas/DatasetReference"
+    ApiSpec:
+      type: object
+      description: Original API spec
+    ApiSpecification:
+      type: object
+      description: Parsed API specification
+      properties:
+        info:
+          $ref: "#/components/schemas/Info"
+        paths:
+          type: array
+          items:
+            $ref: "#/components/schemas/PathItem"
+        externalDocs:
+          $ref: "#/components/schemas/ExternalDocumentation"
+        formats:
+          type: array
+          items:
+            type: string
+            description: A list of formats returned by the api
+    Harvest:
+      type: object
+      description: Information about when the API was first and last harvested by the system
+    Publisher:
+      type: object
+      description:
+        The publisher of the information model
+      properties:
+        uri:
+          type: string
+        id:
+          type: string
+        name:
+          type: string
+        orgPath:
+          type: string
+        prefLabel:
+          $ref: "#/components/schemas/PrefLabel"
+    PrefLabel:
+      type: object
+      properties:
+        no:
+          type: string
+          description:
+            The name of the publisher in Norwegian
+    Contact:
+      type: object
+      description: The contact point [dcat:contactPoint]
+      properties:
+        uri:
+          type: string
+        organizationName:
+          type: string
+    Info:
+      type: object
+      description: The Info Object
+    PathItem:
+      type: object
+      description: The Path Item Object
+    ExternalDocumentation:
+      type: object
+      description: The External Documentation Object
+    DatasetReference:
+      type: object
+      properties:
+        id:
+          type: string
+        uri:
+          type: string
+        title:
+          type: object
+          properties:
+            nb:
+              type: string
+              description: Title in Norwegian
