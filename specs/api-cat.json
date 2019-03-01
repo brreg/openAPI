@@ -15,6 +15,10 @@
       "url": "http://data.norge.no/nlod/no/2.0"
     }
   },
+  "externalDocs": {
+    "description": "Dokumentasjon på Informasjonsforvaltning GitHub",
+    "url": "https://informasjonsforvaltning.github.io/felles-datakatalog/api-katalog/api/"
+  },
   "servers": [
     {
       "url": "https://fellesdatakatalog.brreg.no/api-cat/apis",

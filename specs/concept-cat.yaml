@@ -11,6 +11,9 @@ info:
   license:
     name: License of API
     url: 'http://data.norge.no/nlod/no/2.0'
+externalDocs:
+  description: Dokumentasjon på Informasjonsforvaltning GitHub
+  url: https://informasjonsforvaltning.github.io/felles-datakatalog/begrepskatalog/api/
 servers:
   - url: 'https://fellesdatakatalog.brreg.no/api/concepts'
     description: The production Concept server
