@@ -221,7 +221,7 @@
           "hits": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ApiDocument"
+              "$ref": "#/components/schemas/ApiSearchResult"
             }
           },
           "total": {
@@ -231,7 +231,92 @@
         }
       },
       "Aggregation": {
-        "type": "object"
+        "type": "object",
+        "properties": {
+          "formats": {
+            "type": "object",
+            "description": "A collection of formats and a count per format in query result",
+            "properties": {
+              "buckets": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ApiSearchResult"
+                }
+              }
+            }
+          }
+        }
+      },
+      "AggregationBucket": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "the format"
+          },
+          "count": {
+            "type": "number",
+            "description": "the number of apis with the given format in the query result"
+          }
+        }
+      },
+      "ApiSearchResult": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The id given by the harvest system"
+          },
+          "title": {
+            "type": "string",
+            "description": "The title of the api, can be specified in multiple langauges [dct:title]"
+          },
+          "titleFormatted": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the api, can be specified in multiple languages [dct:description]"
+          },
+          "descriptionFormatted": {
+            "type": "string"
+          },
+          "formats": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "A list of formats returned by the api"
+          },
+          "publisher": {
+            "$ref": "#/components/schemas/Publisher"
+          },
+          "nationalComponent": {
+            "type": "boolean",
+            "description": "Indication if the api is from an authoritative source (a National Component)"
+          },
+          "isOpenAccess": {
+            "type": "boolean",
+            "description": "Indication if the api has open access"
+          },
+          "isOpenLicense": {
+            "type": "boolean",
+            "description": "Indication if the api has open licence"
+          },
+          "isFree": {
+            "type": "boolean",
+            "description": "Indication if the api is free"
+          },
+          "statusCode": {
+            "type": "string"
+          },
+          "deprecationInfoExpirationDate": {
+            "type": "string"
+          },
+          "deprecationInfoReplacedWithUrl": {
+            "type": "string"
+          }
+        }
       },
       "ApiDocument": {
         "type": "object",
@@ -287,6 +372,37 @@
             "items": {
               "$ref": "#/components/schemas/DatasetReference"
             }
+          },
+          "titleFormatted": {
+            "type": "string"
+          },
+          "descriptionFormatted": {
+            "type": "string"
+          },
+          "nationalComponent": {
+            "type": "boolean",
+            "description": "Indication if the api is from an authoritative source (a National Component)"
+          },
+          "isOpenAccess": {
+            "type": "boolean",
+            "description": "Indication if the api has open access"
+          },
+          "isOpenLicense": {
+            "type": "boolean",
+            "description": "Indication if the api has open licence"
+          },
+          "isFree": {
+            "type": "boolean",
+            "description": "Indication if the api is free"
+          },
+          "statusCode": {
+            "type": "string"
+          },
+          "deprecationInfoExpirationDate": {
+            "type": "string"
+          },
+          "deprecationInfoReplacedWithUrl": {
+            "type": "string"
           }
         }
       },
@@ -325,7 +441,7 @@
       },
       "Publisher": {
         "type": "object",
-        "description": "The publisher of the information model",
+        "description": "The publisher of the api [dct:publisher]",
         "properties": {
           "uri": {
             "type": "string"
