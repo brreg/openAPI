@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.2
 info:
   description: Provides a basic search api against the National API Directory of Norway
   version: '1.0'
@@ -18,8 +18,8 @@ servers:
   - url: 'https://fellesdatakatalog.brreg.no/api-cat/apis'
     description: The production API server
 tags:
-  - name: get-controller
-    description: Get Controller
+  - name: rest-controller
+    description: REST Controller
   - name: search-controller
     description: Search Controller
 paths:
@@ -37,6 +37,45 @@ paths:
           required: false
           schema:
             type: string
+        - name: orgPath
+          in: query
+          description: Filters on publisher's organization path (orgPath), e.g. /STAT/972417858/971040238
+          required: false
+          schema:
+            type: string
+        - name: harvestSourceUri
+          in: query
+          description: Filters on harvestSourceUri external identifier
+          required: false
+          schema:
+            type: string
+        - name: format
+          in: query
+          description: Filters on formats
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: aggregations
+          in: query
+          description: Calculate aggregations
+          required: false
+          schema:
+            type: string
+            default: "false"
+        - name: sortfield
+          in: query
+          description: Specifies the sort field, at the present the only value is \"modified\". Default is no value, and results are sorted by relevance
+          required: false
+          schema:
+            type: string
+        - name: sortdirection
+          in: query
+          description: "Specifies the sort direction of the sorted result. The directions are: asc for ascending and desc for descending"
+          required: false
+          schema:
+            type: string
       responses:
         '200':
           description: OK
@@ -47,7 +86,7 @@ paths:
   /{id}:
     get:
       tags:
-      - get-controller
+      - rest-controller
       summary: Get a specific api
       operationId: getApiDocumentUsingGET
       parameters:
@@ -73,7 +112,7 @@ paths:
   /{id}/schema:
     get:
       tags:
-      - get-controller
+      - rest-controller
       summary: Get a specific api's specification
       operationId: getApiSpecUsingGET
       parameters:
