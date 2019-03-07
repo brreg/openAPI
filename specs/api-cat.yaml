@@ -310,10 +310,13 @@ components:
       properties:
         uri:
           type: string
+          description: Link to the organization entry in The Brønnøysund Register Centre
         id:
           type: string
+          description: Organization number
         name:
           type: string
+          description: The name of the organization as given in the The Brønnøysund Register Centre
         orgPath:
           type: string
         prefLabel:
