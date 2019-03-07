@@ -1,0 +1,107 @@
+{
+  "apiDocUrl": "https://informasjonsforvaltning.github.io/felles-datakatalog/api-katalog/api/",
+  "datasetUris": [
+    "http://brreg.no/catalogs/974760673/datasets/ed6510da-01cf-4905-82fb-72e3cda08789"
+  ],
+  "nationalComponent": false,
+  "isOpenAccess": true,
+  "isOpenLicense": true,
+  "isFree": true,
+  "cost": "Gratis",
+  "usageLimitation": "",
+  "performance": "",
+  "availability": "",
+  "id": "77bb65c6-38f7-4eab-80c7-855d45aaa996",
+  "harvestSourceUri": "http://nginx-search:8080/api/registration/apis/bf0f51b5-8665-4a9e-bcae-3d42dbdfce65",
+  "apiSpecUrl": "https://raw.githubusercontent.com/brreg/openAPI/master/specs/api-cat.json",
+  "apiSpec": "{\n  \"openapi\": \"3.0.1\",\n  \"info\": {\n    \"description\": \"Provides a basic search api against the National API Directory of Norway\",\n    \"version\": \"1.0\",\n    \"title\": \"National API Directory Search API\",\n    \"termsOfService\": \"https://fellesdatakatalog.brreg.no/about\",\n    \"contact\": {\n      \"name\": \"Brønnøysundregistrene\",\n      \"url\": \"https://fellesdatakatalog.brreg.no\",\n      \"email\": \"fellesdatakatalog@brreg.no\"\n    },\n    \"license\": {\n      \"name\": \"License of API\",\n      \"url\": \"http://data.norge.no/nlod/no/2.0\"\n    }\n  },\n  \"externalDocs\": {\n    \"description\": \"Dokumentasjon på Informasjonsforvaltning GitHub\",\n    \"url\": \"https://informasjonsforvaltning.github.io/felles-datakatalog/api-katalog/api/\"\n  },\n  \"servers\": [\n    {\n      \"url\": \"https://fellesdatakatalog.brreg.no/api-cat/apis\",\n      \"description\": \"The production API server\"\n    }\n  ],\n  \"tags\": [\n    {\n      \"name\": \"get-controller\",\n      \"description\": \"Get Controller\"\n    },\n    {\n      \"name\": \"search-controller\",\n      \"description\": \"Search Controller\"\n    }\n  ],\n  \"paths\": {\n    \"/\": {\n      \"get\": {\n        \"tags\": [\n          \"search-controller\"\n        ],\n        \"summary\": \"Queries the api catalog for api specifications\",\n        \"description\": \"So far only simple queries is supported\",\n        \"operationId\": \"searchUsingGET\",\n        \"parameters\": [\n          {\n            \"name\": \"q\",\n            \"in\": \"query\",\n            \"description\": \"the query string\",\n            \"required\": false,\n            \"schema\": {\n              \"type\": \"string\"\n            }\n          }\n        ],\n        \"responses\": {\n          \"200\": {\n            \"description\": \"OK\",\n            \"content\": {\n              \"application/json\": {\n                \"schema\": {\n                  \"$ref\": \"#/components/schemas/QueryResponse\"\n                }\n              }\n            }\n          }\n        }\n      }\n    },\n    \"/{id}\": {\n      \"get\": {\n        \"tags\": [\n          \"get-controller\"\n        ],\n        \"summary\": \"Get a specific api\",\n        \"operationId\": \"getApiDocumentUsingGET\",\n        \"parameters\": [\n          {\n            \"name\": \"id\",\n            \"in\": \"path\",\n            \"description\": \"id\",\n            \"required\": true,\n            \"schema\": {\n              \"type\": \"string\"\n            }\n          }\n        ],\n        \"responses\": {\n          \"200\": {\n            \"description\": \"OK\",\n            \"content\": {\n              \"application/json\": {\n                \"schema\": {\n                  \"$ref\": \"#/components/schemas/ApiDocument\"\n                }\n              }\n            }\n          },\n          \"401\": {\n            \"description\": \"Unauthorized\"\n          },\n          \"403\": {\n            \"description\": \"Forbidden\"\n          },\n          \"404\": {\n            \"description\": \"Not Found\"\n          }\n        }\n      }\n    },\n    \"/{id}/schema\": {\n      \"get\": {\n        \"tags\": [\n          \"get-controller\"\n        ],\n        \"summary\": \"Get a specific api's specification\",\n        \"operationId\": \"getApiSpecUsingGET\",\n        \"parameters\": [\n          {\n            \"name\": \"id\",\n            \"in\": \"path\",\n            \"description\": \"id\",\n            \"required\": true,\n            \"schema\": {\n              \"type\": \"string\"\n            }\n          }\n        ],\n        \"responses\": {\n          \"200\": {\n            \"description\": \"OK\",\n            \"content\": {\n              \"application/json\": {\n                \"schema\": {\n                  \"$ref\": \"#/components/schemas/ApiSpec\"\n                }\n              }\n            }\n          },\n          \"401\": {\n            \"description\": \"Unauthorized\"\n          },\n          \"403\": {\n            \"description\": \"Forbidden\"\n          },\n          \"404\": {\n            \"description\": \"Not Found\"\n          }\n        }\n      }\n    }\n  },\n  \"components\": {\n    \"schemas\": {\n      \"QueryResponse\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"aggregations\": {\n            \"$ref\": \"#/components/schemas/Aggregation\"\n          },\n          \"hits\": {\n            \"type\": \"array\",\n            \"items\": {\n              \"$ref\": \"#/components/schemas/ApiDocument\"\n            }\n          },\n          \"total\": {\n            \"type\": \"integer\",\n            \"format\": \"int64\"\n          }\n        }\n      },\n      \"Aggregation\": {\n        \"type\": \"object\"\n      },\n      \"ApiDocument\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"id\": {\n            \"type\": \"string\",\n            \"description\": \"The id given by the harvest system\"\n          },\n          \"harvestSourceUri\": {\n            \"type\": \"string\",\n            \"description\": \"The source where the record was harvested from\"\n          },\n          \"apiSpecUrl\": {\n            \"type\": \"string\",\n            \"description\": \"The url of the specification which are used to harvest the specification\"\n          },\n          \"apiSpec\": {\n            \"$ref\": \"#/components/schemas/ApiSpec\"\n          },\n          \"apiSpecification\": {\n            \"$ref\": \"#/components/schemas/ApiSpecification\"\n          },\n          \"harvest\": {\n            \"$ref\": \"#/components/schemas/Harvest\"\n          },\n          \"title\": {\n            \"type\": \"string\",\n            \"description\": \"The title of the api, can be specified in multiple langauges [dct:title]\"\n          },\n          \"description\": {\n            \"type\": \"string\",\n            \"description\": \"The description of the api, can be specified in multiple languages [dct:description]\"\n          },\n          \"formats\": {\n            \"type\": \"array\",\n            \"items\": {\n              \"type\": \"string\"\n            },\n            \"description\": \"A list of formats returned by the api\"\n          },\n          \"publisher\": {\n            \"$ref\": \"#/components/schemas/Publisher\"\n          },\n          \"contactPoint\": {\n            \"type\": \"array\",\n            \"items\": {\n              \"$ref\": \"#/components/schemas/Contact\"\n            }\n          },\n          \"datasetReference\": {\n            \"type\": \"array\",\n            \"description\": \"A list of references to the datasets that can be returned by the API\",\n            \"items\": {\n              \"$ref\": \"#/components/schemas/DatasetReference\"\n            }\n          }\n        }\n      },\n      \"ApiSpec\": {\n        \"type\": \"object\",\n        \"description\": \"Original API spec\"\n      },\n      \"ApiSpecification\": {\n        \"type\": \"object\",\n        \"description\": \"Parsed API specification\",\n        \"properties\": {\n          \"info\": {\n            \"$ref\": \"#/components/schemas/Info\"\n          },\n          \"paths\": {\n            \"type\": \"array\",\n            \"items\": {\n              \"$ref\": \"#/components/schemas/PathItem\"\n            }\n          },\n          \"externalDocs\": {\n            \"$ref\": \"#/components/schemas/ExternalDocumentation\"\n          },\n          \"formats\": {\n            \"type\": \"array\",\n            \"items\": {\n              \"type\": \"string\",\n              \"description\": \"A list of formats returned by the api\"\n            }\n          }\n        }\n      },\n      \"Harvest\": {\n        \"type\": \"object\",\n        \"description\": \"Information about when the API was first and last harvested by the system\"\n      },\n      \"Publisher\": {\n        \"type\": \"object\",\n        \"description\": \"The publisher of the information model\",\n        \"properties\": {\n          \"uri\": {\n            \"type\": \"string\"\n          },\n          \"id\": {\n            \"type\": \"string\"\n          },\n          \"name\": {\n            \"type\": \"string\"\n          },\n          \"orgPath\": {\n            \"type\": \"string\"\n          },\n          \"prefLabel\": {\n            \"$ref\": \"#/components/schemas/PrefLabel\"\n          }\n        }\n      },\n      \"PrefLabel\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"no\": {\n            \"type\": \"string\",\n            \"description\": \"The name of the publisher in Norwegian\"\n          }\n        }\n      },\n      \"Contact\": {\n        \"type\": \"object\",\n        \"description\": \"The contact point [dcat:contactPoint]\",\n        \"properties\": {\n          \"uri\": {\n            \"type\": \"string\"\n          },\n          \"organizationName\": {\n            \"type\": \"string\"\n          }\n        }\n      },\n      \"Info\": {\n        \"type\": \"object\",\n        \"description\": \"The Info Object\"\n      },\n      \"PathItem\": {\n        \"type\": \"object\",\n        \"description\": \"The Path Item Object\"\n      },\n      \"ExternalDocumentation\": {\n        \"type\": \"object\",\n        \"description\": \"The External Documentation Object\"\n      },\n      \"DatasetReference\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"id\": {\n            \"type\": \"string\"\n          },\n          \"uri\": {\n            \"type\": \"string\"\n          },\n          \"title\": {\n            \"type\": \"object\",\n            \"properties\": {\n              \"nb\": {\n                \"type\": \"string\",\n                \"description\": \"Title in Norwegian\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}",
+  "apiSpecification": {
+    "info": {
+      "title": "National API Directory Search API",
+      "description": "Provides a basic search api against the National API Directory of Norway",
+      "termsOfService": "https://fellesdatakatalog.brreg.no/about",
+      "contact": {
+        "name": "Brønnøysundregistrene",
+        "url": "https://fellesdatakatalog.brreg.no",
+        "email": "fellesdatakatalog@brreg.no"
+      },
+      "license": {
+        "name": "License of API",
+        "url": "http://data.norge.no/nlod/no/2.0"
+      },
+      "version": "1.0"
+    },
+    "paths": {
+      "/": {
+        "get": {
+          "summary": "Queries the api catalog for api specifications",
+          "description": "So far only simple queries is supported"
+        }
+      },
+      "/{id}": {
+        "get": {
+          "summary": "Get a specific api"
+        }
+      },
+      "/{id}/schema": {
+        "get": {
+          "summary": "Get a specific api's specification"
+        }
+      }
+    },
+    "externalDocs": {
+      "description": "Dokumentasjon på Informasjonsforvaltning GitHub",
+      "url": "https://informasjonsforvaltning.github.io/felles-datakatalog/api-katalog/api/"
+    },
+    "formats": [
+      "application/json"
+    ]
+  },
+  "harvest": {
+    "firstHarvested": "2018-12-19T09:52:51.883Z",
+    "lastHarvested": "2019-03-07T11:10:00.103Z",
+    "changed": [
+      "2018-12-21T09:27:29.577Z",
+      "2019-01-07T16:53:37.588Z",
+      "2019-01-07T16:54:19.940Z",
+      "2019-02-05T11:08:08.046Z",
+      "2019-02-05T11:08:24.889Z",
+      "2019-02-25T14:18:27.207Z",
+      "2019-02-26T08:39:00.913Z",
+      "2019-02-26T08:39:05.880Z",
+      "2019-03-01T17:00:01.476Z"
+    ]
+  },
+  "title": "National API Directory Search API",
+  "description": "Provides a basic search api against the National API Directory of Norway",
+  "descriptionFormatted": "Provides a basic search api against the National API Directory of Norway",
+  "formats": [
+    "application/json"
+  ],
+  "publisher": {
+    "uri": "http://data.brreg.no/enhetsregisteret/enhet/974760673",
+    "id": "974760673",
+    "name": "REGISTERENHETEN I BRØNNØYSUND",
+    "orgPath": "/STAT/912660680/974760673",
+    "prefLabel": {
+      "no": "Brønnøysundregistrene"
+    }
+  },
+  "contactPoint": [
+    {
+      "uri": "https://fellesdatakatalog.brreg.no",
+      "email": "fellesdatakatalog@brreg.no",
+      "organizationName": "Brønnøysundregistrene"
+    }
+  ],
+  "datasetReferences": [
+    {
+      "id": "ea9e2aa7-880c-4387-888e-77446acab279",
+      "uri": "http://brreg.no/catalogs/974760673/datasets/ed6510da-01cf-4905-82fb-72e3cda08789",
+      "title": {
+        "nb": "Felles datakatalog",
+        "en": "National data catalogue"
+      }
+    }
+  ]
+}
