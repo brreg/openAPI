@@ -159,16 +159,24 @@ components:
             buckets:
               type: array
               items:
-                $ref: "#/components/schemas/ApiSearchResult"
+                $ref: "#/components/schemas/AggregationBucket"
+        orgPath:
+          type: object
+          description: A organizational path and a count per level in query result
+          properties:
+            buckets:
+              type: array
+              items:
+                $ref: "#/components/schemas/AggregationBucket"
     AggregationBucket:
       type: object
       properties:
         key:
           type: string
-          description: the format
+          description: the item aggregated on
         count:
           type: number
-          description: the number of apis with the given format in the query result
+          description: the number of apis with the propertiy given key in the query result
     ApiSearchResult:
       type: object
       properties:
