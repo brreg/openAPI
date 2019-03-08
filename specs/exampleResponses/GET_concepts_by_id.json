@@ -1,0 +1,43 @@
+{
+  "id": "b7137ee8-0de0-4553-8fa0-80e80f72a50e",
+  "uri": "https://fellesdatakatalog.brreg.no/api/concepts/b7137ee8-0de0-4553-8fa0-80e80f72a50e",
+  "identifier": "http://data.brreg.no/begrep/55562",
+  "definition": {
+    "text": {
+      "nb": "rettighetshaver viker prioritet for en eller flere konkurrerende rettighetshavere"
+    },
+    "remark": {
+      "nb": "Ved en prioritetsvikelse endres rekkefølgen for en allerede tinglyst heftelse, eller for en rettsstiftelse som skal tinglyses."
+    },
+    "source": {
+      "prefLabel": {
+        "nb": "Egendefinert"
+      }
+    }
+  },
+  "subject": {
+    "nb": "Tinglysing"
+  },
+  "prefLabel": {
+    "nb": "prioritetsvikelse"
+  },
+  "altLabel": [],
+  "hiddenLabel": [],
+  "contactPoint": {
+    "email": "informasjonsforvaltning@brreg.no",
+    "telephone": "+4775007500"
+  },
+  "publisher": {
+    "uri": "http://data.brreg.no/enhetsregisteret/enhet/974760673",
+    "id": "974760673",
+    "name": "REGISTERENHETEN I BRØNNØYSUND",
+    "orgPath": "/STAT/912660680/974760673",
+    "prefLabel": {
+      "no": "Brønnøysundregistrene"
+    }
+  },
+  "harvest": {
+    "firstHarvested": "2019-03-04T11:00:02.956+0000",
+    "lastHarvested": "2019-03-04T11:00:02.956+0000"
+  }
+}

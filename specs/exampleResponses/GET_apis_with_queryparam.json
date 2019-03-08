@@ -1,0 +1,163 @@
+{
+  "total": 5,
+  "hits": [
+    {
+      "nationalComponent": true,
+      "isOpenAccess": true,
+      "isOpenLicense": true,
+      "isFree": true,
+      "statusCode": "STABLE",
+      "id": "3b88f2d7-8531-4e5c-a0a0-e22ff96221df",
+      "title": "Åpne Data fra Enhetsregisteret - API Dokumentasjon",
+      "description": "Teknisk beskrivelse av REST-tjenestene i Åpne Data fra Enhetsregisteret - Work in progress\n---\n\n## Ordbok\n### Enhetsregisteret\nRegister over grunndata om juridiske personer og andre enheter. Enhetsregisteret tildeler organisasjonsnummer for entydig identifisering av enheter.\n\n### Organisasjonsnummer\nNisifret nummer som entydig identifiserer enheter i Enhetsregisteret.\n\n### Enhet\nEnhet på øverste nivå i registreringsstrukturen i Enhetsregisteret. Eksempelvis enkeltpersonforetak, foreninger, selskap, sameier og andre som er registrert i Enhetsregisteret. Identifiseres med organisasjonsnummer.\n\n### Underenhet\nEnhet på laveste nivå i registreringsstrukturen i Enhetsregisteret. En underenhet kan ikke eksistere alene og har alltid knytning til en hovedenhet. Identifiseres med organisasjonsnummer.\n\n### Organisasjonsform\nOrganisasjonsform er virksomhetens formelle organisering og gir retningslinjer overfor blant annet ansvarsforhold, skatt, revisjonsplikt, rettigheter og plikter.\n\n### Næringskode\n[Næringskoder]: https://www.brreg.no/bedrift/naeringskoder/\n[Næringskoder] på brreg.no\n\n[Standard for næringsgruppering]: https://www.ssb.no/klass/klassifikasjoner/6\n[Standard for næringsgruppering]\n---\n\n## Versjonering\nDu kan velge major versjon ved å spesifisere HTTP Accept-headeren. Bruk headeren spesifisert i tabellen under. Hvis versjon ikke spesifiseres, vil man få siste versjon.\n\n \n \n API\n Header\n \n \n \n \n /\n application/vnd.enhetsregisteret.v1+json\n \n \n /organisasjonsformer\n application/vnd.enhetsregisteret.organisasjonsform.v1+json\n \n \n\n\n\n### Strategi\nVi skal normalt ikke bryte bakoverkompabiliteten med våre brukere. Likevel kan det være nødvendig i enkelte situasjoner, av for eksempel juridiske årsaker eller vedlikehold, å gjøre endringer som medfører et slikt brudd. Vi vil i dette tilfellet versjonere tjenesten slik at nyeste versjon vil være tilgjengelig sammen med forrige versjon.\n\n#### Dersom man ikke benytter versjonering i accept header, vil man få siste versjon.\n\nEldre versjon vil anses som utdatert/deprecated, og vil på sikt bli tatt bort. Ved behov for denne typen endringer vil vi forsøke å gi bruker god tid, og varsle om endringen i forkant. Se punkt om varsling.\n\n### Når innføres ny versjon\nVi vil innføre en ny versjon når vi introduserer en endring som påvirker bakoverkompabiliteten. Mindre endringer og patcher vil ikke medføre versjonsendring i header.\n\n### Når fjernes en versjon\nVi vil legge ut varsel/driftsmeldinger i god tid på følgende steder:\n- [Driftsmeldinger]: https://www.brreg.no/om-oss/driftsmeldinger/\n[Driftsmeldinger]\n- [RSS-feed]: https://www.brreg.no/produkter-og-tjenester/rss-feed/\n[RSS-feed].\n\nEksempel på endring som medfører versjonering:\n\n- Fjerne eller endre navn på et attributt i HTTP-responsen.\n\n- Fjerne eller endre navn på et REST endepunkt.\n\n---\n\n## Endringslogg\n\n \n \n Versjon\n Dato\n Endring\n \n \n \n \n 1.1.0\n 14. august 2018\n Ny tjeneste /oppdateringer/enheter og /oppdateringer/underenheter\n \n \n 1.0.0\n 6. april 2018\n Produksjonssetting av ny åpne data tjeneste for Enhetsregisteret\n \n \n\n",
+      "descriptionFormatted": "Teknisk beskrivelse av REST-tjenestene i Åpne Data fra Enhetsregisteret - Work in progress\n---\n\n## Ordbok\n### Enhetsregisteret\nRegister over grunndata om juridiske personer og andre enheter. Enhetsregisteret tildeler organisasjonsnummer for entydig identifisering av enheter.\n\n### Organisasjonsnummer\nNisifret nummer som entydig identifiserer enheter i Enhetsregisteret.\n\n### Enhet\nEnhet på øverste nivå i registreringsstrukturen i Enhetsregisteret. Eksempelvis enkeltpersonforetak, foreninger, selskap, sameier og andre som er registrert i Enhetsregisteret. Identifiseres med organisasjonsnummer.\n\n### Underenhet\nEnhet på laveste nivå i registreringsstrukturen i Enhetsregisteret. En underenhet kan ikke eksistere alene og har alltid knytning til en hovedenhet. Identifiseres med organisasjonsnummer.\n\n### Organisasjonsform\nOrganisasjonsform er virksomhetens formelle organisering og gir retningslinjer overfor blant annet ansvarsforhold, skatt, revisjonsplikt, rettigheter og plikter.\n\n### Næringskode\n[Næringskoder]: https://www.brreg.no/bedrift/naeringskoder/\n[Næringskoder]  på brreg.no\n\n[Standard for næringsgruppering]: https://www.ssb.no/klass/klassifikasjoner/6\n[Standard for næringsgruppering]\n---\n\n## Versjonering\nDu kan velge major versjon ved å spesifisere HTTP Accept-headeren. Bruk headeren spesifisert i tabellen under. Hvis versjon ikke spesifiseres, vil man få siste versjon.\n<table>\n  <thead>\n    <tr>\n      <th>API</th>\n      <th>Header</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>/</td>\n      <td>application/vnd.enhetsregisteret.v1+json</td>\n    </tr>\n    <tr>\n      <td>/organisasjonsformer</td>\n      <td>application/vnd.enhetsregisteret.organisasjonsform.v1+json</td>\n    </tr>\n  </tbody>\n</table>\n\n\n### Strategi\nVi skal normalt ikke bryte bakoverkompabiliteten med våre brukere. Likevel kan det være nødvendig i enkelte situasjoner, av for eksempel juridiske årsaker eller vedlikehold, å gjøre endringer som medfører et slikt brudd. Vi vil i dette tilfellet versjonere tjenesten slik at nyeste versjon vil være tilgjengelig sammen med forrige versjon.\n\n#### Dersom man ikke benytter versjonering i accept header, vil man få siste versjon.\n\nEldre versjon vil anses som utdatert/deprecated, og vil på sikt bli tatt bort. Ved behov for denne typen endringer vil vi forsøke å gi bruker god tid, og varsle om endringen i forkant. Se punkt om varsling.\n\n### Når innføres ny versjon\nVi vil innføre en ny versjon når vi introduserer en endring som påvirker bakoverkompabiliteten. Mindre endringer og patcher vil ikke medføre versjonsendring i header.\n\n### Når fjernes en versjon\nVi vil legge ut varsel/driftsmeldinger i god tid på følgende steder:\n- [Driftsmeldinger]: https://www.brreg.no/om-oss/driftsmeldinger/\n[Driftsmeldinger]\n- [RSS-feed]: https://www.brreg.no/produkter-og-tjenester/rss-feed/\n[RSS-feed].\n\nEksempel på endring som medfører versjonering:\n\n- Fjerne eller endre navn på et attributt i HTTP-responsen.\n\n- Fjerne eller endre navn på et REST endepunkt.\n\n---\n\n## Endringslogg\n<table>\n  <thead>\n    <tr>\n      <th>Versjon</th>\n      <th>Dato</th>\n      <th>Endring</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>1.1.0</td>\n      <td>14. august 2018</td>\n      <td>Ny tjeneste /oppdateringer/enheter og /oppdateringer/underenheter</td>\n    </tr>\n    <tr>\n      <td>1.0.0</td>\n      <td>6. april 2018</td>\n      <td>Produksjonssetting av ny åpne data tjeneste for Enhetsregisteret</td>\n    </tr>\n  </tbody>\n</table>\n",
+      "formats": [
+        "application/json",
+        "application/vnd.enhetsregisteret.enhet.v1+json",
+        "application/vnd.enhetsregisteret.organisasjonsform.v1+json"
+      ],
+      "publisher": {
+        "id": "974760673",
+        "name": "REGISTERENHETEN I BRØNNØYSUND",
+        "orgPath": "/STAT/912660680/974760673",
+        "prefLabel": {
+          "no": "Brønnøysundregistrene"
+        }
+      }
+    },
+    {
+      "nationalComponent": false,
+      "isOpenAccess": true,
+      "isOpenLicense": true,
+      "isFree": true,
+      "id": "77bb65c6-38f7-4eab-80c7-855d45aaa996",
+      "title": "National API Directory Search API",
+      "description": "Provides a basic search api against the National API Directory of Norway",
+      "descriptionFormatted": "Provides a basic search api against the National API Directory of Norway",
+      "formats": [
+        "application/json"
+      ],
+      "publisher": {
+        "id": "974760673",
+        "name": "REGISTERENHETEN I BRØNNØYSUND",
+        "orgPath": "/STAT/912660680/974760673",
+        "prefLabel": {
+          "no": "Brønnøysundregistrene"
+        }
+      }
+    },
+    {
+      "nationalComponent": false,
+      "isOpenAccess": true,
+      "isOpenLicense": true,
+      "isFree": true,
+      "id": "cb6483b8-4d94-473d-a4b9-8ee64abb9b91",
+      "title": "National Concept Directory Search API",
+      "description": "Provides a basic search api against the National Concept Directory of Norway",
+      "descriptionFormatted": "Provides a basic search api against the National Concept Directory of Norway",
+      "formats": [
+        "application/json"
+      ],
+      "publisher": {
+        "id": "974760673",
+        "name": "REGISTERENHETEN I BRØNNØYSUND",
+        "orgPath": "/STAT/912660680/974760673",
+        "prefLabel": {
+          "no": "Brønnøysundregistrene"
+        }
+      }
+    },
+    {
+      "nationalComponent": false,
+      "isOpenAccess": true,
+      "isOpenLicense": true,
+      "isFree": true,
+      "id": "bff198ab-faef-4b31-89b2-348a0bf1336e",
+      "title": "National Data Directory Search API",
+      "description": "Provides a basic search api against the National Data Directory of Norway",
+      "descriptionFormatted": "Provides a basic search api against the National Data Directory of Norway",
+      "formats": [
+        "application/ld+json",
+        "application/json",
+        "application/rdf+xml",
+        "text/turtle"
+      ],
+      "publisher": {
+        "id": "974760673",
+        "name": "REGISTERENHETEN I BRØNNØYSUND",
+        "orgPath": "/STAT/912660680/974760673",
+        "prefLabel": {
+          "no": "Brønnøysundregistrene"
+        }
+      }
+    },
+    {
+      "nationalComponent": false,
+      "isOpenAccess": true,
+      "isOpenLicense": true,
+      "isFree": true,
+      "statusCode": "STABLE",
+      "id": "4036a944-d586-4776-9b4b-d787a9d2c86f",
+      "title": "National Information Model Directory Search API",
+      "description": "Provides a basic search api against the National Information Model Directory of Norway",
+      "descriptionFormatted": "Provides a basic search api against the National Information Model Directory of Norway",
+      "formats": [
+        "application/json"
+      ],
+      "publisher": {
+        "id": "974760673",
+        "name": "REGISTERENHETEN I BRØNNØYSUND",
+        "orgPath": "/STAT/912660680/974760673",
+        "prefLabel": {
+          "no": "Brønnøysundregistrene"
+        }
+      }
+    }
+  ],
+  "aggregations": {
+    "formats": {
+      "buckets": [
+        {
+          "key": "application/json",
+          "count": 5
+        },
+        {
+          "key": "application/ld+json",
+          "count": 1
+        },
+        {
+          "key": "application/rdf+xml",
+          "count": 1
+        },
+        {
+          "key": "application/vnd.enhetsregisteret.enhet.v1+json",
+          "count": 1
+        },
+        {
+          "key": "application/vnd.enhetsregisteret.organisasjonsform.v1+json",
+          "count": 1
+        },
+        {
+          "key": "text/turtle",
+          "count": 1
+        }
+      ]
+    },
+    "orgPath": {
+      "buckets": [
+        {
+          "key": "/STAT",
+          "count": 5
+        },
+        {
+          "key": "/STAT/912660680",
+          "count": 5
+        },
+        {
+          "key": "/STAT/912660680/974760673",
+          "count": 5
+        }
+      ]
+    }
+  }
+}
