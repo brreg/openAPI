@@ -26,7 +26,7 @@ paths:
       tags:
         - concept
       summary: Query the concept catalog for concept document
-      description: So far only simple queries is supported
+      description: So far only simple queries are supported
       operationId: searchUsingGET
       parameters:
         - name: q
@@ -35,12 +35,43 @@ paths:
           required: false
           schema:
             type: string
-        - name: aggregations
+        - name: orgPath
           in: query
-          description: If you want aggregations, set to true.
+          description: Filters on publisher's organization path (orgPath), e.g. /STAT/972417858/971040238
           required: false
           schema:
-            type: boolean
+            type: string
+        - name: aggregations
+          in: query
+          description: If you want aggregations, set to "true".
+          required: false
+          schema:
+            type: string
+            default: "false"
+        - name: preflabel
+          in: query
+          description: The prefLabel text.
+          required: false
+          schema:
+            type: string
+        - name: returnfields
+          in: query
+          description: Comma separated list of which fields should be returned.
+          required: false
+          schema:
+            type: string
+        - name: sortfield
+          in: query
+          description: Specifies the sort field, at the present the only value is \"modified\". Default is no value, and results are sorted by relevance.
+          required: false
+          schema:
+            type: string
+        - name: sortdirection
+          in: query
+          description: "Specifies the sort direction of the sorted result. The directions are: asc for ascending and desc for descending."
+          required: false
+          schema:
+            type: string
       responses:
         '200':
           description: OK
@@ -92,5 +123,147 @@ components:
       type: object
     ConceptDocument:
       type: object
+      properties:
+        id:
+          type: string
+          description: The id given by the harvest system
+        uri:
+          type: string
+          description: The uri of the concept [dct:identifier]
+        identifier:
+          type: string
+          description: Identifier
+        definition:
+          $ref: "#/components/schemas/Definition"
+        alternativeDefinition:
+          $ref: "#/components/schemas/Definition"
+        subject:
+          $ref: "#/components/schemas/Subject"
+        prefLabel:
+          $ref: "#/components/schemas/PrefLabel"
+        altLabel:
+          type: array
+          items:
+            $ref: "#/components/schemas/AltLabel"
+        hiddenLabel:
+          type: array
+          items:
+            $ref: "#/components/schemas/HiddenLabel"
+        contactPoint:
+          $ref: "#/components/schemas/ContactPoint"
+        publisher:
+          $ref: "#/components/schemas/Publisher"
+        harvestSourceUri:
+          type: string
+          description: The source where the record was harvested from
+        harvest:
+          $ref: "#/components/schemas/HarvestMetadata"
+    Definition:
+      type: object
+      description: The definition [skosno:Definisjon]
+      properties:
+        text:
+          type: object
+          properties:
+            nb:
+              type: string
+              description: the definition text in Norwegian Bokmål
+        remark:
+          type: object
+          properties:
+            nb:
+              type: string
+              description: the definition remark in Norwegian Bokmål
+        source:
+          $ref: "#/components/schemas/Source"
+        targetGroup:
+          type: string
+          description: Target group
+        lastUpdated:
+          type: string
+          description: Date when the definition was last updated
+    Subject:
+      type: object
+      description: Subject [dct:subject]
+    PrefLabel:
+      type: object
+      description:
+        Preferred label [skosxl:prefLabel]
+      properties:
+        nb:
+          type: string
+          description:
+            Preferred label [skosxl:prefLabel] in Norwegian Bokmål
+    AltLabel:
+      type: object
+      description:
+        Alternative label [skosxl:altLabel]
+      properties:
+        nb:
+          type: string
+          description:
+            Preferred label [skosxl:altLabel] in Norwegian Bokmål
+    HiddenLabel:
+      type: object
+      description: Hidden label [skos:hiddenLabel]
+      properties:
+        nb:
+          type: string
+          description:
+            Hidden label [skosxl:altLabel] in Norwegian Bokmål
+    ContactPoint:
+      type: object
+      description: Hidden label [skos:hiddenLabel]
+      properties:
+        email:
+          type: string
+        telephone:
+          type: string
+    Publisher:
+      type: object
+      description: The publisher of the concept [dct:publisher]
+      properties:
+        uri:
+          type: string
+          description: Link to the organization entry in The Brønnøysund Register Centre
+        id:
+          type: string
+          description: Organization number
+        name:
+          type: string
+          description: The name of the organization as given in the The Brønnøysund Register Centre
+        orgPath:
+          type: string
+        prefLabel:
+          $ref: "#/components/schemas/PrefLabel"
+    HarvestMetadata:
+      type: object
+      description: Information about when the concept was first and last harvested by the system
+      properties:
+        firstHarvested:
+          type: string
+        lastHarvested:
+          type: string
+        lastChanged:
+          type: string
+        changed:
+          type: array
+          items:
+            type: string
+    Source:
+      type: object
+      description: The source of the definition
+      properties:
+        uri:
+          type: string
+          description: The uri to the source
+        prefLabel:
+          type: object
+          description: The label of the source
+          properties:
+            nb:
+              type: string
+              description:
+                Label of the source in Norwegian Bokmål
     ErrorMessage:
       type: object
