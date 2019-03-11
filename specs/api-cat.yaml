@@ -1,7 +1,7 @@
 openapi: 3.0.2
 info:
   description: Provides a basic search api against the National API Directory of Norway
-  version: '1.0'
+  version: '1.1'
   title: National API Directory Search API
   termsOfService: 'https://fellesdatakatalog.brreg.no/about'
   contact:
@@ -135,6 +135,33 @@ paths:
           description: Forbidden
         '404':
           description: Not Found
+  /endpoints:
+    get:
+      tags:
+      - search-controller
+      summary: Queries the api catalog for api specifications
+      description: dedicated path to serve endpoints based on organization and/or standard
+      operationId: searchUsingGETwithEndpointRespons
+      parameters:
+        - name: standard
+          in: query
+          description: Filters on standard ("type of service")
+          required: true
+          schema:
+            type: string
+        - name: organizationNumber
+          in: query
+          description: Filters on publisher's organization number
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EndpointQueryResponse"
 components:
   schemas:
     QueryResponse:
@@ -149,6 +176,17 @@ components:
         total:
           type: integer
           format: int64
+    EndpointQueryResponse:
+      type: object
+      properties:
+        hits:
+          type: array
+          items:
+            $ref: "#/components/schemas/EndpointSearchResult"
+        total:
+          type: integer
+          format: int64
+          example: 1
     Aggregation:
       type: object
       properties:
@@ -218,6 +256,25 @@ components:
           type: string
         deprecationInfoReplacedWithUrl:
           type: string
+    EndpointSearchResult:
+      type: object
+      properties:
+        apiRef:
+          type: string
+          description: url to the the api-description in API-catalogue
+          example: "https://fellesdatakatalog.brreg.no/api/apis/cb6483b8-4d94-473d-a4b9-8ee64abb9b91"
+        organizationNumber:
+          type: string
+          description: The organizationNumber to the publisher of the API
+          example: 974760673
+        standard:
+          type: string
+          description: The standard ("type of service") the API conforms to
+          example: Kontoopplysinger
+        endpoint:
+          type: string
+          description: The endpoint (Server Object url) of the API
+          example: "https://example.com/kontoopplysinger"
     ApiDocument:
       type: object
       properties:
