@@ -149,12 +149,17 @@ paths:
           required: true
           schema:
             type: string
-        - name: organizationNumber
+            example: Kontoopplysinger
+        - name: organizationNumbers
           in: query
-          description: Filters on publisher's organization number
+          description: Filters on publishers' organization numbers
           required: false
           schema:
-            type: string
+            type: array
+            items:
+              type: string
+              description: organization number
+            example: 974760673,974761076
       responses:
         '200':
           description: OK
@@ -274,7 +279,7 @@ components:
         endpoint:
           type: string
           description: The endpoint (Server Object url) of the API
-          example: "https://example.com/kontoopplysinger"
+          example: "https://example.com/api/kontoopplysinger"
     ApiDocument:
       type: object
       properties:
