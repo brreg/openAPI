@@ -150,7 +150,7 @@ paths:
           schema:
             type: string
             example: Kontoopplysinger
-        - name: organizationNumbers
+        - name: orgNos
           in: query
           description: Filters on publishers' organization numbers
           required: false
@@ -276,9 +276,9 @@ components:
           type: string
           description: url to the the api-description in API-catalogue
           example: "https://fellesdatakatalog.brreg.no/api/apis/cb6483b8-4d94-473d-a4b9-8ee64abb9b91"
-        organizationNumber:
+        orgNo:
           type: string
-          description: The organizationNumber to the publisher of the API
+          description: The organization number to the publisher of the API
           example: 974760673
         serviceType:
           type: string
@@ -286,7 +286,7 @@ components:
           example: Kontoopplysinger
         url:
           type: string
-          description: The endpoint (Server Object url) of the API
+          description: The Server Object url of the API
           example: "https://example.com/api/kontoopplysinger"
         activationDate:
           type: string
