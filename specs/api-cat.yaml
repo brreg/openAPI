@@ -275,7 +275,7 @@ components:
         apiRef:
           type: string
           description: url to the the api-description in API-catalogue
-          example: "https://fellesdatakatalog.brreg.no/api/apis/cb6483b8-4d94-473d-a4b9-8ee64abb9b91"
+          example: "https://fellesdatakatalog.brreg.no/apis/cb6483b8-4d94-473d-a4b9-8ee64abb9b91"
         orgNo:
           type: string
           description: The organization number to the publisher of the API
