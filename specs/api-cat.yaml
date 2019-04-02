@@ -1,7 +1,7 @@
 openapi: 3.0.2
 info:
   description: Provides a basic search api against the National API Directory of Norway
-  version: '1.0'
+  version: '1.1'
   title: National API Directory Search API
   termsOfService: 'https://fellesdatakatalog.brreg.no/about'
   contact:
@@ -135,6 +135,46 @@ paths:
           description: Forbidden
         '404':
           description: Not Found
+  /endpoints:
+    get:
+      tags:
+      - search-controller
+      summary: Queries the api catalog for api specifications
+      description: dedicated path to serve endpoints based on organization and/or standard
+      operationId: searchUsingGETwithEndpointRespons
+      parameters:
+        - name: serviceType ("tjenestetype")
+          in: query
+          description: Filters on standard ("type of service")
+          required: true
+          schema:
+            type: string
+            example: Kontoopplysinger
+        - name: orgNos
+          in: query
+          description: Filters on publishers' organization numbers
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              description: organization number
+            example: 974760673,974761076
+        - name: activeOnly
+          in: query
+          description: Filters on active or all endpoints
+          required: false
+          schema:
+            type: boolean
+            default: true
+            example: false
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EndpointsQueryResponse"
 components:
   schemas:
     QueryResponse:
@@ -149,6 +189,17 @@ components:
         total:
           type: integer
           format: int64
+    EndpointsQueryResponse:
+      type: object
+      properties:
+        endpoints:
+          type: array
+          items:
+            $ref: "#/components/schemas/Endpoint"
+        total:
+          type: integer
+          format: int64
+          example: 1
     Aggregation:
       type: object
       properties:
@@ -218,6 +269,37 @@ components:
           type: string
         deprecationInfoReplacedWithUrl:
           type: string
+    Endpoint:
+      type: object
+      properties:
+        apiRef:
+          type: string
+          description: url to the the api-description in API-catalogue
+          example: "https://fellesdatakatalog.brreg.no/apis/cb6483b8-4d94-473d-a4b9-8ee64abb9b91"
+        orgNo:
+          type: string
+          description: The organization number to the publisher of the API
+          example: 974760673
+        serviceType:
+          type: string
+          description: The standard ("type of service") the API conforms to
+          example: Kontoopplysinger
+        url:
+          type: string
+          description: The Server Object url of the API
+          example: "https://example.com/api/kontoopplysinger"
+        activationDate:
+          type: string
+          format: date-time
+          description: The date-time from which the endpoint is active
+        expirationDate:
+          type: string
+          format: date-time
+          description: The date-time from which the endpoint is active
+        transportProfile:
+          type: string
+          description: transport method
+          example: kontoREST
     ApiDocument:
       type: object
       properties:
