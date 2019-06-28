@@ -1,7 +1,7 @@
 openapi: 3.0.2
 info:
   description: Provides a basic search api against the National API Directory of Norway
-  version: '1.1'
+  version: '1.2'
   title: National API Directory Search API
   termsOfService: 'https://fellesdatakatalog.brreg.no/about'
   contact:
@@ -15,7 +15,7 @@ externalDocs:
   description: Dokumentasjon på Informasjonsforvaltning GitHub
   url: https://informasjonsforvaltning.github.io/felles-datakatalog/api-katalog/api/
 servers:
-  - url: 'https://fellesdatakatalog.brreg.no/api-cat/apis'
+  - url: 'https://fellesdatakatalog.brreg.no/api/apis'
     description: The production API server
 tags:
   - name: rest-controller
@@ -269,6 +269,10 @@ components:
           type: string
         deprecationInfoReplacedWithUrl:
           type: string
+        servers:
+          type: array
+          items:
+            $ref: "#/components/schemas/Server"
     Endpoint:
       type: object
       properties:
@@ -440,3 +444,10 @@ components:
             nb:
               type: string
               description: Title in Norwegian
+    Server:
+      type: object
+      properties:
+        url:
+          type: string
+        description:
+          type: string
