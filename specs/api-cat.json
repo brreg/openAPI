@@ -229,6 +229,16 @@
             }
           },
           {
+            "name": "environment",
+            "in": "query",
+            "description": "Filters on environment (\"test\", \"production\")",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "production"
+            }
+          },
+          {
             "name": "orgNos",
             "in": "query",
             "description": "Filters on publishers' organization numbers",
@@ -448,6 +458,14 @@
             "type": "string",
             "description": "transport method",
             "example": "kontoREST"
+          },
+          "environment": {
+            "type": "string",
+            "description": "The environment the url points to",
+            "enum": [
+              "test",
+              "production"
+            ]
           }
         }
       },
