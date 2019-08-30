@@ -2,7 +2,7 @@
   "openapi": "3.0.2",
   "info": {
     "description": "Provides a basic search api against the National API Directory of Norway",
-    "version": "1.1",
+    "version": "1.2",
     "title": "National API Directory Search API",
     "termsOfService": "https://fellesdatakatalog.brreg.no/about",
     "contact": {
@@ -21,7 +21,7 @@
   },
   "servers": [
     {
-      "url": "https://fellesdatakatalog.brreg.no/api-cat/apis",
+      "url": "https://fellesdatakatalog.brreg.no/api/apis",
       "description": "The production API server"
     }
   ],
@@ -229,6 +229,16 @@
             }
           },
           {
+            "name": "environment",
+            "in": "query",
+            "description": "Filters on environment (\"test\", \"production\")",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "production"
+            }
+          },
+          {
             "name": "orgNos",
             "in": "query",
             "description": "Filters on publishers' organization numbers",
@@ -402,6 +412,12 @@
           },
           "deprecationInfoReplacedWithUrl": {
             "type": "string"
+          },
+          "servers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Server"
+            }
           }
         }
       },
@@ -442,6 +458,14 @@
             "type": "string",
             "description": "transport method",
             "example": "kontoREST"
+          },
+          "environment": {
+            "type": "string",
+            "description": "The environment the url points to",
+            "enum": [
+              "test",
+              "production"
+            ]
           }
         }
       },
@@ -640,6 +664,17 @@
                 "description": "Title in Norwegian"
               }
             }
+          }
+        }
+      },
+      "Server": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
           }
         }
       }
