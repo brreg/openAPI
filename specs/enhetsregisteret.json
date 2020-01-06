@@ -376,7 +376,7 @@
         {
           "name": "organisasjonsnummer",
           "in": "query",
-          "description": "Organisasjonsnummeret til enheten",
+          "description": "Organisasjonsnummeret til underenhetene. Kommaseparert liste med organisasjonsnummer",
           "required": false,
           "schema": {
             "type": "string"
