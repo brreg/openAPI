@@ -211,7 +211,7 @@ paths:
           type: integer
       - name: organisasjonsnummer
         in: query
-        description: Organisasjonsnummeret til enheten
+        description: Organisasjonsnummeret til enhetene.  Kommaseparert liste med organisasjonsnummer.
         required: false
         schema:
           type: string
