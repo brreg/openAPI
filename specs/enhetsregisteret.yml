@@ -747,8 +747,6 @@ components:
           type: string
         organisasjonsform:
           $ref: '#/components/schemas/Organisasjonsform'
-        postadresse:
-          $ref: '#/components/schemas/Adresse'
         registreringsdatoEnhetsregisteret:
           type: string
         registrertIMvaregisteret:
@@ -761,8 +759,6 @@ components:
           $ref: '#/components/schemas/Naeringskode'
         antallAnsatte:
           type: integer
-        forretningsadresse:
-          $ref: '#/components/schemas/Adresse'
         stiftelsedato:
           type: string
         institusjonellSektorkode:
@@ -785,24 +781,6 @@ components:
           type: string
         _links:
           $ref: '#/components/schemas/Self'
-    Adresse:
-      properties:
-        land:
-          type: string
-        landkode:
-          type: string
-        postnummer:
-          type: string
-        poststed:
-          type: string
-        adresse:
-          type: array
-          items:
-            type: string
-        kommune:
-          type: string
-        kommunenummer:
-          type: string
     Naeringskode:
       properties:
         kode:
