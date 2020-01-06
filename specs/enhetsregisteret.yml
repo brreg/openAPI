@@ -277,16 +277,60 @@ paths:
         required: false
         schema:
           type: string
-      - name: postadresse
+      - name: postadresse.kommunenummer
         in: query
+        description: Kommunenummer til enhetens postadresse. Kommaseparert liste med kommunenummer på 4 siffer.
         required: false
         schema:
-          $ref: '#/components/schemas/Adresse'
-      - name: forretningsadresse
+          type: string
+      - name: postadresse.postnummer
         in: query
+        description: Postnummeret til enhetens postadresse. Kommaseparert liste med postnummer på 4 siffer.
         required: false
         schema:
-          $ref: '#/components/schemas/Adresse'
+          type: string
+      - name: postadresse.poststed
+        in: query
+        description: Poststedet til enhetens postadresse. Fritekst.
+        required: false
+        schema:
+          type: string
+      - name: postadresse.landkode
+        in: query
+        description: Landkode til enhetens postadresse. Kommaseparert liste med landkoder.
+        required: false
+        schema:
+          type: string
+      - name: postadresse.adresse
+        in: query
+        description: Adresse til enhetens postadresse. Kommaseparert liste med adresser.
+        required: false
+        schema:
+          type: string
+      - name: forretningsadresse.postnummer
+        in: query
+        description: Postnummer til enhetens forretningsadresse. Kommaseparert liste med postnummer på 4 siffer.
+        required: false
+        schema:
+          type: string
+      - name: forretningsadresse.poststed
+        in: query
+        description: Poststedet til enhetens forretningsadresse. Fritekst.
+        required: false
+        schema:
+          type: string
+      - name: forretningsadresse.landkode
+        in: query
+        description: Landkode til enhetens forretningsadresse. Kommaseparert liste med landkoder.
+        required: false
+        schema:
+          type: string
+      - name: forretningsadresse.adresse
+        in: query
+        description: Adresse til enhetens forretningsadresse. Kommaseparert liste med adresser.
+        required: false
+        schema:
+          type: string
       - name: sisteInnsendteAarsregnskap
         in: query
         description: Årstall for siste innsendte årsregnskap for enheten. Kommaseparert liste med årstall på 4 siffer
@@ -440,22 +484,66 @@ paths:
         required: false
         schema:
           type: string
-      - name: postadresse
+      - name: postadresse.kommunenummer
         in: query
+        description: Kommunenummer til enhetens postadresse. Kommaseparert liste med kommunenummer på 4 siffer.
         required: false
         schema:
-          $ref: '#/components/schemas/Adresse'
+          type: string
+      - name: postadresse.postnummer
+        in: query
+        description: Postnummeret til enhetens postadresse. Kommaseparert liste med postnummer på 4 siffer.
+        required: false
+        schema:
+          type: string
+      - name: postadresse.poststed
+        in: query
+        description: Poststedet til enhetens postadresse. Fritekst.
+        required: false
+        schema:
+          type: string
+      - name: postadresse.landkode
+        in: query
+        description: Landkode til enhetens postadresse. Kommaseparert liste med landkoder.
+        required: false
+        schema:
+          type: string
+      - name: postadresse.adresse
+        in: query
+        description: Adresse til enhetens postadresse. Kommaseparert liste med adresser.
+        required: false
+        schema:
+          type: string
       - name: kommunenummer
         in: query
         description: Filtrer på kommunenummer 4 siffer.
         required: false
         schema:
           type: string
-      - name: beliggenhetsadresse
+      - name: beliggenhetsadresse.postnummer
         in: query
+        description: Postnummeret til enhetens beliggenhetsadresse. Kommaseparert liste med postnummer på 4 siffer.
         required: false
         schema:
-          $ref: '#/components/schemas/Adresse'
+          type: string
+      - name: beliggenhetsadresse.poststed
+        in: query
+        description: Poststedet til enhetens beliggenhetsadresse. Fritekst.
+        required: false
+        schema:
+          type: string
+      - name: beliggenhetsadresse.landkode
+        in: query
+        description: Landkode til enhetens beliggenhetsadresse. Kommaseparert liste med landkoder.
+        required: false
+        schema:
+          type: string
+      - name: beliggenhetsadresse.adresse
+        in: query
+        description: Adresse til enhetens beliggenhetsadresse. Kommaseparert liste med adresser.
+        required: false
+        schema:
+          type: string
       - name: naeringskode
         in: query
         description: Filtrer på næringskode. Valgfritt nivå. Kommaseparert liste.
