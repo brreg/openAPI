@@ -26,7 +26,14 @@
         "description": "Hent alle tjenester",
         "responses": {
           "200": {
-            "description": "Tjenester mot åpne data fra Enhetsregisteret"
+            "description": "Tjenester mot åpne data fra Enhetsregisteret",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "default": {
             "description": "Udefinert feil"
@@ -161,6 +168,197 @@
           "schema": {
             "type": "integer"
           }
+        },
+        {
+          "name": "organisasjonsnummer",
+          "in": "query",
+          "description": "Organisasjonsnummeret til enhetene.  Kommaseparert liste med organisasjonsnummer.",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "registrertIForetaksregisteret",
+          "in": "query",
+          "description": "Hvorvidt enheten er registrert i Foretaksregisteret",
+          "required": false,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "registrertIStiftelsesregisteret",
+          "in": "query",
+          "description": "Hvorvidt enheten er registrert i Stiftelsesregisteret",
+          "required": false,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "registrertIFrivillighetsregisteret",
+          "in": "query",
+          "description": "Hvorvidt enheten er registrert i Frivillighetsregisteret",
+          "required": false,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "frivilligRegistrertIMvaregisteret",
+          "in": "query",
+          "description": "Frivillig registrert i Merverdiavgiftsregisteret. Kommaseparert liste med beskrivelser.",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "underTvangsavviklingEllerTvangsopplosning",
+          "in": "query",
+          "description": "Hvorvidt enheten er registrert som underTvangsavvikling eller tvangsopplosning",
+          "required": false,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "underAvvikling",
+          "in": "query",
+          "description": "Hvorvidt enheten er registrert som underAvvikling",
+          "required": false,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "fraStiftelsesdato",
+          "in": "query",
+          "description": "Tidligste stiftelsesdato for enheten",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "format": "date (ISO-8601)"
+          }
+        },
+        {
+          "name": "tilStiftelsesdato",
+          "in": "query",
+          "description": "Seneste stiftelsesdato hos enheten",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "format": "date (ISO-8601)"
+          }
+        },
+        {
+          "name": "hjemmeside",
+          "in": "query",
+          "description": "Enhetens hjemmeside",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "institusjonellSektorkode",
+          "in": "query",
+          "description": "Enhetens institusjonelle sektorkode. Kommaseparert liste med sektorkoder på 4 siffer.",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "postadresse.kommunenummer",
+          "in": "query",
+          "description": "Kommunenummer til enhetens postadresse. Kommaseparert liste med kommunenummer på 4 siffer.",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "postadresse.postnummer",
+          "in": "query",
+          "description": "Postnummeret til enhetens postadresse. Kommaseparert liste med postnummer på 4 siffer.",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "postadresse.poststed",
+          "in": "query",
+          "description": "Poststedet til enhetens postadresse. Fritekst.",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "postadresse.landkode",
+          "in": "query",
+          "description": "Landkode til enhetens postadresse. Kommaseparert liste med landkoder.",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "postadresse.adresse",
+          "in": "query",
+          "description": "Adresse til enhetens postadresse. Kommaseparert liste med adresser.",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "forretningsadresse.postnummer",
+          "in": "query",
+          "description": "Postnummer til enhetens forretningsadresse. Kommaseparert liste med postnummer på 4 siffer.",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "forretningsadresse.poststed",
+          "in": "query",
+          "description": "Poststedet til enhetens forretningsadresse. Fritekst.",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "forretningsadresse.landkode",
+          "in": "query",
+          "description": "Landkode til enhetens forretningsadresse. Kommaseparert liste med landkoder.",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "forretningsadresse.adresse",
+          "in": "query",
+          "description": "Adresse til enhetens forretningsadresse. Kommaseparert liste med adresser.",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "sisteInnsendteAarsregnskap",
+          "in": "query",
+          "description": "Årstall for siste innsendte årsregnskap for enheten. Kommaseparert liste med årstall på 4 siffer",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
         }
       ],
       "get": {
@@ -168,7 +366,14 @@
         "description": "Hent alle enheter",
         "responses": {
           "200": {
-            "description": "Enheter fra Enhetsregisteret"
+            "description": "Enheter fra Enhetsregisteret",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "400": {
             "description": "Ugyldig forespørsel"
@@ -225,22 +430,6 @@
     "/underenheter": {
       "parameters": [
         {
-          "name": "size",
-          "in": "query",
-          "description": "Antall ønskede treff i response. Default verdi er 20. Max dypde (page*size) er 10 000.",
-          "schema": {
-            "type": "integer"
-          }
-        },
-        {
-          "name": "page",
-          "in": "query",
-          "description": "Hvilken side som ønskes av resultatsettet. Default verdi er 0. Max dypde (page*size) er 10 000",
-          "schema": {
-            "type": "integer"
-          }
-        },
-        {
           "name": "navn",
           "in": "query",
           "description": "Filtrer på navn. Sammensatt søk på likhet. Resultat sorteres pr default etter score",
@@ -250,12 +439,128 @@
           }
         },
         {
-          "name": "sort",
+          "name": "organisasjonsnummer",
           "in": "query",
-          "description": "Sorter resultatsett på feltnavn. Merk at navn må sorteres på navn.norwegian",
+          "description": "Organisasjonsnummeret til underenhetene.  Kommaseparert liste med organisasjonsnummer.",
           "required": false,
           "schema": {
             "type": "string"
+          }
+        },
+        {
+          "name": "overordnetEnhet",
+          "in": "query",
+          "description": "Organisasjonsnummeret til overordnet enhet",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "fraAntallAnsatte",
+          "in": "query",
+          "description": "Filtrer på fra antall ansatte",
+          "required": false,
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "tilAntallAnsatte",
+          "in": "query",
+          "description": "Filtrer på til antall ansatte",
+          "required": false,
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "registrertIMvaregisteret",
+          "in": "query",
+          "description": "Filtrer på om enheten er registrert i Merverdiregisteret",
+          "required": false,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "fraRegistreringsdatoEnhetsregisteret",
+          "in": "query",
+          "description": "Filtrer på fra registreringsdato i Enhetsregisteret.",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "format": "date (ISO-8601)"
+          }
+        },
+        {
+          "name": "tilRegistreringsdatoEnhetsregisteret",
+          "in": "query",
+          "description": "Filtrer på til registreringsdato i Enhetsregisteret.",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "format": "date (ISO-8601)"
+          }
+        },
+        {
+          "name": "fraOppstartsdato",
+          "in": "query",
+          "description": "Tidligste oppstartsdato for enheten",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "format": "date (ISO-8601)"
+          }
+        },
+        {
+          "name": "tilOppstartsdato",
+          "in": "query",
+          "description": "Seneste oppstartsdato for enheten",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "format": "date (ISO-8601)"
+          }
+        },
+        {
+          "name": "fraDatoEierskifte",
+          "in": "query",
+          "description": "Tidligste registreringsdato for eierskifte",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "format": "date (ISO-8601)"
+          }
+        },
+        {
+          "name": "tilDatoEierskifte",
+          "in": "query",
+          "description": "Seneste registreringsdato for eierskifte",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "format": "date (ISO-8601)"
+          }
+        },
+        {
+          "name": "fraNedleggelsesdato",
+          "in": "query",
+          "description": "Tidligste nedleggelsesdato for enheten",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "format": "date (ISO-8601)"
+          }
+        },
+        {
+          "name": "tilNedleggelsesdato",
+          "in": "query",
+          "description": "Seneste nedleggelsesdato for enheten",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "format": "date (ISO-8601)"
           }
         },
         {
@@ -268,9 +573,54 @@
           }
         },
         {
-          "name": "naeringskode",
+          "name": "hjemmeside",
           "in": "query",
-          "description": "Filtrer på næringskode. Valgfritt nivå. Kommaseparert liste.",
+          "description": "Enhetens hjemmeside",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "postadresse.kommunenummer",
+          "in": "query",
+          "description": "Kommunenummer til enhetens postadresse. Kommaseparert liste med kommunenummer på 4 siffer.",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "postadresse.postnummer",
+          "in": "query",
+          "description": "Postnummeret til enhetens postadresse. Kommaseparert liste med postnummer på 4 siffer.",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "postadresse.poststed",
+          "in": "query",
+          "description": "Poststedet til enhetens postadresse. Fritekst.",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "postadresse.landkode",
+          "in": "query",
+          "description": "Landkode til enhetens postadresse. Kommaseparert liste med landkoder.",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "postadresse.adresse",
+          "in": "query",
+          "description": "Adresse til enhetens postadresse. Kommaseparert liste med adresser.",
           "required": false,
           "schema": {
             "type": "string"
@@ -286,12 +636,73 @@
           }
         },
         {
-          "name": "overordnetEnhet",
+          "name": "beliggenhetsadresse.postnummer",
           "in": "query",
-          "description": "Organisasjonsnummeret til overordnet enhet",
+          "description": "Postnummeret til enhetens beliggenhetsadresse. Kommaseparert liste med postnummer på 4 siffer.",
           "required": false,
           "schema": {
             "type": "string"
+          }
+        },
+        {
+          "name": "beliggenhetsadresse.poststed",
+          "in": "query",
+          "description": "Poststedet til enhetens beliggenhetsadresse. Fritekst.",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "beliggenhetsadresse.landkode",
+          "in": "query",
+          "description": "Landkode til enhetens beliggenhetsadresse. Kommaseparert liste med landkoder.",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "beliggenhetsadresse.adresse",
+          "in": "query",
+          "description": "Adresse til enhetens beliggenhetsadresse. Kommaseparert liste med adresser.",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "naeringskode",
+          "in": "query",
+          "description": "Filtrer på næringskode. Valgfritt nivå. Kommaseparert liste.",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "sort",
+          "in": "query",
+          "description": "Sorter resultatsett på feltnavn. Merk at navn må sorteres på navn.norwegian",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "size",
+          "in": "query",
+          "description": "Antall ønskede treff i response. Default verdi er 20. Max dypde (page*size) er 10 000.",
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "description": "Hvilken side som ønskes av resultatsettet. Default verdi er 0. Max dypde (page*size) er 10 000",
+          "schema": {
+            "type": "integer"
           }
         }
       ],
@@ -300,7 +711,14 @@
         "description": "Hent alle underenheter",
         "responses": {
           "200": {
-            "description": "Underenheter fra Enhetsregisteret"
+            "description": "Underenheter fra Enhetsregisteret",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "default": {
             "description": "Udefinert feil"
@@ -325,7 +743,14 @@
         "description": "Hent detaljer om underenhet",
         "responses": {
           "200": {
-            "description": "Underenhet fra Enhetsregisteret"
+            "description": "Underenhet fra Enhetsregisteret",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "404": {
             "description": "Underenhet finnes ikke"
@@ -340,12 +765,48 @@
       }
     },
     "/oppdateringer/enheter": {
+      "parameters": [
+        {
+          "name": "dato",
+          "in": "query",
+          "description": "Tidligste tidsstempel for når enheten ble oppdatert. På format Datetime (ISO-8601): yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "oppdateringsid",
+          "in": "query",
+          "description": "Minste oppdateringsid for enhet. Større eller lik 1.",
+          "required": false,
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "organisasjonsnummer",
+          "in": "query",
+          "description": "Organisasjonsnummeret til enheten. Kommaseparert liste med organisasjonsnummer.",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
       "get": {
         "operationId": "listOppdateringerEnhet",
         "description": "Hent oppdateringer på enheter",
         "responses": {
           "200": {
-            "description": "Oppdateringer på enheter fra Enhetsregisteret"
+            "description": "Oppdateringer på enheter fra Enhetsregisteret",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "default": {
             "description": "Udefinert feil"
@@ -354,12 +815,48 @@
       }
     },
     "/oppdateringer/underenheter": {
+      "parameters": [
+        {
+          "name": "dato",
+          "in": "query",
+          "description": "Tidligste tidsstempel for når enheten ble oppdatert. På format Datetime (ISO-8601): yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "oppdateringsid",
+          "in": "query",
+          "description": "Minste oppdateringsid for enhet. Større eller lik 1.",
+          "required": false,
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "organisasjonsnummer",
+          "in": "query",
+          "description": "Organisasjonsnummeret til enheten. Kommaseparert liste med organisasjonsnummer.",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
       "get": {
         "operationId": "listOppdateringerUnderenhet",
         "description": "Hent oppdateringer på underenheter",
         "responses": {
           "200": {
-            "description": "Oppdateringer på underenheter fra Enhetsregisteret"
+            "description": "Oppdateringer på underenheter fra Enhetsregisteret",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "default": {
             "description": "Udefinert feil"
@@ -438,6 +935,48 @@
           }
         }
       }
+    },
+    "/organisasjonsformer/enheter": {
+      "get": {
+        "operationId": "listOrganisasjonsformerEnheter",
+        "description": "Hent organisasjonsformer for enheter",
+        "responses": {
+          "200": {
+            "description": "Liste over mulige organisasjonsformer for enheter",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Udefinert feil"
+          }
+        }
+      }
+    },
+    "/organisasjonsformer/underenheter": {
+      "get": {
+        "operationId": "listOrganisasjonsformerUnderenheter",
+        "description": "Hent organisasjonsformer for underenheter",
+        "responses": {
+          "200": {
+            "description": "Liste over mulige organisasjonsformer for underenheter",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Udefinert feil"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -452,9 +991,6 @@
           },
           "organisasjonsform": {
             "$ref": "#/components/schemas/Organisasjonsform"
-          },
-          "postadresse": {
-            "$ref": "#/components/schemas/Adresse"
           },
           "registreringsdatoEnhetsregisteret": {
             "type": "string"
@@ -473,9 +1009,6 @@
           },
           "antallAnsatte": {
             "type": "integer"
-          },
-          "forretningsadresse": {
-            "$ref": "#/components/schemas/Adresse"
           },
           "stiftelsedato": {
             "type": "string"
@@ -509,34 +1042,6 @@
           },
           "_links": {
             "$ref": "#/components/schemas/Self"
-          }
-        }
-      },
-      "Adresse": {
-        "properties": {
-          "land": {
-            "type": "string"
-          },
-          "landkode": {
-            "type": "string"
-          },
-          "postnummer": {
-            "type": "string"
-          },
-          "poststed": {
-            "type": "string"
-          },
-          "adresse": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "kommune": {
-            "type": "string"
-          },
-          "kommunenummer": {
-            "type": "string"
           }
         }
       },
