@@ -7,7 +7,7 @@
     }
   ],
   "info": {
-    "description": "Teknisk beskrivelse av REST-tjenestene i Åpne Data fra Enhetsregisteret - Work in progress\n---\n\n## Ordbok\n### Enhetsregisteret\nRegister over grunndata om juridiske personer og andre enheter. Enhetsregisteret tildeler organisasjonsnummer for entydig identifisering av enheter.\n\n### Organisasjonsnummer\nNisifret nummer som entydig identifiserer enheter i Enhetsregisteret.\n\n### Enhet\nEnhet på øverste nivå i registreringsstrukturen i Enhetsregisteret. Eksempelvis enkeltpersonforetak, foreninger, selskap, sameier og andre som er registrert i Enhetsregisteret. Identifiseres med organisasjonsnummer.\n\n### Underenhet\nEnhet på laveste nivå i registreringsstrukturen i Enhetsregisteret. En underenhet kan ikke eksistere alene og har alltid knytning til en hovedenhet. Identifiseres med organisasjonsnummer.\n\n### Organisasjonsform\nOrganisasjonsform er virksomhetens formelle organisering og gir retningslinjer overfor blant annet ansvarsforhold, skatt, revisjonsplikt, rettigheter og plikter.\n\n### Næringskode\n[Næringskoder]: https://www.brreg.no/bedrift/naeringskoder/\n[Næringskoder]  på brreg.no\n\n[Standard for næringsgruppering]: https://www.ssb.no/klass/klassifikasjoner/6\n[Standard for næringsgruppering]\n---\n\n## Versjonering\nDu kan velge major versjon ved å spesifisere HTTP Accept-headeren. Bruk headeren spesifisert i tabellen under. Hvis versjon ikke spesifiseres, vil man få siste versjon.\n<table>\n  <thead>\n    <tr>\n      <th>API</th>\n      <th>Header</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>/</td>\n      <td>application/vnd.enhetsregisteret.v1+json</td>\n    </tr>\n    <tr>\n      <td>/organisasjonsformer</td>\n      <td>application/vnd.enhetsregisteret.organisasjonsform.v1+json</td>\n    </tr>\n  </tbody>\n</table>\n\n\n### Strategi\nVi skal normalt ikke bryte bakoverkompabiliteten med våre brukere. Likevel kan det være nødvendig i enkelte situasjoner, av for eksempel juridiske årsaker eller vedlikehold, å gjøre endringer som medfører et slikt brudd. Vi vil i dette tilfellet versjonere tjenesten slik at nyeste versjon vil være tilgjengelig sammen med forrige versjon.\n\n#### Dersom man ikke benytter versjonering i accept header, vil man få siste versjon.\n\nEldre versjon vil anses som utdatert/deprecated, og vil på sikt bli tatt bort. Ved behov for denne typen endringer vil vi forsøke å gi bruker god tid, og varsle om endringen i forkant. Se punkt om varsling.\n\n### Når innføres ny versjon\nVi vil innføre en ny versjon når vi introduserer en endring som påvirker bakoverkompabiliteten. Mindre endringer og patcher vil ikke medføre versjonsendring i header.\n\n### Når fjernes en versjon\nVi vil legge ut varsel/driftsmeldinger i god tid på følgende steder:\n- [Driftsmeldinger]: https://www.brreg.no/om-oss/driftsmeldinger/\n[Driftsmeldinger]\n- [RSS-feed]: https://www.brreg.no/produkter-og-tjenester/rss-feed/\n[RSS-feed].\n\nEksempel på endring som medfører versjonering:\n\n- Fjerne eller endre navn på et attributt i HTTP-responsen.\n\n- Fjerne eller endre navn på et REST endepunkt.\n\n---\n\n## Endringslogg\n<table>\n  <thead>\n    <tr>\n      <th>Versjon</th>\n      <th>Dato</th>\n      <th>Endring</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>1.1.0</td>\n      <td>14. august 2018</td>\n      <td>Ny tjeneste /oppdateringer/enheter og /oppdateringer/underenheter</td>\n    </tr>\n    <tr>\n      <td>1.0.0</td>\n      <td>6. april 2018</td>\n      <td>Produksjonssetting av ny åpne data tjeneste for Enhetsregisteret</td>\n    </tr>\n  </tbody>\n</table>\n",
+    "description": "Teknisk beskrivelse av REST-tjenestene i Åpne Data fra Enhetsregisteret - Work in progress\n---\n\n## Ordbok\n### Enhetsregisteret\nRegister over grunndata om juridiske personer og andre enheter. Enhetsregisteret tildeler organisasjonsnummer for entydig identifisering av enheter.\n\n### Organisasjonsnummer\nNisifret nummer som entydig identifiserer enheter i Enhetsregisteret.\n\n### Enhet\nEnhet på øverste nivå i registreringsstrukturen i Enhetsregisteret. Eksempelvis enkeltpersonforetak, foreninger, selskap, sameier og andre som er registrert i Enhetsregisteret. Identifiseres med organisasjonsnummer.\n\n### Underenhet\nEnhet på laveste nivå i registreringsstrukturen i Enhetsregisteret. En underenhet kan ikke eksistere alene og har alltid knytning til en hovedenhet. Identifiseres med organisasjonsnummer.\n\n### Organisasjonsform\nOrganisasjonsform er virksomhetens formelle organisering og gir retningslinjer overfor blant annet ansvarsforhold, skatt, revisjonsplikt, rettigheter og plikter.\n\n### Næringskode\n[Næringskoder]: https://www.brreg.no/bedrift/naeringskoder/\n[Næringskoder]  på brreg.no\n\n[Standard for næringsgruppering]: https://www.ssb.no/klass/klassifikasjoner/6\n[Standard for næringsgruppering]\n---\n\n## Versjonering\nDu kan velge major versjon ved å spesifisere HTTP Accept-headeren. Bruk headeren spesifisert i tabellen under. Hvis versjon ikke spesifiseres, vil man få siste versjon.\n<table>\n  <thead>\n    <tr>\n      <th>API</th>\n      <th>Header</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>/</td>\n      <td>application/vnd.enhetsregisteret.v1+json</td>\n    </tr>\n    <tr>\n      <td>/organisasjonsformer</td>\n      <td>application/vnd.brreg.enhetsregisteret.organisasjonsform.v1+json</td>\n    </tr>\n  </tbody>\n</table>\n\n\n### Strategi\nVi skal normalt ikke bryte bakoverkompabiliteten med våre brukere. Likevel kan det være nødvendig i enkelte situasjoner, av for eksempel juridiske årsaker eller vedlikehold, å gjøre endringer som medfører et slikt brudd. Vi vil i dette tilfellet versjonere tjenesten slik at nyeste versjon vil være tilgjengelig sammen med forrige versjon.\n\n#### Dersom man ikke benytter versjonering i accept header, vil man få siste versjon.\n\nEldre versjon vil anses som utdatert/deprecated, og vil på sikt bli tatt bort. Ved behov for denne typen endringer vil vi forsøke å gi bruker god tid, og varsle om endringen i forkant. Se punkt om varsling.\n\n### Når innføres ny versjon\nVi vil innføre en ny versjon når vi introduserer en endring som påvirker bakoverkompabiliteten. Mindre endringer og patcher vil ikke medføre versjonsendring i header.\n\n### Når fjernes en versjon\nVi vil legge ut varsel/driftsmeldinger i god tid på følgende steder:\n- [Driftsmeldinger]: https://www.brreg.no/om-oss/driftsmeldinger/\n[Driftsmeldinger]\n- [RSS-feed]: https://www.brreg.no/produkter-og-tjenester/rss-feed/\n[RSS-feed].\n\nEksempel på endring som medfører versjonering:\n\n- Fjerne eller endre navn på et attributt i HTTP-responsen.\n\n- Fjerne eller endre navn på et REST endepunkt.\n\n---\n",
     "version": "1.0.0",
     "title": "Åpne Data fra Enhetsregisteret - API Dokumentasjon",
     "contact": {
@@ -29,6 +29,11 @@
             "description": "Tjenester mot åpne data fra Enhetsregisteret",
             "content": {
               "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/vnd.brreg.enhetsregisteret.v1+json": {
                 "schema": {
                   "type": "string"
                 }
@@ -370,7 +375,12 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/_Enheter"
+                }
+              },
+              "application/vnd.brreg.enhetsregisteret.enhet.v1+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Enheter"
                 }
               }
             }
@@ -408,7 +418,7 @@
                   "$ref": "#/components/schemas/Enhet"
                 }
               },
-              "application/vnd.enhetsregisteret.enhet.v1+json": {
+              "application/vnd.brreg.enhetsregisteret.enhet.v1+json": {
                 "schema": {
                   "$ref": "#/components/schemas/Enhet"
                 }
@@ -715,7 +725,12 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/_Underenheter"
+                }
+              },
+              "application/vnd.brreg.enhetsregisteret.underenhet.v1+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Underenheter"
                 }
               }
             }
@@ -747,7 +762,12 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/Underenhet"
+                }
+              },
+              "application/vnd.brreg.enhetsregisteret.underenhet.v1+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Underenhet"
                 }
               }
             }
@@ -803,6 +823,11 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "$ref": "#/components/schemas/Enhet"
+                }
+              },
+              "application/vnd.brreg.enhetsregisteret.oppdatering.enhet.v1+json": {
+                "schema": {
                   "type": "string"
                 }
               }
@@ -853,6 +878,11 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "$ref": "#/components/schemas/Enhet"
+                }
+              },
+              "application/vnd.brreg.enhetsregisteret.oppdatering.underenhet.v1+json": {
+                "schema": {
                   "type": "string"
                 }
               }
@@ -877,7 +907,7 @@
                   "$ref": "#/components/schemas/_Organisasjonsformer"
                 }
               },
-              "application/vnd.enhetsregisteret.organisasjonsform.v1+json": {
+              "application/vnd.brreg.enhetsregisteret.organisasjonsform.v1+json": {
                 "schema": {
                   "$ref": "#/components/schemas/_Organisasjonsformer"
                 }
@@ -920,7 +950,7 @@
                   "$ref": "#/components/schemas/Organisasjonsform"
                 }
               },
-              "application/vnd.enhetsregisteret.organisasjonsform.v1+json": {
+              "application/vnd.brreg.enhetsregisteret.organisasjonsform.v1+json": {
                 "schema": {
                   "$ref": "#/components/schemas/Organisasjonsform"
                 }
@@ -946,7 +976,12 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/_Organisasjonsformer"
+                }
+              },
+              "application/vnd.brreg.enhetsregisteret.organisasjonsform.v1+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Organisasjonsformer"
                 }
               }
             }
@@ -967,7 +1002,12 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/_Organisasjonsformer"
+                }
+              },
+              "application/vnd.brreg.enhetsregisteret.organisasjonsform.v1+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_Organisasjonsformer"
                 }
               }
             }
@@ -981,7 +1021,7 @@
   },
   "components": {
     "schemas": {
-      "Enhet": {
+      "Underenhet": {
         "properties": {
           "organisasjonsnummer": {
             "type": "string"
@@ -991,6 +1031,9 @@
           },
           "organisasjonsform": {
             "$ref": "#/components/schemas/Organisasjonsform"
+          },
+          "postadresse": {
+            "$ref": "#/components/schemas/Adresse"
           },
           "registreringsdatoEnhetsregisteret": {
             "type": "string"
@@ -1009,6 +1052,64 @@
           },
           "antallAnsatte": {
             "type": "integer"
+          },
+          "overordnetEnhet": {
+            "type": "string"
+          },
+          "oppstartsdato": {
+            "type": "string"
+          },
+          "beliggenhetsadresse": {
+            "$ref": "#/components/schemas/Adresse"
+          },
+          "_links": {
+            "$ref": "#/components/schemas/_Links"
+          }
+        }
+      },
+      "Enhet": {
+        "properties": {
+          "organisasjonsnummer": {
+            "type": "string"
+          },
+          "navn": {
+            "type": "string"
+          },
+          "organisasjonsform": {
+            "$ref": "#/components/schemas/Organisasjonsform"
+          },
+          "hjemmeside": {
+            "type": "string"
+          },
+          "postadresse": {
+            "$ref": "#/components/schemas/Adresse"
+          },
+          "registreringsdatoEnhetsregisteret": {
+            "type": "string"
+          },
+          "registrertIMvaregisteret": {
+            "type": "boolean"
+          },
+          "frivilligMvaRegistrertBeskrivelser": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "naeringskode1": {
+            "$ref": "#/components/schemas/Naeringskode"
+          },
+          "naeringskode2": {
+            "$ref": "#/components/schemas/Naeringskode"
+          },
+          "naeringskode3": {
+            "$ref": "#/components/schemas/Naeringskode"
+          },
+          "antallAnsatte": {
+            "type": "integer"
+          },
+          "forretningsadresse": {
+            "$ref": "#/components/schemas/Adresse"
           },
           "stiftelsedato": {
             "type": "string"
@@ -1041,7 +1142,35 @@
             "type": "string"
           },
           "_links": {
-            "$ref": "#/components/schemas/Self"
+            "$ref": "#/components/schemas/_Links"
+          }
+        }
+      },
+      "Adresse": {
+        "properties": {
+          "land": {
+            "type": "string"
+          },
+          "landkode": {
+            "type": "string"
+          },
+          "postnummer": {
+            "type": "string"
+          },
+          "poststed": {
+            "type": "string"
+          },
+          "adresse": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "kommune": {
+            "type": "string"
+          },
+          "kommunenummer": {
+            "type": "string"
           }
         }
       },
@@ -1062,6 +1191,40 @@
           },
           "beskrivelse": {
             "type": "string"
+          }
+        }
+      },
+      "_Enheter": {
+        "properties": {
+          "embedded": {
+            "$ref": "#/components/schemas/Enheter"
+          }
+        }
+      },
+      "Enheter": {
+        "properties": {
+          "enheter": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Enhet"
+            }
+          }
+        }
+      },
+      "_Underenheter": {
+        "properties": {
+          "embedded": {
+            "$ref": "#/components/schemas/Underenheter"
+          }
+        }
+      },
+      "Underenheter": {
+        "properties": {
+          "enheter": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Underenhet"
+            }
           }
         }
       },
@@ -1098,6 +1261,16 @@
       "Self": {
         "properties": {
           "self": {
+            "$ref": "#/components/schemas/Href"
+          }
+        }
+      },
+      "_Links": {
+        "properties": {
+          "self": {
+            "$ref": "#/components/schemas/Href"
+          },
+          "overordnetEnhet": {
             "$ref": "#/components/schemas/Href"
           }
         }
