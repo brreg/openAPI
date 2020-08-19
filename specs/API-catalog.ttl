@@ -1,14 +1,70 @@
-@prefix adms: <http://www.w3.org/ns/adms#> .
-@prefix dcterms:   <http://purl.org/dc/terms/> .
-@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
-@prefix dcat:  <http://www.w3.org/ns/dcat#> .
-<https://github.com/brreg/openAPI/tree/master/specs> a adms:AssetRepository ;
-  dcterms:created "2018-11-29"^^xsd:date ;
-  dcterms:description "A complete catalog of API decriptions created by Brønnøysund Register Centre"@en ;
-  dcterms:publisher <https://data.brreg.no/enhetsregisteret/enhet/974760673> ;
-  dcat:dataset <https://raw.githubusercontent.com/brreg/openAPI/master/specs/api-cat.json> ;
-  dcat:dataset <https://raw.githubusercontent.com/brreg/openAPI/master/specs/enhetsregisteret.json> ;
-  dcat:dataset <https://raw.githubusercontent.com/brreg/openAPI/master/specs/fdk.json> ;
-  dcat:dataset <https://raw.githubusercontent.com/brreg/openAPI/master/specs/concept-cat.json> ;
-  dcat:dataset <https://raw.githubusercontent.com/brreg/openAPI/master/specs/informationmodel-cat.json> ;
-  dcterms:title "API catalog Brønnøysund Register Centre"@en .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix fdk: <https://begrep.brreg.no/fdk#> .
+@prefix ns1: <http://www.w3.org/2006/vcard/ns#> .
+@prefix ns2: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.brreg.no/kataloger/api> a dcat:Catalog ;
+    dct:publisher <http://data.brreg.no/enhetsregisteret/enhet/9839834938> ;
+    dct:title "Brønnøysundregistrenes API-katalog"@nb ;
+    dcat:service <https://data.brreg.no/regnskapsregister/api>,
+        <https://ebevis.no>,
+        <https://nsg.fellesdatakatalog.brreg.no/api/>,
+        <https://www.enurl.no> .
+
+<https://data.brreg.no/regnskapsregister/api> a dcat:DataService ;
+    dct:description """_Dette er et midlertidig API som er utviklet for FoU (Forsknings- og utviklingsarbeid), og særskilt for EUbusinessgraph. APIèt vil ikke bli videreutviklet eller vedlikeholdt, og kan bli lagt ned uten varsel.
+API'et kan brukes av alle, men har dere behov for kontinuerlig oppdatering fra Regnskapsregisteret, anbefaler vi at dere avventer til en fullverdig versjon av API regnskapsregisteret blir publisert i løpet av de nærmeste årene._
+
+_APIèt inneholder nøkkeltall fra sist innsendte årsregnskap som er godkjent av Regnskapsregisteret, fra og med regnskapsåret 2018.  Dette gjelder for de virksomhetene som følger ordinær oppstillingsplan etter regnskapsloven. Regnskapstall fra f.eks. banker og forsikringsselskap er ikke tilgjengelig. Konserntall er heller ikke tilgjengelig. Dette Api'et inneholder heller ikke opplysninger om hvorvidt virksomheten er slettet, gått konkurs eller annen tilsvarende opplysninger. Disse opplysningene finner dere her: <https://data.brreg.no/enhetsregisteret/oppslag/enheter>_
+"""@en ;
+    dct:license <http://data.norge.no/nlod/no/2.0> ;
+    dct:title "Nøkkeltall fra årsregnskapet"@en ;
+    dcat:contactPoint [ a ns1:Organization ;
+            ns1:hasEmail <mailto:opendata@brreg.no> ;
+            ns1:hasOrganizationName "Forenkling og Brukerdialog hos Brønnøysundregistrene"@en ;
+            ns1:hasURL <https://www.brreg.no/> ] ;
+    dcat:endpointDescription <https://raw.githubusercontent.com/brreg/regnskapsregister-api/master/src/main/resources/specification/regnskapsregister.json> ;
+    dcat:endpointURL <http://34.98.91.231> ;
+    fdk:status "under utprøving" .
+
+<https://ebevis.no> a dcat:DataService ;
+    dct:description "API for eBevis - production environment"@en ;
+    dct:title "eBevis Production"@en ;
+    dcat:endpointDescription <https://ebevis.no/docs/services/5ad48cc4221f41c9c2d412fc/export?DocumentFormat=OpenApiJson> ;
+    dcat:endpointURL <https://api.ebevis.no/nadobe/v1> .
+
+<https://nsg.fellesdatakatalog.brreg.no/api/> a dcat:DataService ;
+    dct:description "A reference implementation of the proposal for a common Nordic standard API for accessing bookkeeping information"@en,
+        "en norsk beskrivelse av det samme"@no ;
+    dct:media_types "application/json",
+        "text/turtle" ;
+    dct:title "Nordic Smart Government Reference API"@en ;
+    dcat:endpointDescription <https://nsg.fellesdatakatalog.brreg.no/v3/api-docs> ;
+    dcat:endpointURL <https://nsg.fellesdatakatalog.brreg.no> .
+
+<https://www.enurl.no> a dcat:DataService ;
+    dct:accessRights "et rettighetsutsagn" ;
+    dct:description "dette er en eksempelbeskrivelse av et API"@no ;
+    dct:licence <https://data.norge.no/nlod/no/> ;
+    dct:media_types "application/json",
+        "application/xml" ;
+    dct:title "tittelen"@no ;
+    dcat:endpointURL <https://eksempel.com/api> ;
+    dcat:keyword "eksempel" ;
+    dcat:landingPage <https://eksempel.com/api/landingsside> ;
+    dcat:servesDataset <https://data.norge.no/datasets/68d08f28-a16d-4fab-a953-ed4ab08ce2e2> ;
+    dcat:theme <https://psi.norge.no/los/tema/arbeid> ;
+    ns2:page <https://eksempel.com/api/dokumentasjon> ;
+    fdk:aapen_lisens true ;
+    fdk:autoritativ_kilde true ;
+    fdk:gratis true ;
+    fdk:kapasitet_ytelse "Normal responstid er 100 ms"@no ;
+    fdk:pålitelighet "Oppetid siste 12 måneder er 99,7 %"@no ;
+    fdk:status "I produksjon"@no ;
+    fdk:tilgang_for_alle true ;
+    fdk:tjenestetype "Saldoppslag" ;
+    fdk:trafikkbegrensninger "Resultatssettet er begrenset til 100 treff"@no .
+
+
