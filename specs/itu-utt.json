@@ -1,0 +1,1049 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Restendepunkter for å hente opplysninger om intet til utlegg og utleggestrekk på et fødselesnummer/d-nummer/organisasjonsnummer. \nEndepunktene forventer et gyldig maskinporttoken med scope = brreg:losore/utlegg.",
+    "title": "Intet til utlegg/utleggstrekk (ITU/UTT) API",
+    "contact": {
+      "name": "Løsøreregisteret",
+      "url": "https://brreg.github.io/docs/apidokumentasjon/losoreregisteret/",
+      "email": "oa-fagstillinger@brreg.no"
+    }
+  },
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "endringslogg-controller",
+      "description": "Endringslogg Controller"
+    },
+    {
+      "name": "totalbestand-controller",
+      "description": "Totalbestand Controller"
+    },
+    {
+      "name": "utlegg-controller",
+      "description": "Utlegg Controller"
+    }
+  ],
+  "paths": {
+    "/utlegg/endringslogg/enheter/{datoOpprettet}": {
+      "get": {
+        "tags": [
+          "endringslogg-controller"
+        ],
+        "summary": "Hent endringslogg om intet til utlegg på organisasjonsnummer basert på sist endret dato (for kredittopplysningsforetak).",
+        "operationId": "finnNyeEndringsloggerForEnhetVedUidUsingGET",
+        "produces": [
+          "application/json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Bearer <access_token>",
+            "required": true,
+            "type": "string",
+            "x-example": "Bearer access_token"
+          },
+          {
+            "name": "datoOpprettet",
+            "in": "path",
+            "description": "Sist endret dato",
+            "required": true,
+            "type": "string",
+            "x-example": "2020-01-01T00:00"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/EndringsloggWrapper"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/utlegg/endringslogg/{datoOpprettet}": {
+      "get": {
+        "tags": [
+          "endringslogg-controller"
+        ],
+        "summary": "Hent endringslogg om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på sist endret dato (for kredittopplysningsforetak).",
+        "operationId": "finnNyeEndringsloggerVedUidUsingGET",
+        "produces": [
+          "application/json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Bearer <access_token>",
+            "required": true,
+            "type": "string",
+            "x-example": "Bearer access_token"
+          },
+          {
+            "name": "datoOpprettet",
+            "in": "path",
+            "description": "Sist endret dato",
+            "required": true,
+            "type": "string",
+            "x-example": "2020-01-01T00:00"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/EndringsloggWrapper"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/utlegg/enheter/{organisasjonsnummer}": {
+      "get": {
+        "tags": [
+          "utlegg-controller"
+        ],
+        "summary": "Hent opplysninger om intet til utlegg på et organisasjonsnummer (for distributører).",
+        "description": "Henter opplysninger om intet til utlegg på et organisasjonsnummer.\nEndepunktet forventer en gyldig maskinporten token som bearer token.\n",
+        "operationId": "findByOrganisasjonsnummerUsingGET",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Bearer <access_token>",
+            "required": true,
+            "type": "string",
+            "x-example": "Bearer access_token"
+          },
+          {
+            "name": "organisasjonsnummer",
+            "in": "path",
+            "description": "organisasjonsnummer",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "sokers_orgnummer",
+            "in": "query",
+            "description": "sokers_orgnummer",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/UtleggDistributorWrapper"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/utlegg/personer-utvidet/{fodselsnummer}": {
+      "get": {
+        "tags": [
+          "utlegg-controller"
+        ],
+        "summary": "Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer (for kredittopplysningsforetak).",
+        "description": "Henter opplysninger om intet til utlegg/utleggstrekk på et fødselsnummer/d-nummer.\nEndepunktet forventer en gyldig maskinporten token som bearer token.\n",
+        "operationId": "findByFodselsnrKredittforetakUsingGET",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Bearer <access_token>",
+            "required": true,
+            "type": "string",
+            "x-example": "Bearer access_token"
+          },
+          {
+            "name": "fodselsnummer",
+            "in": "path",
+            "description": "fodselsnummer",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/UtleggKredittforetakWrapper"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/utlegg/personer/{fodselsnummer}": {
+      "get": {
+        "tags": [
+          "utlegg-controller"
+        ],
+        "summary": "Hent opplysninger om intet til utlegg og utleggstrekk på et fødselsnummer eller d-nummer (for distributører).",
+        "description": "Henter opplysninger om intet til utlegg/utleggstrekk på et fødselsnummer/d-nummer.\nEndepunktet forventer en gyldig maskinporten token som bearer token.\n",
+        "operationId": "findByFodselsnrUsingGET",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Bearer <access_token>",
+            "required": true,
+            "type": "string",
+            "x-example": "Bearer access_token"
+          },
+          {
+            "name": "fodselsnummer",
+            "in": "path",
+            "description": "fodselsnummer",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "sokers_orgnummer",
+            "in": "query",
+            "description": "sokers_orgnummer",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/UtleggDistributorWrapper"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/utlegg/totalbestand": {
+      "get": {
+        "tags": [
+          "totalbestand-controller"
+        ],
+        "summary": "Hent totalbestand om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer (for kredittopplysningsforetak).",
+        "operationId": "getTotalbestandUsingGET",
+        "produces": [
+          "application/json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Bearer <access_token>",
+            "required": true,
+            "type": "string",
+            "x-example": "Bearer access_token"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/TotalbestandWrapper"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/utlegg/totalbestand/enheter": {
+      "get": {
+        "tags": [
+          "totalbestand-controller"
+        ],
+        "summary": "Hent totalbestand om intet til utlegg på organisasjonsnummer (for kredittopplysningsforetak).",
+        "operationId": "getTotalbestandForEnhetUsingGET",
+        "produces": [
+          "application/json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Bearer <access_token>",
+            "required": true,
+            "type": "string",
+            "x-example": "Bearer access_token"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/TotalbestandWrapper"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/utlegg/totalbestand/enheter/{datoSistEndret}": {
+      "get": {
+        "tags": [
+          "totalbestand-controller"
+        ],
+        "summary": "Hent totalbestand om intet til utlegg på organisasjonsnummer basert på sist endret dato (for kredittopplysningsforetak).",
+        "operationId": "getTotalbestandForEnhetMedDatoSistEndretUsingGET",
+        "produces": [
+          "application/json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Bearer <access_token>",
+            "required": true,
+            "type": "string",
+            "x-example": "Bearer access_token"
+          },
+          {
+            "name": "datoSistEndret",
+            "in": "path",
+            "description": "Sist endret dato",
+            "required": false,
+            "type": "string",
+            "x-example": "2020-01-01T00:00"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/TotalbestandWrapper"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/utlegg/totalbestand/{datoSistEndret}": {
+      "get": {
+        "tags": [
+          "totalbestand-controller"
+        ],
+        "summary": "Hent totalbestand om intet til utlegg og utleggstrekk på fødselsnummer, d-nummer og organisasjonsnummer basert på sist endret dato (for kredittopplysningsforetak).",
+        "operationId": "getTotalbestandMedDatoSistEndretUsingGET",
+        "produces": [
+          "application/json;charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Bearer <access_token>",
+            "required": true,
+            "type": "string",
+            "x-example": "Bearer access_token"
+          },
+          {
+            "name": "datoSistEndret",
+            "in": "path",
+            "description": "Sist endret dato",
+            "required": false,
+            "type": "string",
+            "x-example": "2020-01-01T00:00"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/TotalbestandWrapper"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "definitions": {
+    "Aktor": {
+      "type": "object",
+      "properties": {
+        "adresse": {
+          "type": "string",
+          "example": "Gråen 4"
+        },
+        "etternavn": {
+          "type": "string",
+          "example": "Kjellsen"
+        },
+        "fornavn": {
+          "type": "string",
+          "example": "Kjell"
+        },
+        "landkode": {
+          "type": "string",
+          "example": "NO"
+        },
+        "mellomnavn": {
+          "type": "string",
+          "example": "Waldemar"
+        },
+        "navn": {
+          "type": "string",
+          "example": "Simon Skogseth"
+        },
+        "organisasjonsnummer": {
+          "type": "string",
+          "example": "810305002"
+        },
+        "personidentifikator": {
+          "type": "string",
+          "example": "01065101935"
+        },
+        "postnr": {
+          "type": "string",
+          "example": "4844"
+        },
+        "poststed": {
+          "type": "string",
+          "example": "Arendal"
+        },
+        "referansenummer": {
+          "type": "string",
+          "example": "1"
+        },
+        "rolletype": {
+          "type": "string",
+          "example": "Saksøker",
+          "enum": [
+            "NAMSMYNDIGHET",
+            "PROSESSFULLMEKTIG",
+            "SAKSOKER",
+            "SAKSOKT"
+          ]
+        },
+        "saksnummer": {
+          "type": "string",
+          "example": "1"
+        }
+      },
+      "title": "Aktor"
+    },
+    "EndringsloggResponseKredittforetak": {
+      "type": "object",
+      "properties": {
+        "_links": {
+          "type": "array",
+          "xml": {
+            "name": "link",
+            "attribute": false,
+            "wrapped": false
+          },
+          "items": {
+            "$ref": "#/definitions/Link"
+          }
+        },
+        "antallITU": {
+          "type": "integer",
+          "format": "int32",
+          "example": 0
+        },
+        "antallUTT": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1
+        },
+        "datoSistEndret": {
+          "type": "string",
+          "example": "2020-01-01T00:00:00"
+        },
+        "endringslogg": {
+          "type": "array",
+          "description": "endringslogg",
+          "items": {
+            "$ref": "#/definitions/Utlegg"
+          }
+        },
+        "meldinger": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "tilleggsinfo": {
+          "type": "string"
+        }
+      },
+      "title": "EndringsloggResponseKredittforetak"
+    },
+    "EndringsloggWrapper": {
+      "type": "object",
+      "properties": {
+        "beskrivelse": {
+          "type": "string"
+        },
+        "detaljer": {
+          "type": "string"
+        },
+        "endringsloggResponseKredittforetak": {
+          "$ref": "#/definitions/EndringsloggResponseKredittforetak"
+        },
+        "feilId": {
+          "type": "string"
+        },
+        "feilkode": {
+          "type": "string"
+        },
+        "feiltype": {
+          "type": "string"
+        }
+      },
+      "title": "EndringsloggWrapper"
+    },
+    "Link": {
+      "type": "object",
+      "properties": {
+        "deprecation": {
+          "type": "string",
+          "xml": {
+            "name": "deprecation",
+            "attribute": true,
+            "wrapped": false
+          }
+        },
+        "href": {
+          "type": "string",
+          "xml": {
+            "name": "href",
+            "attribute": true,
+            "wrapped": false
+          }
+        },
+        "hreflang": {
+          "type": "string",
+          "xml": {
+            "name": "hreflang",
+            "attribute": true,
+            "wrapped": false
+          }
+        },
+        "media": {
+          "type": "string",
+          "xml": {
+            "name": "media",
+            "attribute": true,
+            "wrapped": false
+          }
+        },
+        "rel": {
+          "type": "string",
+          "xml": {
+            "name": "rel",
+            "attribute": true,
+            "wrapped": false
+          }
+        },
+        "templated": {
+          "type": "boolean"
+        },
+        "title": {
+          "type": "string",
+          "xml": {
+            "name": "title",
+            "attribute": true,
+            "wrapped": false
+          }
+        },
+        "type": {
+          "type": "string",
+          "xml": {
+            "name": "type",
+            "attribute": true,
+            "wrapped": false
+          }
+        }
+      },
+      "title": "Link"
+    },
+    "TotalbestandResponseKredittforetak": {
+      "type": "object",
+      "properties": {
+        "_links": {
+          "type": "array",
+          "xml": {
+            "name": "link",
+            "attribute": false,
+            "wrapped": false
+          },
+          "items": {
+            "$ref": "#/definitions/Link"
+          }
+        },
+        "antallITU": {
+          "type": "integer",
+          "format": "int32",
+          "example": 0
+        },
+        "antallUTT": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1
+        },
+        "datoSistEndret": {
+          "type": "string",
+          "example": "2020-01-01T00:00:00"
+        },
+        "meldinger": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "tilleggsinfo": {
+          "type": "string"
+        },
+        "totalbestand": {
+          "type": "array",
+          "description": "totalbestand",
+          "items": {
+            "$ref": "#/definitions/Utlegg"
+          }
+        }
+      },
+      "title": "TotalbestandResponseKredittforetak"
+    },
+    "TotalbestandWrapper": {
+      "type": "object",
+      "properties": {
+        "beskrivelse": {
+          "type": "string"
+        },
+        "detaljer": {
+          "type": "string"
+        },
+        "feilId": {
+          "type": "string"
+        },
+        "feilkode": {
+          "type": "string"
+        },
+        "feiltype": {
+          "type": "string"
+        },
+        "totalbestandResponseKredittforetak": {
+          "$ref": "#/definitions/TotalbestandResponseKredittforetak"
+        }
+      },
+      "title": "TotalbestandWrapper"
+    },
+    "Utlegg": {
+      "type": "object",
+      "properties": {
+        "aktorer": {
+          "type": "array",
+          "description": "aktorer",
+          "items": {
+            "$ref": "#/definitions/Aktor"
+          }
+        },
+        "avholdtForretning": {
+          "type": "string",
+          "format": "date",
+          "example": "2017-08-01"
+        },
+        "innfortILosoreregisteret": {
+          "type": "string",
+          "format": "date",
+          "example": "2017-08-02"
+        },
+        "periodeSlutt": {
+          "type": "string",
+          "format": "date",
+          "example": "2020-07-13"
+        },
+        "periodeStart": {
+          "type": "string",
+          "format": "date",
+          "example": "2017-07-13"
+        },
+        "slettedato": {
+          "type": "string",
+          "format": "date",
+          "example": "2017-06-11"
+        },
+        "slettekode": {
+          "type": "string",
+          "example": "S"
+        },
+        "trekkbelop": {
+          "type": "number",
+          "example": 25000.0
+        },
+        "trekkprosent": {
+          "type": "number",
+          "format": "double",
+          "example": 10.0
+        },
+        "trekkvaluta": {
+          "type": "string",
+          "example": "NOK"
+        },
+        "ubmeldnr": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1
+        },
+        "ubnr": {
+          "type": "integer",
+          "format": "int64",
+          "example": 20181230000026
+        },
+        "utleggstype": {
+          "type": "string",
+          "example": "UTT",
+          "enum": [
+            "ITU",
+            "UTT"
+          ]
+        }
+      },
+      "title": "Utlegg"
+    },
+    "UtleggDistributor": {
+      "type": "object",
+      "properties": {
+        "avholdtForretning": {
+          "type": "string",
+          "format": "date",
+          "example": "2017-08-01"
+        },
+        "innfortILosoreregisteret": {
+          "type": "string",
+          "format": "date",
+          "example": "2017-08-02"
+        },
+        "periodeSlutt": {
+          "type": "string",
+          "format": "date",
+          "example": "2020-07-13"
+        },
+        "periodeStart": {
+          "type": "string",
+          "format": "date",
+          "example": "2017-07-13"
+        },
+        "trekkbelop": {
+          "type": "number",
+          "example": 25000.0
+        },
+        "trekkprosent": {
+          "type": "number",
+          "format": "double",
+          "example": 10.0
+        },
+        "trekkvaluta": {
+          "type": "string",
+          "example": "NOK"
+        },
+        "utleggstype": {
+          "type": "string",
+          "example": "UTT",
+          "enum": [
+            "ITU",
+            "UTT"
+          ]
+        }
+      },
+      "title": "UtleggDistributor"
+    },
+    "UtleggDistributorWrapper": {
+      "type": "object",
+      "properties": {
+        "beskrivelse": {
+          "type": "string"
+        },
+        "detaljer": {
+          "type": "string"
+        },
+        "feilId": {
+          "type": "string"
+        },
+        "feilkode": {
+          "type": "string"
+        },
+        "feiltype": {
+          "type": "string"
+        },
+        "utleggResponseDistributor": {
+          "$ref": "#/definitions/UtleggResponseDistributor"
+        }
+      },
+      "title": "UtleggDistributorWrapper"
+    },
+    "UtleggKredittforetak": {
+      "type": "object",
+      "properties": {
+        "aktorer": {
+          "type": "array",
+          "description": "aktorer",
+          "items": {
+            "$ref": "#/definitions/Aktor"
+          }
+        },
+        "avholdtForretning": {
+          "type": "string",
+          "format": "date",
+          "example": "2017-08-01"
+        },
+        "innfortILosoreregisteret": {
+          "type": "string",
+          "format": "date",
+          "example": "2017-08-02"
+        },
+        "periodeSlutt": {
+          "type": "string",
+          "format": "date",
+          "example": "2020-07-13"
+        },
+        "periodeStart": {
+          "type": "string",
+          "format": "date",
+          "example": "2017-07-13"
+        },
+        "trekkbelop": {
+          "type": "number",
+          "example": 25000.0
+        },
+        "trekkprosent": {
+          "type": "number",
+          "format": "double",
+          "example": 10.0
+        },
+        "trekkvaluta": {
+          "type": "string",
+          "example": "NOK"
+        },
+        "ubmeldnr": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1
+        },
+        "ubnr": {
+          "type": "integer",
+          "format": "int64",
+          "example": 20181230000026
+        },
+        "utleggstype": {
+          "type": "string",
+          "example": "UTT",
+          "enum": [
+            "ITU",
+            "UTT"
+          ]
+        }
+      },
+      "title": "UtleggKredittforetak"
+    },
+    "UtleggKredittforetakWrapper": {
+      "type": "object",
+      "properties": {
+        "beskrivelse": {
+          "type": "string"
+        },
+        "detaljer": {
+          "type": "string"
+        },
+        "feilId": {
+          "type": "string"
+        },
+        "feilkode": {
+          "type": "string"
+        },
+        "feiltype": {
+          "type": "string"
+        },
+        "utleggResponseKredittforetak": {
+          "$ref": "#/definitions/UtleggResponseKredittforetak"
+        }
+      },
+      "title": "UtleggKredittforetakWrapper"
+    },
+    "UtleggResponseDistributor": {
+      "type": "object",
+      "properties": {
+        "_links": {
+          "type": "array",
+          "xml": {
+            "name": "link",
+            "attribute": false,
+            "wrapped": false
+          },
+          "items": {
+            "$ref": "#/definitions/Link"
+          }
+        },
+        "antallITU": {
+          "type": "integer",
+          "format": "int32",
+          "example": 0
+        },
+        "antallUTT": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1
+        },
+        "meldinger": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "tilleggsinfo": {
+          "type": "string"
+        },
+        "utlegg": {
+          "type": "array",
+          "description": "utleggList",
+          "items": {
+            "$ref": "#/definitions/UtleggDistributor"
+          }
+        }
+      },
+      "title": "UtleggResponseDistributor"
+    },
+    "UtleggResponseKredittforetak": {
+      "type": "object",
+      "properties": {
+        "_links": {
+          "type": "array",
+          "xml": {
+            "name": "link",
+            "attribute": false,
+            "wrapped": false
+          },
+          "items": {
+            "$ref": "#/definitions/Link"
+          }
+        },
+        "antallITU": {
+          "type": "integer",
+          "format": "int32",
+          "example": 0
+        },
+        "antallUTT": {
+          "type": "integer",
+          "format": "int32",
+          "example": 1
+        },
+        "meldinger": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "tilleggsinfo": {
+          "type": "string"
+        },
+        "utlegg": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UtleggKredittforetak"
+          }
+        }
+      },
+      "title": "UtleggResponseKredittforetak"
+    }
+  }
+}
