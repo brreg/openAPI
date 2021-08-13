@@ -1,0 +1,677 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Løsøre tilgjengeliggjøring api (losore-tlg-api)",
+    "description": "Spring-boot-applikasjon beskyttet med maskinporten for løsøredata tilgjengeliggjøring",
+    "contact": {
+      "name": "Løsøreregisteret",
+      "url": "https://brreg.github.io/docs/apidokumentasjon/losoreregisteret/",
+      "email": "oa-fagstillinger@brreg.no"
+    }
+  },
+  "paths": {
+    "/registerinfo/api/v1/rettsstiftelse/totalbestand": {
+      "post": {
+        "tags": [
+          "rettsstiftelse-controller"
+        ],
+        "operationId": "getTotalbestand",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TotalbestandRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RettsstiftelseWrapper"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RettsstiftelseWrapper"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TotalbestandResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/registerinfo/api/v1/rettsstiftelse/endringslogg": {
+      "post": {
+        "tags": [
+          "rettsstiftelse-controller"
+        ],
+        "operationId": "getEndringslogg",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EndringsloggRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RettsstiftelseWrapper"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RettsstiftelseWrapper"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EndringsloggResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/registerinfo/api/v1/rettsstiftelse/regnr/{regnr}": {
+      "get": {
+        "tags": [
+          "rettsstiftelse-controller"
+        ],
+        "operationId": "getRettsstiftelseByRegNr",
+        "parameters": [
+          {
+            "name": "regnr",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RettsstiftelseWrapper"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RettsstiftelseWrapper"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RettsstiftelseWrapper"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/registerinfo/api/v1/rettsstiftelse/orgnr/{orgnr}": {
+      "get": {
+        "tags": [
+          "rettsstiftelse-controller"
+        ],
+        "operationId": "getRettsstiftelseByOrgnr",
+        "parameters": [
+          {
+            "name": "orgnr",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sluttbrukerOrgNr",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RettsstiftelseWrapper"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RettsstiftelseWrapper"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RettsstiftelseWrapper"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/registerinfo/api/v1/rettsstiftelse/fnr/{fnr}": {
+      "get": {
+        "tags": [
+          "rettsstiftelse-controller"
+        ],
+        "operationId": "getRettsstiftelseByFnr",
+        "parameters": [
+          {
+            "name": "fnr",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sluttbrukerOrgNr",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RettsstiftelseWrapper"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RettsstiftelseWrapper"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RettsstiftelseWrapper"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Belop": {
+        "type": "object",
+        "properties": {
+          "belop": {
+            "type": "number"
+          },
+          "valuta": {
+            "type": "string"
+          }
+        }
+      },
+      "Brok": {
+        "type": "object",
+        "properties": {
+          "teller": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nevner": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Formuesgode": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "identifiseringsmaateFormuesgode": {
+            "$ref": "#/components/schemas/IdentifiseringsmaateFormuesgode"
+          },
+          "eierandel": {
+            "$ref": "#/components/schemas/Brok"
+          }
+        }
+      },
+      "Gjeldsordning": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "meldefristKrav": {
+            "type": "string"
+          },
+          "gjeldsordningsperiodeFraDato": {
+            "type": "string",
+            "format": "date"
+          },
+          "gjeldsordningsperiodeTilDato": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      },
+      "IdentifiseringsmaateFormuesgode": {
+        "type": "object",
+        "properties": {
+          "registreringsnummerMotorvogn": {
+            "type": "string"
+          },
+          "avgrensingTingsinnbegrep": {
+            "type": "string"
+          },
+          "beskrivelseAvgrensing": {
+            "type": "string"
+          },
+          "avtaletypeFordring": {
+            "type": "string"
+          },
+          "uregistrertMotorvognMerke": {
+            "type": "string"
+          },
+          "uregistrertMotorvognAarsmodell": {
+            "type": "string"
+          },
+          "uregistrertMotorvognIdentifikasjonsnummer": {
+            "type": "string"
+          },
+          "beskrivelse": {
+            "type": "string"
+          },
+          "identifikator": {
+            "type": "string"
+          },
+          "identifiseringstype": {
+            "type": "string"
+          }
+        }
+      },
+      "Krav": {
+        "type": "object",
+        "properties": {
+          "belop": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Belop"
+            }
+          },
+          "kravSalgspant": {
+            "type": "string"
+          },
+          "kravFordringer": {
+            "type": "string"
+          }
+        }
+      },
+      "Paategning": {
+        "type": "object",
+        "properties": {
+          "paategning": {
+            "type": "string"
+          }
+        }
+      },
+      "Prioritetsvikelse": {
+        "type": "object",
+        "properties": {
+          "dokumentnummer": {
+            "type": "string"
+          },
+          "panthaverFremtidig": {
+            "type": "string"
+          },
+          "belopFremtidig": {
+            "type": "string"
+          }
+        }
+      },
+      "Rettsstiftelse": {
+        "type": "object",
+        "properties": {
+          "dokumentnummer": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "innkomsttidspunkt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "beslutningstidspunkt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string"
+          },
+          "utlopRettsvernstid": {
+            "type": "string",
+            "format": "date"
+          },
+          "slettetDato": {
+            "type": "string",
+            "format": "date"
+          },
+          "avgrensingRettsstiftelse": {
+            "type": "string"
+          },
+          "roller": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Rolle"
+            }
+          },
+          "formuesgoder": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Formuesgode"
+            }
+          },
+          "krav": {
+            "$ref": "#/components/schemas/Krav"
+          },
+          "gjeldsordning": {
+            "$ref": "#/components/schemas/Gjeldsordning"
+          },
+          "vergemaal": {
+            "$ref": "#/components/schemas/Vergemaal"
+          },
+          "skifteutlegg": {
+            "$ref": "#/components/schemas/Skifteutlegg"
+          },
+          "paategninger": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Paategning"
+            }
+          },
+          "prioritetsvikelser": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Prioritetsvikelse"
+            }
+          }
+        }
+      },
+      "RettsstiftelseWrapper": {
+        "type": "object",
+        "properties": {
+          "sokeparameter": {
+            "type": "string"
+          },
+          "oppslagstidspunkt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "antallRettsstiftelser": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rettsstiftelser": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Rettsstiftelse"
+            }
+          },
+          "korrelasjonsid": {
+            "type": "string"
+          },
+          "tidspunkt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "feilmelding": {
+            "type": "string"
+          }
+        }
+      },
+      "Rolle": {
+        "type": "object",
+        "properties": {
+          "rolleinnehaverType": {
+            "type": "string",
+            "enum": [
+              "BRPERSON",
+              "VIRKSOMHET",
+              "ANNEN_AKTOR"
+            ]
+          },
+          "navn": {
+            "type": "string"
+          },
+          "identifikator": {
+            "type": "string"
+          },
+          "adresse": {
+            "type": "string"
+          }
+        }
+      },
+      "Skifteutlegg": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "Vergemaal": {
+        "type": "object",
+        "properties": {
+          "personligForhold": {
+            "type": "boolean"
+          },
+          "okonomiskeForhold": {
+            "type": "boolean"
+          },
+          "varighet": {
+            "type": "string"
+          }
+        }
+      },
+      "TotalbestandRequest": {
+        "type": "object",
+        "properties": {
+          "upperCutoff": {
+            "type": "string",
+            "description": "Hvor langt tilbake i tid man vil hente data for",
+            "format": "date-time"
+          },
+          "lastSortValues": {
+            "type": "array",
+            "description": "Hent flere Rettsstiftelser, utover sidestørrelsen. For å få neste side, så må du sende inn tabellen som du fikk i forrige søkeresultat.",
+            "nullable": true,
+            "example": [
+              2837642376,
+              "sdlkjhfsdk"
+            ],
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "TotalbestandResponse": {
+        "type": "object",
+        "properties": {
+          "upperCutoffForrigeRequest": {
+            "type": "string",
+            "description": "Hvor langt tilbake i tid man hentet data for i forrige request",
+            "format": "date-time"
+          },
+          "sortValues": {
+            "type": "array",
+            "description": "Brukes i neste TotalbestandRequest for å hente flere Rettsstiftelser, utover sidestørrelsen.",
+            "nullable": true,
+            "example": [
+              2837642376,
+              "sdlkjhfsdk"
+            ],
+            "items": {
+              "type": "object"
+            }
+          },
+          "antallRettsstiftelser": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rettsstiftelser": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Rettsstiftelse"
+            }
+          }
+        }
+      },
+      "EndringsloggRequest": {
+        "type": "object",
+        "properties": {
+          "lowerCutoff": {
+            "type": "string",
+            "description": "Hvor langt frem i tid man vil hente data for",
+            "format": "date-time"
+          },
+          "lastSortValues": {
+            "type": "array",
+            "description": "Hent flere innslag, utover sidestørrelsen. For å få neste side, så må du sende inn tabellen som du fikk i forrige response.",
+            "nullable": true,
+            "example": [
+              2837642376,
+              "sdlkjhfsdk"
+            ],
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "EndringsloggResponse": {
+        "type": "object",
+        "properties": {
+          "sistEndretSisteInnslag": {
+            "type": "string",
+            "description": "Sist endret for det siste innslaget returnert",
+            "format": "date-time"
+          },
+          "sortValues": {
+            "type": "array",
+            "description": "Brukes i neste EndringsloggRequest for å hente flere Rettsstiftelser, utover sidestørrelsen.",
+            "nullable": true,
+            "example": [
+              2837642376,
+              "sdlkjhfsdk"
+            ],
+            "items": {
+              "type": "object"
+            }
+          },
+          "antallRettsstiftelser": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rettsstiftelser": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Rettsstiftelse"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "Authorization": {
+        "type": "http",
+        "description": "Bearer token",
+        "in": "header",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}
