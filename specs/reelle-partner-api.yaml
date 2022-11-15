@@ -1,11 +1,24 @@
 openapi: "3.0.3"
+servers:
+  - url: https://rrh.brreg.no
+    description: Produksjon
+  - url: https://rrh.ppe.brreg.no
+    description: Testmiljø
 info:
-  title: OpenAPI spesifikasjon for tilgjengeliggjøring av reelle rettighetshavere
-  description: OpenAPI spesifikasjon for tilgjengeliggjøring av reelle rettighetshavere. APIet krever maskinporten-token. Gyldige scopes er brreg:reelle/partner.offentlig for offentlig myndighet, og brreg:reelle/partner.rapporteringspliktig for viksomheter som er rapporteringspliktig etter hvitevaskingsloven.
-  version: "0.3"
+  title: Partner API for Register over reelle rettighetshavere - API dokumentasjon
+  description: Teknisk beskrivelse av REST-tjenestene i Partner API for Register over reelle rettighetshavere APIet krever maskinporten-token. Gyldige scopes er brreg:reelle/partner.offentlig for offentlig myndighet, og brreg:reelle/partner.rapporteringspliktig for viksomheter som er rapporteringspliktig etter hvitevaskingsloven.
+  version: "0.4"
+  contact:
+    email: opendata.rrh@brreg.no
+  license:
+    name: Norsk lisens for offentlige data (NLOD)
+    url: https://data.norge.no/nlod/no/
+externalDocs:
+  description: Github-dokumentasjon med detaljert beskrivelse av APIet
+  url: https://brreg.github.io/docs/apidokumentasjon/reelle-rettighetshavere/partner-api/
 
 paths:
-  /rrh/api/reelle-rettighetshavere/{organisasjonsnummer}:
+  /api/partner/reelle-rettigheter/{organisasjonsnummer}:
     summary: Hent ut reell rettighet basert på organisasjonsnummer for registreringspliktig virksomhet
     description: Hent ut reell rettighet basert på organisasjonsnummer for registreringspliktig virksomhet.
 
@@ -22,6 +35,13 @@ paths:
           required: true
           schema:
             $ref: '#/components/schemas/Organisasjonsnummer'
+        - in: header
+          name: Authorization
+          schema:
+            type: string
+            example: 'Bearer xxxxx'
+          required: true
+
       responses:
         '200':
           $ref: '#/components/responses/200'
@@ -46,24 +66,27 @@ components:
           example: 'd3877b48-a4fb-4949-86e1-be4645771147'
         registreringStatus:
           $ref: '#/components/schemas/RegistreringStatus'
-        gjelderFraDato:
+        registrertDato:
           $ref: '#/components/schemas/DatoKlokkeslett'
         reelleRettighetshavereStatus:
           $ref: '#/components/schemas/ReelleRettighetshavereStatus'
+        registreringspliktigVirksomhet:
+          $ref: '#/components/schemas/Virksomhet'
         reelleRettighetshavere:
-          $ref: '#/components/schemas/ReelleRettighetshavere'
+          type: array
+          items:
+            $ref: '#/components/schemas/ReellRettighetshaver'
     RegistreringStatus:
       type: object
       properties:
         kode:
           type: string
           example: registreringstatus.regi
-        beskrivelse:
+        kodetekst:
           type: string
           example: Registrert
     DatoKlokkeslett:
       type: string
-      #pattern: \d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[1-2]\d|3[0-1])T(?:[0-1]\d|2[0-3]):[0-5]\d:[0-5]\d(?:\.\d+|)(?:Z|(?:\+|\-)(?:\d{2}):?(?:\d{2}))
       example: '2022-02-14T09:13:45.12Z'
     ReelleRettighetshavereStatus:
       type: object
@@ -71,40 +94,26 @@ components:
         kode:
           type: string
           example: reellerettighetshaverestatus.nrki
-        beskrivelse:
+        kodetekst:
           type: string
           example: Noen reelle rettighetshavere kan ikke identifiseres
     Organisasjonsnummer:
       type: string
       example: 974760673
-    ReelleRettighetshavere:
-      type: array
-      items:
-        $ref: '#/components/schemas/ReellRettighetshaver'
+    Virksomhet:
+      type: object
+      properties:
+        organisasjonsnummer:
+          $ref: '#/components/schemas/Organisasjonsnummer'
     ReellRettighetshaver:
       type: object
       properties:
-        foedselsdato:
-          type: string
-          example: '1999-08-02'
-        foedselsaar:
-          type: string
-          example: '1999'
-        navn:
-          $ref: '#/components/schemas/Navn'
-        foerstRegistrertDato:
-          $ref: '#/components/schemas/DatoKlokkeslett'
-        endretDato:
-          $ref: '#/components/schemas/DatoKlokkeslett'
-        statsborgerskap:
-          type: array
-          items:
-            $ref: '#/components/schemas/LandOgKode'
+        folkeregistrertPerson:
+          $ref: '#/components/schemas/Person'
+        utenlandskPerson:
+          $ref: '#/components/schemas/UtenlandskPerson'
         bostedsland:
-          $ref: '#/components/schemas/LandOgKode'
-        erDoed:
-          type: boolean
-          example: false
+          $ref: '#/components/schemas/Landkode'
         erUnntattFraInnsyn:
           type: boolean
           example: false
@@ -112,74 +121,107 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Posisjon'
-    LandOgKode:
+        foerstRegistrertDato:
+          $ref: '#/components/schemas/DatoKlokkeslett'
+        endretDato:
+          $ref: '#/components/schemas/DatoKlokkeslett'
+    UtenlandskPerson:
+      type: object
+      properties:
+        foedselsdato:
+          type: string
+          example: '1999-03-12'
+        foedselsaar:
+          type: string
+          example: '1999'
+        fulltNavn:
+          type: string
+          example: 'PUSSIG LAV DAL JORDBÆR'
+        statsborgerskap:
+          type: array
+          items:
+            $ref: '#/components/schemas/Landkode'
+    Person:
+      type: object
+      properties:
+        foedselsEllerDNummer:
+          type: string
+          example: '12345678901'
+        foedselsdato:
+          type: string
+          example: '1985-12-25'
+        foedselsaar:
+          type: string
+          example: '1985'
+        navn:
+          $ref: '#/components/schemas/Personnavn'
+        erDoed:
+          type: boolean
+          example: false
+        statsborgerskap:
+          type: array
+          items:
+            $ref: '#/components/schemas/Landkode'
+    Landkode:
       type: object
       properties:
         landkode:
           type: string
-          example: NO
+          example: 'NOR'
         land:
           type: string
-          example: Norge
-    Navn:
+          example: 'Norge'
+    Personnavn:
       type: object
       properties:
         fornavn:
           type: string
-          example: PUSSIG LAV
+          example: 'PUSSIG LAV'
         mellomnavn:
           type: string
-          example: DAL
+          example: 'DAL'
         etternavn:
           type: string
-          example: JORDBÆR
-        fulltNavn:
-          type: string
-          example: PUSSIG LAV DAL JORDBÆR
+          example: 'JORDBÆR'
     Posisjon:
       type: object
       properties:
-        posisjonType:
+        type:
           $ref: '#/components/schemas/PosisjonType'
         stoerrelseIntervall:
           $ref: '#/components/schemas/StoerrelseIntervall'
         grunnlag:
           type: array
           items:
-            $ref: '#/components/schemas/Grunnlag'
+            $ref: '#/components/schemas/GrunnlagType'
         beskrivelseAnnenMaate:
           type: string
           example: Fritekst som beskriver hvordan rettighetshaveren har kontroll i virksomheten
-    StoerrelseIntervall:
-      type: object
-      properties:
-        kode:
-          type: string
-          example: stoerrelseintervall.int1
-        beskrivelse:
-          type: string
-          example: 25,01% - 49,99%
     PosisjonType:
       type: object
       properties:
         kode:
           type: string
           example: posisjontype.eier
-        beskrivelse:
+        kodetekst:
           type: string
           example: Eierskap
-    Grunnlag:
+    StoerrelseIntervall:
       type: object
       properties:
-        grunnlagType:
-          $ref: '#/components/schemas/GrunnlagType'
+        kode:
+          type: string
+          example: stoerrelseintervall.int1
+        kodetekst:
+          type: string
+          example: 25,01% - 49,99%
     GrunnlagType:
       type: object
       properties:
         kode:
           type: string
           example: grunnlagtype.dire
-        beskrivelse:
+        kodetekst:
           type: string
           example: Direkte
     ServerErrorResponse:
@@ -198,7 +240,7 @@ components:
           example: Houston we have a problem!
         path:
           type: string
-          example: /rrh/api/reellerettigheter/974760673
+          example: /api/partner/reelle-rettigheter/974760673
         trace:
           type: string
           example: 5631709a-6e3e-4b72-94e7-fcbf6341272a
@@ -230,7 +272,7 @@ components:
             $ref: '#/components/schemas/ServerErrorResponse'
           examples:
             TokenVerificationFailedResponse:
-              $ref: '#components/examples/TokenVerificationFailedResponse'
+              $ref: '#/components/examples/TokenVerificationFailedResponse'
 
     404:
       description: Virksomheten er ikke registreringspliktig i register over reelle rettighetshavere
@@ -259,7 +301,7 @@ components:
         status: 400
         error: Bad Request
         message: Organisasjonsnummer må være et nummer med nøyaktig ni siffer
-        path: /rrh/api/reellerettigheter/974760
+        path: /api/partner/reelle-rettigheter/974760
         timestamp: '2022-02-14T09:13:45.12Z'
     TokenVerificationFailedResponse:
       summary: 403 Ugyldig token
@@ -268,7 +310,7 @@ components:
         status: 403
         error: Forbidden
         message: Du har ikke tilgang til dette APIet
-        path: /rrh/api/reellerettigheter/974760673
+        path: /api/partner/reelle-rettigheter/974760673
         timestamp: '2022-02-14T09:13:45.12Z'
     NotFoundResponse:
       summary: 404 Ikke funnet
@@ -277,7 +319,7 @@ components:
         status: 404
         error: Not Found
         message: Virksomheten er ikke registreringspliktig i register over reelle rettighetshavere
-        path: /rrh/api/reellerettigheter/974760673
+        path: /api/partner/reelle-rettigheter/974760673
         timestamp: '2022-02-14T09:13:45.12Z'
     InternalServerErrorResponse:
       summary: 500 Intern feil
@@ -286,5 +328,5 @@ components:
         status: 500
         error: Internal Server Error
         message: Uventet feil på tjenesten. Vennligst prøv igjen senere, eller kontakt oss om problemet vedvarer
-        path: /rrh/api/reellerettigheter/974760673
+        path: /api/partner/reelle-rettigheter/974760673
         timestamp: '2022-02-14T09:13:45.12Z'
