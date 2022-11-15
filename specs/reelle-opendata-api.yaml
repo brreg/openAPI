@@ -1,8 +1,22 @@
 openapi: "3.0.3"
+servers:
+  - url: https://rrh.brreg.no
+    description: Produksjon
+  - url: https://rrh.ppe.brreg.no
+    description: Testmiljø
+
 info:
-  title: OpenAPI spesifikasjon for tilgjengeliggjøring av reelle rettighetshavere
-  description: OpenAPI spesifikasjon for tilgjengeliggjøring av reelle rettighetshavere
+  title: Åpent API for Register over reelle rettighetshavere - API dokumentasjon
+  description: Teknisk beskrivelse av REST-tjenestene i Åpent API for Register over reelle rettighetshavere
   version: "0.4"
+  contact:
+    email: opendata.rrh@brreg.no
+  license:
+    name: Norsk lisens for offentlige data (NLOD)
+    url: https://data.norge.no/nlod/no/
+externalDocs:
+  description: Github-dokumentasjon med detaljert beskrivelse av APIet
+  url: https://brreg.github.io/docs/apidokumentasjon/reelle-rettighetshavere/aapent-api/
 
 paths:
   /api/aapen/reelle-rettigheter/{organisasjonsnummer}:
@@ -46,7 +60,7 @@ components:
         reelleRettighetshavereStatus:
           $ref: '#/components/schemas/ReelleRettighetshavereStatus'
         registreringspliktigVirksomhet:
-          $ref: '#/components/schemas/Organisasjonsnummer'
+          $ref: '#/components/schemas/Virksomhet'
         reelleRettighetshavere:
           type: array
           items:
@@ -75,6 +89,11 @@ components:
     Organisasjonsnummer:
       type: string
       example: 974760673
+    Virksomhet:
+      type: object
+      properties:
+        organisasjonsnummer:
+          $ref: '#/components/schemas/Organisasjonsnummer'
     ReellRettighetshaver:
       type: object
       properties:
