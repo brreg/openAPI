@@ -252,7 +252,7 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/ReellRettighet'
-        application/hal+json:
+        application/vnd.brreg.reell.rettighet.v1+json;charset=UTF-8:
           schema:
             $ref: '#/components/schemas/ReellRettighet'
     400:
