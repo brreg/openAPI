@@ -1,11 +1,356 @@
 [
   {
-    "registreringId": "9fdead70-660b-4842-a6e9-45ccc59b1c5e",
+    "registreringId": "ca7613fb-6a0d-4761-a64a-9f2514eae683",
     "registreringStatus": {
       "kode": "registreringstatus.regi",
       "kodetekst": "Reelle rettighetshavere er registrert"
     },
-    "registrertDato": "2022-12-15T16:49:01.303083Z",
+    "registrertDato": "2022-03-28T11:18:41.867822Z",
+    "reelleRettighetshavereStatus": {
+      "kode": "reellerettighetshaverestatus.arid",
+      "kodetekst": "Virksomheten har meldt at de har reelle rettighetshavere, og at alle reelle rettighetshavere er identifisert"
+    },
+    "registreringspliktigVirksomhet": {
+      "organisasjonsnummer": "999999998"
+    },
+    "reelleRettighetshavere": [
+      {
+        "folkeregistrertPerson": {
+          "foedselsEllerDNummer": "58877102163",
+          "foedselsdato": "1971-07-18",
+          "foedselsaar": "1971",
+          "navn": {
+            "fornavn": "MINIMALISTISK",
+            "etternavn": "HANDLELISTE"
+          },
+          "erDoed": false,
+          "statsborgerskap": [
+            {
+              "landkode": "MSR",
+              "land": "Montserrat"
+            }
+          ]
+        },
+        "bostedsland": {
+          "landkode": "USA",
+          "land": "USA"
+        },
+        "erUnntattFraInnsyn": true,
+        "posisjoner": [
+          {
+            "type": {
+              "kode": "posisjontype.eier",
+              "kodetekst": "Eierskap"
+            },
+            "stoerrelseIntervall": {
+              "kode": "stoerrelseintervall.int2",
+              "kodetekst": "50% - 74,99%"
+            },
+            "grunnlag": [
+              {
+                "kode": "grunnlagtype.dire",
+                "kodetekst": "Direkte"
+              }
+            ],
+            "mellomliggendeVirksomheter": []
+          },
+          {
+            "type": {
+              "kode": "posisjontype.kont",
+              "kodetekst": "Kontroll over stemmerettigheter"
+            },
+            "stoerrelseIntervall": {
+              "kode": "stoerrelseintervall.int1",
+              "kodetekst": "25,01% - 49,99%"
+            },
+            "grunnlag": [
+              {
+                "kode": "grunnlagtype.dire",
+                "kodetekst": "Direkte"
+              },
+              {
+                "kode": "grunnlagtype.enav",
+                "kodetekst": "Enighet eller avtale"
+              }
+            ],
+            "mellomliggendeVirksomheter": []
+          },
+          {
+            "type": {
+              "kode": "posisjontype.ruas",
+              "kodetekst": "Rett til å utpeke eller avsette minst halvparten av styremedlemmene"
+            },
+            "grunnlag": [
+              {
+                "kode": "grunnlagtype.enav",
+                "kodetekst": "Enighet eller avtale"
+              }
+            ],
+            "mellomliggendeVirksomheter": []
+          },
+          {
+            "type": {
+              "kode": "posisjontype.anne",
+              "kodetekst": "Kontroll på annen måte"
+            },
+            "grunnlag": [],
+            "beskrivelseAnnenMaate": "Vedkommende utøver kontroll over virksomheten pga bla bla",
+            "mellomliggendeVirksomheter": []
+          }
+        ],
+        "foerstRegistrertDato": "2022-03-28T11:18:41.814559Z",
+        "endretDato": "2022-03-28T11:18:41.814559Z"
+      },
+      {
+        "folkeregistrertPerson": {
+          "foedselsEllerDNummer": "16846895403",
+          "foedselsdato": "2005-03-09",
+          "foedselsaar": "1968",
+          "navn": {
+            "fornavn": "TØFF",
+            "etternavn": "SYSTEM"
+          },
+          "erDoed": false,
+          "statsborgerskap": [
+            {
+              "landkode": "NOR",
+              "land": "Norge"
+            }
+          ]
+        },
+        "bostedsland": {
+          "landkode": "SWE",
+          "land": "Sverige"
+        },
+        "erUnntattFraInnsyn": false,
+        "posisjoner": [
+          {
+            "type": {
+              "kode": "grunnlagtype.anne"
+            },
+            "grunnlag": [],
+            "beskrivelseAnnenMaate": "Vedkommende utøver kontroll over virksomheten pga bla bla",
+            "mellomliggendeVirksomheter": []
+          },
+          {
+            "type": {
+              "kode": "posisjontype.kont",
+              "kodetekst": "Kontroll over stemmerettigheter"
+            },
+            "stoerrelseIntervall": {
+              "kode": "stoerrelseintervall.int1",
+              "kodetekst": "25,01% - 49,99%"
+            },
+            "grunnlag": [
+              {
+                "kode": "grunnlagtype.indi",
+                "kodetekst": "Indirekte"
+              }
+            ],
+            "mellomliggendeVirksomheter": []
+          },
+          {
+            "type": {
+              "kode": "posisjontype.ruas",
+              "kodetekst": "Rett til å utpeke eller avsette minst halvparten av styremedlemmene"
+            },
+            "grunnlag": [
+              {
+                "kode": "grunnlagtype.enav",
+                "kodetekst": "Enighet eller avtale"
+              }
+            ],
+            "mellomliggendeVirksomheter": []
+          }
+        ],
+        "foerstRegistrertDato": "2022-03-29T11:18:41.814559Z",
+        "endretDato": "2022-03-29T11:18:41.814559Z"
+      },
+      {
+        "utenlandskPerson": {
+          "foedselsdato": "2006-03-09",
+          "foedselsaar": "2006",
+          "fulltNavn": "Gill Bates",
+          "statsborgerskap": [
+            {
+              "landkode": "DNK",
+              "land": "Danmark"
+            },
+            {
+              "landkode": "NOR",
+              "land": "Norge"
+            },
+            {
+              "landkode": "SWE",
+              "land": "Sverige"
+            }
+          ]
+        },
+        "bostedsland": {
+          "landkode": "USA",
+          "land": "USA"
+        },
+        "erUnntattFraInnsyn": true,
+        "posisjoner": [
+          {
+            "type": {
+              "kode": "posisjontype.eier",
+              "kodetekst": "Eierskap"
+            },
+            "stoerrelseIntervall": {
+              "kode": "stoerrelseintervall.int2",
+              "kodetekst": "50% - 74,99%"
+            },
+            "grunnlag": [
+              {
+                "kode": "grunnlagtype.dire",
+                "kodetekst": "Direkte"
+              }
+            ],
+            "mellomliggendeVirksomheter": []
+          },
+          {
+            "type": {
+              "kode": "posisjontype.kont",
+              "kodetekst": "Kontroll over stemmerettigheter"
+            },
+            "stoerrelseIntervall": {
+              "kode": "stoerrelseintervall.int1",
+              "kodetekst": "25,01% - 49,99%"
+            },
+            "grunnlag": [
+              {
+                "kode": "grunnlagtype.dire",
+                "kodetekst": "Direkte"
+              },
+              {
+                "kode": "grunnlagtype.enav",
+                "kodetekst": "Enighet eller avtale"
+              }
+            ],
+            "mellomliggendeVirksomheter": []
+          },
+          {
+            "type": {
+              "kode": "posisjontype.ruas",
+              "kodetekst": "Rett til å utpeke eller avsette minst halvparten av styremedlemmene"
+            },
+            "grunnlag": [
+              {
+                "kode": "grunnlagtype.enav",
+                "kodetekst": "Enighet eller avtale"
+              }
+            ],
+            "mellomliggendeVirksomheter": []
+          },
+          {
+            "type": {
+              "kode": "posisjontype.anne",
+              "kodetekst": "Kontroll på annen måte"
+            },
+            "grunnlag": [],
+            "beskrivelseAnnenMaate": "Vedkommende utøver kontroll over virksomheten pga bla bla",
+            "mellomliggendeVirksomheter": []
+          }
+        ],
+        "foerstRegistrertDato": "2022-03-28T11:18:41.814559Z",
+        "endretDato": "2022-03-28T11:18:41.814559Z"
+      },
+      {
+        "utenlandskPerson": {
+          "foedselsdato": "1923-03-24",
+          "foedselsaar": "1923",
+          "fulltNavn": "Abra Kadabra",
+          "statsborgerskap": [
+            {
+              "landkode": "SWE",
+              "land": "Sverige"
+            },
+            {
+              "landkode": "USA",
+              "land": "USA"
+            }
+          ]
+        },
+        "bostedsland": {
+          "landkode": "NOR",
+          "land": "Norge"
+        },
+        "erUnntattFraInnsyn": true,
+        "posisjoner": [
+          {
+            "type": {
+              "kode": "posisjontype.eier",
+              "kodetekst": "Eierskap"
+            },
+            "stoerrelseIntervall": {
+              "kode": "stoerrelseintervall.int2",
+              "kodetekst": "50% - 74,99%"
+            },
+            "grunnlag": [
+              {
+                "kode": "grunnlagtype.dire",
+                "kodetekst": "Direkte"
+              }
+            ],
+            "mellomliggendeVirksomheter": []
+          },
+          {
+            "type": {
+              "kode": "posisjontype.kont",
+              "kodetekst": "Kontroll over stemmerettigheter"
+            },
+            "stoerrelseIntervall": {
+              "kode": "stoerrelseintervall.int1",
+              "kodetekst": "25,01% - 49,99%"
+            },
+            "grunnlag": [
+              {
+                "kode": "grunnlagtype.dire",
+                "kodetekst": "Direkte"
+              },
+              {
+                "kode": "grunnlagtype.enav",
+                "kodetekst": "Enighet eller avtale"
+              }
+            ],
+            "mellomliggendeVirksomheter": []
+          },
+          {
+            "type": {
+              "kode": "posisjontype.ruas",
+              "kodetekst": "Rett til å utpeke eller avsette minst halvparten av styremedlemmene"
+            },
+            "grunnlag": [
+              {
+                "kode": "grunnlagtype.enav",
+                "kodetekst": "Enighet eller avtale"
+              }
+            ],
+            "mellomliggendeVirksomheter": []
+          },
+          {
+            "type": {
+              "kode": "posisjontype.anne",
+              "kodetekst": "Kontroll på annen måte"
+            },
+            "grunnlag": [],
+            "beskrivelseAnnenMaate": "Vedkommende utøver kontroll over virksomheten pga bla bla",
+            "mellomliggendeVirksomheter": []
+          }
+        ],
+        "foerstRegistrertDato": "2022-03-28T11:18:41.814559Z",
+        "endretDato": "2022-03-28T11:18:41.814559Z"
+      }
+    ]
+  },
+  {
+    "registreringId": "02609c26-8006-4c24-b70a-ec31985846e9",
+    "registreringStatus": {
+      "kode": "registreringstatus.regi",
+      "kodetekst": "Reelle rettighetshavere er registrert"
+    },
+    "registrertDato": "2023-03-03T20:10:13.260783Z",
     "reelleRettighetshavereStatus": {
       "kode": "reellerettighetshaverestatus.arid",
       "kodetekst": "Virksomheten har meldt at de har reelle rettighetshavere, og at alle reelle rettighetshavere er identifisert"
@@ -21,7 +366,6 @@
           "foedselsaar": "2002",
           "navn": {
             "fornavn": "STOLT EFFEKTIV",
-            "mellomnavn": null,
             "etternavn": "PARASOLL"
           },
           "erDoed": false,
@@ -36,7 +380,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -62,7 +405,7 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           },
           {
             "type": {
@@ -79,11 +422,11 @@
                 "kodetekst": "Enighet eller avtale"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
-        "foerstRegistrertDato": "2022-12-15T16:48:58.640894Z",
-        "endretDato": "2022-12-15T16:48:58.640894Z"
+        "foerstRegistrertDato": "2023-03-03T20:10:12.957745Z",
+        "endretDato": "2023-03-03T20:10:12.957745Z"
       },
       {
         "folkeregistrertPerson": {
@@ -92,7 +435,6 @@
           "foedselsaar": "1971",
           "navn": {
             "fornavn": "MINIMALISTISK",
-            "mellomnavn": null,
             "etternavn": "HANDLELISTE"
           },
           "erDoed": false,
@@ -103,7 +445,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -115,21 +456,19 @@
               "kode": "posisjontype.ruas",
               "kodetekst": "Rett til å utpeke eller avsette minst halvparten av styremedlemmene"
             },
-            "stoerrelseIntervall": null,
             "grunnlag": [
               {
                 "kode": "grunnlagtype.enav",
                 "kodetekst": "Enighet eller avtale"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
-        "foerstRegistrertDato": "2022-12-15T16:48:58.640894Z",
-        "endretDato": "2022-12-15T16:48:58.640894Z"
+        "foerstRegistrertDato": "2023-03-03T20:10:12.957745Z",
+        "endretDato": "2023-03-03T20:10:12.957745Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1983-12-01",
           "foedselsaar": "1983",
@@ -162,14 +501,13 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
-        "foerstRegistrertDato": "2022-12-15T16:48:58.640894Z",
-        "endretDato": "2022-12-15T16:48:58.640894Z"
+        "foerstRegistrertDato": "2023-03-03T20:10:12.957745Z",
+        "endretDato": "2023-03-03T20:10:12.957745Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1983-03-24",
           "foedselsaar": "1983",
@@ -200,23 +538,23 @@
               "kode": "posisjontype.anne",
               "kodetekst": "Kontroll på annen måte"
             },
-            "stoerrelseIntervall": null,
             "grunnlag": [],
-            "beskrivelseAnnenMaate": "Forklaring på hvilken innflytelse rettighetshaveren har"
+            "beskrivelseAnnenMaate": "Forklaring på hvilken innflytelse rettighetshaveren har",
+            "mellomliggendeVirksomheter": []
           }
         ],
-        "foerstRegistrertDato": "2022-12-15T16:48:58.640894Z",
-        "endretDato": "2022-12-15T16:48:58.640894Z"
+        "foerstRegistrertDato": "2023-03-03T20:10:12.957745Z",
+        "endretDato": "2023-03-03T20:10:12.957745Z"
       }
     ]
   },
   {
-    "registreringId": "6301a157-e241-4315-8010-1ccf67e70694",
+    "registreringId": "dfcd84da-e2d5-40d0-8cda-3f3352fe9baa",
     "registreringStatus": {
       "kode": "registreringstatus.regi",
       "kodetekst": "Reelle rettighetshavere er registrert"
     },
-    "registrertDato": "2022-02-07T06:07:50.072Z",
+    "registrertDato": "2023-02-20T09:05:41.867822Z",
     "reelleRettighetshavereStatus": {
       "kode": "reellerettighetshaverestatus.arid",
       "kodetekst": "Virksomheten har meldt at de har reelle rettighetshavere, og at alle reelle rettighetshavere er identifisert"
@@ -226,71 +564,25 @@
     },
     "reelleRettighetshavere": [
       {
-        "folkeregistrertPerson": {
-          "foedselsEllerDNummer": "26920296504",
-          "foedselsdato": "2002-12-26",
-          "foedselsaar": "2002",
-          "navn": {
-            "fornavn": "KORT FORNØYD",
-            "mellomnavn": "DEIG",
-            "etternavn": "SKYVEDØR"
-          },
-          "erDoed": false,
+        "utenlandskPerson": {
+          "foedselsdato": "1983-03-24",
+          "foedselsaar": "1983",
+          "fulltNavn": "Gill Bates",
           "statsborgerskap": [
             {
               "landkode": "NOR",
               "land": "Norge"
             },
             {
-              "landkode": "URY",
-              "land": "Uruguay"
-            }
-          ]
-        },
-        "utenlandskPerson": null,
-        "bostedsland": {
-          "landkode": "NOR",
-          "land": "Norge"
-        },
-        "erUnntattFraInnsyn": false,
-        "posisjoner": [
-          {
-            "type": {
-              "kode": "posisjontype.ruas",
-              "kodetekst": "Rett til å utpeke eller avsette minst halvparten av styremedlemmene"
+              "landkode": "DNK",
+              "land": "Danmark"
             },
-            "stoerrelseIntervall": null,
-            "grunnlag": [
-              {
-                "kode": "grunnlagtype.enav",
-                "kodetekst": "Enighet eller avtale"
-              }
-            ],
-            "beskrivelseAnnenMaate": null
-          }
-        ],
-        "foerstRegistrertDato": "2022-11-16T07:39:30.160661Z",
-        "endretDato": "2022-11-16T07:39:30.160661Z"
-      },
-      {
-        "folkeregistrertPerson": {
-          "foedselsEllerDNummer": "16846895403",
-          "foedselsdato": "1968-04-16",
-          "foedselsaar": "1968",
-          "navn": {
-            "fornavn": "TØFF",
-            "mellomnavn": null,
-            "etternavn": "SYSTEM"
-          },
-          "erDoed": false,
-          "statsborgerskap": [
             {
-              "landkode": "NOR",
-              "land": "Norge"
+              "landkode": "SWE",
+              "land": "Sverige"
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "SWE",
           "land": "Sverige"
@@ -303,8 +595,8 @@
               "kodetekst": "Eierskap"
             },
             "stoerrelseIntervall": {
-              "kode": "stoerrelseintervall.int1",
-              "kodetekst": "25,01% - 49,99%"
+              "kode": "stoerrelseintervall.int2",
+              "kodetekst": "50% - 74,99%"
             },
             "grunnlag": [
               {
@@ -312,21 +604,158 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": [
+              {
+                "virksomhet": {
+                  "organisasjonsnummer": "987654321"
+                }
+              },
+              {
+                "virksomhet": {
+                  "organisasjonsnummer": "997654321"
+                }
+              }
+            ]
+          },
+          {
+            "type": {
+              "kode": "posisjontype.kont",
+              "kodetekst": "Kontroll over stemmerettigheter"
+            },
+            "stoerrelseIntervall": {
+              "kode": "stoerrelseIntervall.int3"
+            },
+            "grunnlag": [
+              {
+                "kode": "grunnlagtype.indi",
+                "kodetekst": "Indirekte"
+              }
+            ],
+            "mellomliggendeVirksomheter": [
+              {
+                "virksomhet": {
+                  "organisasjonsnummer": "999654999"
+                }
+              },
+              {
+                "virksomhet": {
+                  "organisasjonsnummer": "999654888"
+                }
+              }
+            ]
+          },
+          {
+            "type": {
+              "kode": "posisjontype.ruas",
+              "kodetekst": "Rett til å utpeke eller avsette minst halvparten av styremedlemmene"
+            },
+            "grunnlag": [
+              {
+                "kode": "grunnlagtype.enav",
+                "kodetekst": "Enighet eller avtale"
+              }
+            ],
+            "mellomliggendeVirksomheter": []
+          },
+          {
+            "type": {
+              "kode": "posisjontype.anne",
+              "kodetekst": "Kontroll på annen måte"
+            },
+            "grunnlag": [],
+            "beskrivelseAnnenMaate": "Beskrivelse på annen måte",
+            "mellomliggendeVirksomheter": []
           }
         ],
-        "foerstRegistrertDato": "2022-11-16T07:39:30.160661Z",
-        "endretDato": "2022-11-16T07:39:30.160661Z"
+        "foerstRegistrertDato": "2022-03-28T11:18:41.814559Z",
+        "endretDato": "2022-03-28T11:18:41.814559Z"
+      },
+      {
+        "folkeregistrertPerson": {
+          "foedselsEllerDNummer": "02889995885",
+          "foedselsdato": "1999-08-02",
+          "foedselsaar": "1999",
+          "navn": {
+            "fornavn": "PUSSIG LAV",
+            "mellomnavn": "DAL",
+            "etternavn": "JORDBÆR"
+          },
+          "erDoed": false,
+          "statsborgerskap": [
+            {
+              "landkode": "NOR",
+              "land": "Norge"
+            },
+            {
+              "landkode": "JER",
+              "land": "UKJENT"
+            }
+          ]
+        },
+        "bostedsland": {
+          "landkode": "NOR",
+          "land": "Norge"
+        },
+        "erUnntattFraInnsyn": false,
+        "posisjoner": [
+          {
+            "type": {
+              "kode": "posisjontype.eier",
+              "kodetekst": "Eierskap"
+            },
+            "stoerrelseIntervall": {
+              "kode": "stoerrelseIntervall.int3"
+            },
+            "grunnlag": [
+              {
+                "kode": "grunnlagtype.dire",
+                "kodetekst": "Direkte"
+              }
+            ],
+            "mellomliggendeVirksomheter": []
+          },
+          {
+            "type": {
+              "kode": "posisjontype.kont",
+              "kodetekst": "Kontroll over stemmerettigheter"
+            },
+            "stoerrelseIntervall": {
+              "kode": "stoerrelseIntervall.int1"
+            },
+            "grunnlag": [
+              {
+                "kode": "grunnlagtype.dire",
+                "kodetekst": "Direkte"
+              }
+            ],
+            "mellomliggendeVirksomheter": []
+          },
+          {
+            "type": {
+              "kode": "posisjontype.ruas",
+              "kodetekst": "Rett til å utpeke eller avsette minst halvparten av styremedlemmene"
+            },
+            "grunnlag": [
+              {
+                "kode": "grunnlagtype.enav",
+                "kodetekst": "Enighet eller avtale"
+              }
+            ],
+            "mellomliggendeVirksomheter": []
+          }
+        ],
+        "foerstRegistrertDato": "2022-03-28T11:18:41.814559Z",
+        "endretDato": "2022-03-28T11:18:41.814559Z"
       }
     ]
   },
   {
-    "registreringId": "a2c525aa-31af-402b-a88c-a0ac300fef29",
+    "registreringId": "73037b53-aebc-4ffc-b026-d3a72a88656e",
     "registreringStatus": {
       "kode": "registreringstatus.regi",
       "kodetekst": "Reelle rettighetshavere er registrert"
     },
-    "registrertDato": "2022-12-15T16:49:20.457152Z",
+    "registrertDato": "2023-04-25T14:23:18.449577Z",
     "reelleRettighetshavereStatus": {
       "kode": "reellerettighetshaverestatus.irki",
       "kodetekst": "Virksomheten har meldt at de har reelle rettighetshavere, men at ingen av disse kan identifiseres"
@@ -358,7 +787,6 @@
           "foedselsaar": "1999",
           "navn": {
             "fornavn": "FORNUFTIG VERDIFULL",
-            "mellomnavn": null,
             "etternavn": "BLEKK"
           },
           "erDoed": false,
@@ -373,7 +801,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -395,7 +822,7 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           },
           {
             "type": {
@@ -412,14 +839,13 @@
                 "kodetekst": "Enighet eller avtale"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-16T07:09:38.732177Z",
         "endretDato": "2022-11-16T07:09:38.732177Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1983-03-24",
           "foedselsaar": "1983",
@@ -460,7 +886,7 @@
                 "kodetekst": "Direkte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           },
           {
             "type": {
@@ -477,7 +903,7 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-16T07:09:38.732177Z",
@@ -507,7 +933,6 @@
           "foedselsaar": "2002",
           "navn": {
             "fornavn": "STOLT EFFEKTIV",
-            "mellomnavn": null,
             "etternavn": "PARASOLL"
           },
           "erDoed": false,
@@ -522,7 +947,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -548,7 +972,7 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:28:09.069232Z",
@@ -561,7 +985,6 @@
           "foedselsaar": "1971",
           "navn": {
             "fornavn": "MINIMALISTISK",
-            "mellomnavn": null,
             "etternavn": "HANDLELISTE"
           },
           "erDoed": false,
@@ -572,7 +995,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -598,14 +1020,13 @@
                 "kodetekst": "Enighet eller avtale"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:28:09.069232Z",
         "endretDato": "2022-11-29T11:28:23.479707Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1989-12-24",
           "foedselsaar": "1989",
@@ -638,14 +1059,13 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:28:23.479707Z",
         "endretDato": "2022-11-29T11:28:23.479707Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1983-03-24",
           "foedselsaar": "1983",
@@ -676,9 +1096,9 @@
               "kode": "posisjontype.anne",
               "kodetekst": "Kontroll på annen måte"
             },
-            "stoerrelseIntervall": null,
             "grunnlag": [],
-            "beskrivelseAnnenMaate": "Forklaring på hvilken innflytelse rettighetshaveren har"
+            "beskrivelseAnnenMaate": "Forklaring på hvilken innflytelse rettighetshaveren har",
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:28:23.479707Z",
@@ -708,7 +1128,6 @@
           "foedselsaar": "2002",
           "navn": {
             "fornavn": "STOLT EFFEKTIV",
-            "mellomnavn": null,
             "etternavn": "PARASOLL"
           },
           "erDoed": false,
@@ -723,7 +1142,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -749,7 +1167,7 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:28:06.278397Z",
@@ -762,7 +1180,6 @@
           "foedselsaar": "1971",
           "navn": {
             "fornavn": "MINIMALISTISK",
-            "mellomnavn": null,
             "etternavn": "HANDLELISTE"
           },
           "erDoed": false,
@@ -773,7 +1190,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -799,14 +1215,13 @@
                 "kodetekst": "Enighet eller avtale"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:28:06.278397Z",
         "endretDato": "2022-11-29T11:28:20.18195Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1989-12-24",
           "foedselsaar": "1989",
@@ -839,14 +1254,13 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:28:20.18195Z",
         "endretDato": "2022-11-29T11:28:20.18195Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1983-03-24",
           "foedselsaar": "1983",
@@ -877,9 +1291,9 @@
               "kode": "posisjontype.anne",
               "kodetekst": "Kontroll på annen måte"
             },
-            "stoerrelseIntervall": null,
             "grunnlag": [],
-            "beskrivelseAnnenMaate": "Forklaring på hvilken innflytelse rettighetshaveren har"
+            "beskrivelseAnnenMaate": "Forklaring på hvilken innflytelse rettighetshaveren har",
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:28:20.18195Z",
@@ -888,183 +1302,28 @@
     ]
   },
   {
-    "registreringId": "86d6c11c-a8c1-46e6-b938-99b27d77a45f",
+    "registreringId": "4447f6c2-67eb-4c48-886b-97305fa7342b",
     "registreringStatus": {
       "kode": "registreringstatus.regi",
       "kodetekst": "Reelle rettighetshavere er registrert"
     },
-    "registrertDato": "2022-12-14T16:48:57.93765Z",
+    "registrertDato": "2023-04-24T14:22:29.301769Z",
     "reelleRettighetshavereStatus": {
-      "kode": "reellerettighetshaverestatus.arid",
-      "kodetekst": "Virksomheten har meldt at de har reelle rettighetshavere, og at alle reelle rettighetshavere er identifisert"
+      "kode": "reellerettighetshaverestatus.rkuv",
+      "kodetekst": "Virksomhet har meldt at de ikke har reelle rettighetshavere fordi en utenlandsk offentlig virksomhet eier eller kontrollerer over 75 % av virksomheten"
     },
     "registreringspliktigVirksomhet": {
       "organisasjonsnummer": "910443631"
     },
-    "reelleRettighetshavere": [
-      {
-        "folkeregistrertPerson": {
-          "foedselsEllerDNummer": "05910298382",
-          "foedselsdato": "2002-11-05",
-          "foedselsaar": "2002",
-          "navn": {
-            "fornavn": "STOLT EFFEKTIV",
-            "mellomnavn": null,
-            "etternavn": "PARASOLL"
-          },
-          "erDoed": false,
-          "statsborgerskap": [
-            {
-              "landkode": "NOR",
-              "land": "Norge"
-            },
-            {
-              "landkode": "MEX",
-              "land": "Mexico"
-            }
-          ]
-        },
-        "utenlandskPerson": null,
-        "bostedsland": {
-          "landkode": "NOR",
-          "land": "Norge"
-        },
-        "erUnntattFraInnsyn": false,
-        "posisjoner": [
-          {
-            "type": {
-              "kode": "posisjontype.eier",
-              "kodetekst": "Eierskap"
-            },
-            "stoerrelseIntervall": {
-              "kode": "stoerrelseintervall.int2",
-              "kodetekst": "50% - 74,99%"
-            },
-            "grunnlag": [
-              {
-                "kode": "grunnlagtype.dire",
-                "kodetekst": "Direkte"
-              }
-            ],
-            "beskrivelseAnnenMaate": null
-          }
-        ],
-        "foerstRegistrertDato": "2022-12-15T16:48:57.952Z",
-        "endretDato": "2022-12-15T16:48:57.952Z"
-      },
-      {
-        "folkeregistrertPerson": null,
-        "utenlandskPerson": {
-          "foedselsdato": "1983-03-24",
-          "foedselsaar": "1983",
-          "fulltNavn": "GILL BATES",
-          "statsborgerskap": [
-            {
-              "landkode": "DEU",
-              "land": "Tyskland"
-            },
-            {
-              "landkode": "SWE",
-              "land": "Sverige"
-            },
-            {
-              "landkode": "USA",
-              "land": "USA"
-            }
-          ]
-        },
-        "bostedsland": {
-          "landkode": "USA",
-          "land": "USA"
-        },
-        "erUnntattFraInnsyn": false,
-        "posisjoner": [
-          {
-            "type": {
-              "kode": "posisjontype.kont",
-              "kodetekst": "Kontroll over stemmerettigheter"
-            },
-            "stoerrelseIntervall": {
-              "kode": "stoerrelseintervall.int1",
-              "kodetekst": "25,01% - 49,99%"
-            },
-            "grunnlag": [
-              {
-                "kode": "grunnlagtype.indi",
-                "kodetekst": "Indirekte"
-              },
-              {
-                "kode": "grunnlagtype.enav",
-                "kodetekst": "Enighet eller avtale"
-              }
-            ],
-            "beskrivelseAnnenMaate": null
-          },
-          {
-            "type": {
-              "kode": "posisjontype.ruas",
-              "kodetekst": "Rett til å utpeke eller avsette minst halvparten av styremedlemmene"
-            },
-            "stoerrelseIntervall": null,
-            "grunnlag": [
-              {
-                "kode": "grunnlagtype.enav",
-                "kodetekst": "Enighet eller avtale"
-              }
-            ],
-            "beskrivelseAnnenMaate": null
-          }
-        ],
-        "foerstRegistrertDato": "2022-12-15T16:48:57.952Z",
-        "endretDato": "2022-12-15T16:48:57.952Z"
-      },
-      {
-        "folkeregistrertPerson": {
-          "foedselsEllerDNummer": "58877102163",
-          "foedselsdato": "1971-07-18",
-          "foedselsaar": "1971",
-          "navn": {
-            "fornavn": "MINIMALISTISK",
-            "mellomnavn": null,
-            "etternavn": "HANDLELISTE"
-          },
-          "erDoed": false,
-          "statsborgerskap": [
-            {
-              "landkode": "MSR",
-              "land": "Montserrat"
-            }
-          ]
-        },
-        "utenlandskPerson": null,
-        "bostedsland": {
-          "landkode": "NOR",
-          "land": "Norge"
-        },
-        "erUnntattFraInnsyn": false,
-        "posisjoner": [
-          {
-            "type": {
-              "kode": "posisjontype.anne",
-              "kodetekst": "Kontroll på annen måte"
-            },
-            "stoerrelseIntervall": null,
-            "grunnlag": [],
-            "beskrivelseAnnenMaate": "Beskrivelse av hva kontrollen går ut på."
-          }
-        ],
-        "foerstRegistrertDato": "2022-12-15T16:48:57.959Z",
-        "endretDato": "2022-12-15T16:48:57.959Z"
-      }
-    ]
+    "reelleRettighetshavere": []
   },
   {
-    "registreringId": "cec4f3cf-7da1-4717-ae61-55f76b719a63",
+    "registreringId": "3c0aec50-bbed-4e8d-90f5-c7dedb927f31",
     "registreringStatus": {
       "kode": "registreringstatus.regi",
       "kodetekst": "Reelle rettighetshavere er registrert"
     },
-    "registrertDato": "2022-11-28T16:03:47.764171Z",
+    "registrertDato": "2023-04-25T14:36:24.39155Z",
     "reelleRettighetshavereStatus": {
       "kode": "reellerettighetshaverestatus.arid",
       "kodetekst": "Virksomheten har meldt at de har reelle rettighetshavere, og at alle reelle rettighetshavere er identifisert"
@@ -1074,61 +1333,6 @@
     },
     "reelleRettighetshavere": [
       {
-        "folkeregistrertPerson": {
-          "foedselsEllerDNummer": "05910298382",
-          "foedselsdato": "2002-11-05",
-          "foedselsaar": "2002",
-          "navn": {
-            "fornavn": "STOLT EFFEKTIV",
-            "mellomnavn": null,
-            "etternavn": "PARASOLL"
-          },
-          "erDoed": false,
-          "statsborgerskap": [
-            {
-              "landkode": "NOR",
-              "land": "Norge"
-            },
-            {
-              "landkode": "MEX",
-              "land": "Mexico"
-            }
-          ]
-        },
-        "utenlandskPerson": null,
-        "bostedsland": {
-          "landkode": "NOR",
-          "land": "Norge"
-        },
-        "erUnntattFraInnsyn": false,
-        "posisjoner": [
-          {
-            "type": {
-              "kode": "posisjontype.eier",
-              "kodetekst": "Eierskap"
-            },
-            "stoerrelseIntervall": {
-              "kode": "stoerrelseintervall.int2",
-              "kodetekst": "50% - 74,99%"
-            },
-            "grunnlag": [
-              {
-                "kode": "grunnlagtype.dire",
-                "kodetekst": "Direkte"
-              },
-              {
-                "kode": "grunnlagtype.indi",
-                "kodetekst": "Indirekte"
-              }
-            ],
-            "beskrivelseAnnenMaate": null
-          }
-        ],
-        "foerstRegistrertDato": "2022-11-28T16:03:46.84197Z",
-        "endretDato": "2022-11-28T16:03:46.84197Z"
-      },
-      {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1983-12-01",
           "foedselsaar": "1983",
@@ -1151,21 +1355,19 @@
               "kode": "posisjontype.ruas",
               "kodetekst": "Rett til å utpeke eller avsette minst halvparten av styremedlemmene"
             },
-            "stoerrelseIntervall": null,
             "grunnlag": [
               {
                 "kode": "grunnlagtype.enav",
                 "kodetekst": "Enighet eller avtale"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
-        "foerstRegistrertDato": "2022-11-28T16:03:46.84197Z",
-        "endretDato": "2022-11-28T16:03:46.84197Z"
+        "foerstRegistrertDato": "2023-04-25T14:36:22.177257Z",
+        "endretDato": "2023-04-25T14:36:22.177257Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1983-03-24",
           "foedselsaar": "1983",
@@ -1176,12 +1378,12 @@
               "land": "Tyskland"
             },
             {
-              "landkode": "SWE",
-              "land": "Sverige"
-            },
-            {
               "landkode": "USA",
               "land": "USA"
+            },
+            {
+              "landkode": "SWE",
+              "land": "Sverige"
             }
           ]
         },
@@ -1196,63 +1398,13 @@
               "kode": "posisjontype.anne",
               "kodetekst": "Kontroll på annen måte"
             },
-            "stoerrelseIntervall": null,
             "grunnlag": [],
-            "beskrivelseAnnenMaate": "Forklaring pÃ¥ hvilken innflytelse rettighetshaveren har - annen mÃ¥te."
+            "beskrivelseAnnenMaate": "Forklaring pÃ¥ hvilken innflytelse rettighetshaveren har - annen mÃ¥te.",
+            "mellomliggendeVirksomheter": []
           }
         ],
-        "foerstRegistrertDato": "2022-11-28T16:03:46.84197Z",
-        "endretDato": "2022-11-28T16:03:46.84197Z"
-      },
-      {
-        "folkeregistrertPerson": {
-          "foedselsEllerDNummer": "58877102163",
-          "foedselsdato": "1971-07-18",
-          "foedselsaar": "1971",
-          "navn": {
-            "fornavn": "MINIMALISTISK",
-            "mellomnavn": null,
-            "etternavn": "HANDLELISTE"
-          },
-          "erDoed": false,
-          "statsborgerskap": [
-            {
-              "landkode": "MSR",
-              "land": "Montserrat"
-            }
-          ]
-        },
-        "utenlandskPerson": null,
-        "bostedsland": {
-          "landkode": "NOR",
-          "land": "Norge"
-        },
-        "erUnntattFraInnsyn": false,
-        "posisjoner": [
-          {
-            "type": {
-              "kode": "posisjontype.kont",
-              "kodetekst": "Kontroll over stemmerettigheter"
-            },
-            "stoerrelseIntervall": {
-              "kode": "stoerrelseintervall.int3",
-              "kodetekst": "75% - 100%"
-            },
-            "grunnlag": [
-              {
-                "kode": "grunnlagtype.dire",
-                "kodetekst": "Direkte"
-              },
-              {
-                "kode": "grunnlagtype.enav",
-                "kodetekst": "Enighet eller avtale"
-              }
-            ],
-            "beskrivelseAnnenMaate": null
-          }
-        ],
-        "foerstRegistrertDato": "2022-11-28T16:03:46.84197Z",
-        "endretDato": "2022-11-28T16:03:46.84197Z"
+        "foerstRegistrertDato": "2023-04-25T14:36:22.177257Z",
+        "endretDato": "2023-04-25T14:36:22.177257Z"
       }
     ]
   },
@@ -1278,7 +1430,6 @@
           "foedselsaar": "2006",
           "navn": {
             "fornavn": "KRITISK",
-            "mellomnavn": null,
             "etternavn": "ORM"
           },
           "erDoed": false,
@@ -1289,7 +1440,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -1311,7 +1461,7 @@
                 "kodetekst": "Direkte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-24T15:27:39.431725Z",
@@ -1341,7 +1491,6 @@
           "foedselsaar": "2002",
           "navn": {
             "fornavn": "STOLT EFFEKTIV",
-            "mellomnavn": null,
             "etternavn": "PARASOLL"
           },
           "erDoed": false,
@@ -1356,7 +1505,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -1382,7 +1530,7 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:28:00.653301Z",
@@ -1395,7 +1543,6 @@
           "foedselsaar": "1971",
           "navn": {
             "fornavn": "MINIMALISTISK",
-            "mellomnavn": null,
             "etternavn": "HANDLELISTE"
           },
           "erDoed": false,
@@ -1406,7 +1553,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -1432,14 +1578,13 @@
                 "kodetekst": "Enighet eller avtale"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:28:00.653301Z",
         "endretDato": "2022-11-29T11:28:15.266242Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1989-12-24",
           "foedselsaar": "1989",
@@ -1472,14 +1617,13 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:28:15.266242Z",
         "endretDato": "2022-11-29T11:28:15.266242Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1983-03-24",
           "foedselsaar": "1983",
@@ -1510,9 +1654,9 @@
               "kode": "posisjontype.anne",
               "kodetekst": "Kontroll på annen måte"
             },
-            "stoerrelseIntervall": null,
             "grunnlag": [],
-            "beskrivelseAnnenMaate": "Forklaring på hvilken innflytelse rettighetshaveren har"
+            "beskrivelseAnnenMaate": "Forklaring på hvilken innflytelse rettighetshaveren har",
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:28:15.266242Z",
@@ -1542,7 +1686,6 @@
           "foedselsaar": "2002",
           "navn": {
             "fornavn": "STOLT EFFEKTIV",
-            "mellomnavn": null,
             "etternavn": "PARASOLL"
           },
           "erDoed": false,
@@ -1557,7 +1700,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -1583,7 +1725,7 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:27:57.910126Z",
@@ -1596,7 +1738,6 @@
           "foedselsaar": "1971",
           "navn": {
             "fornavn": "MINIMALISTISK",
-            "mellomnavn": null,
             "etternavn": "HANDLELISTE"
           },
           "erDoed": false,
@@ -1607,7 +1748,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -1633,14 +1773,13 @@
                 "kodetekst": "Enighet eller avtale"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:27:57.910126Z",
         "endretDato": "2022-11-29T11:28:11.922345Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1989-12-24",
           "foedselsaar": "1989",
@@ -1673,14 +1812,13 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:28:11.922345Z",
         "endretDato": "2022-11-29T11:28:11.922345Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1983-03-24",
           "foedselsaar": "1983",
@@ -1711,9 +1849,9 @@
               "kode": "posisjontype.anne",
               "kodetekst": "Kontroll på annen måte"
             },
-            "stoerrelseIntervall": null,
             "grunnlag": [],
-            "beskrivelseAnnenMaate": "Forklaring på hvilken innflytelse rettighetshaveren har"
+            "beskrivelseAnnenMaate": "Forklaring på hvilken innflytelse rettighetshaveren har",
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:28:11.922345Z",
@@ -1743,7 +1881,6 @@
           "foedselsaar": "2002",
           "navn": {
             "fornavn": "STOLT EFFEKTIV",
-            "mellomnavn": null,
             "etternavn": "PARASOLL"
           },
           "erDoed": false,
@@ -1758,7 +1895,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -1784,7 +1920,7 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:27:52.204038Z",
@@ -1797,7 +1933,6 @@
           "foedselsaar": "1971",
           "navn": {
             "fornavn": "MINIMALISTISK",
-            "mellomnavn": null,
             "etternavn": "HANDLELISTE"
           },
           "erDoed": false,
@@ -1808,7 +1943,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -1834,14 +1968,13 @@
                 "kodetekst": "Enighet eller avtale"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:27:52.204038Z",
         "endretDato": "2022-11-29T11:28:17.020552Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1989-12-24",
           "foedselsaar": "1989",
@@ -1874,14 +2007,13 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:28:17.020552Z",
         "endretDato": "2022-11-29T11:28:17.020552Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1983-03-24",
           "foedselsaar": "1983",
@@ -1912,9 +2044,9 @@
               "kode": "posisjontype.anne",
               "kodetekst": "Kontroll på annen måte"
             },
-            "stoerrelseIntervall": null,
             "grunnlag": [],
-            "beskrivelseAnnenMaate": "Forklaring på hvilken innflytelse rettighetshaveren har"
+            "beskrivelseAnnenMaate": "Forklaring på hvilken innflytelse rettighetshaveren har",
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:28:17.020552Z",
@@ -1944,7 +2076,6 @@
           "foedselsaar": "2002",
           "navn": {
             "fornavn": "STOLT EFFEKTIV",
-            "mellomnavn": null,
             "etternavn": "PARASOLL"
           },
           "erDoed": false,
@@ -1959,7 +2090,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -1985,7 +2115,7 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:27:49.425625Z",
@@ -1998,7 +2128,6 @@
           "foedselsaar": "1971",
           "navn": {
             "fornavn": "MINIMALISTISK",
-            "mellomnavn": null,
             "etternavn": "HANDLELISTE"
           },
           "erDoed": false,
@@ -2009,7 +2138,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -2035,14 +2163,13 @@
                 "kodetekst": "Enighet eller avtale"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:27:49.425625Z",
         "endretDato": "2022-11-29T11:28:25.152156Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1989-12-24",
           "foedselsaar": "1989",
@@ -2075,14 +2202,13 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:28:25.152156Z",
         "endretDato": "2022-11-29T11:28:25.152156Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1983-03-24",
           "foedselsaar": "1983",
@@ -2113,9 +2239,9 @@
               "kode": "posisjontype.anne",
               "kodetekst": "Kontroll på annen måte"
             },
-            "stoerrelseIntervall": null,
             "grunnlag": [],
-            "beskrivelseAnnenMaate": "Forklaring på hvilken innflytelse rettighetshaveren har"
+            "beskrivelseAnnenMaate": "Forklaring på hvilken innflytelse rettighetshaveren har",
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:28:25.152156Z",
@@ -2145,7 +2271,6 @@
           "foedselsaar": "2002",
           "navn": {
             "fornavn": "STOLT EFFEKTIV",
-            "mellomnavn": null,
             "etternavn": "PARASOLL"
           },
           "erDoed": false,
@@ -2160,7 +2285,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -2186,7 +2310,7 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:27:46.658751Z",
@@ -2199,7 +2323,6 @@
           "foedselsaar": "1971",
           "navn": {
             "fornavn": "MINIMALISTISK",
-            "mellomnavn": null,
             "etternavn": "HANDLELISTE"
           },
           "erDoed": false,
@@ -2210,7 +2333,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -2236,14 +2358,13 @@
                 "kodetekst": "Enighet eller avtale"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:27:46.658751Z",
         "endretDato": "2022-11-29T11:28:26.783007Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1989-12-24",
           "foedselsaar": "1989",
@@ -2276,14 +2397,13 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:28:26.783007Z",
         "endretDato": "2022-11-29T11:28:26.783007Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1983-03-24",
           "foedselsaar": "1983",
@@ -2314,9 +2434,9 @@
               "kode": "posisjontype.anne",
               "kodetekst": "Kontroll på annen måte"
             },
-            "stoerrelseIntervall": null,
             "grunnlag": [],
-            "beskrivelseAnnenMaate": "Forklaring på hvilken innflytelse rettighetshaveren har"
+            "beskrivelseAnnenMaate": "Forklaring på hvilken innflytelse rettighetshaveren har",
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:28:26.783007Z",
@@ -2346,7 +2466,6 @@
           "foedselsaar": "2002",
           "navn": {
             "fornavn": "STOLT EFFEKTIV",
-            "mellomnavn": null,
             "etternavn": "PARASOLL"
           },
           "erDoed": false,
@@ -2361,7 +2480,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -2387,7 +2505,7 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:27:42.864343Z",
@@ -2400,7 +2518,6 @@
           "foedselsaar": "1971",
           "navn": {
             "fornavn": "MINIMALISTISK",
-            "mellomnavn": null,
             "etternavn": "HANDLELISTE"
           },
           "erDoed": false,
@@ -2411,7 +2528,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -2437,14 +2553,13 @@
                 "kodetekst": "Enighet eller avtale"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:27:42.864343Z",
         "endretDato": "2022-11-29T11:28:18.602171Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1989-12-24",
           "foedselsaar": "1989",
@@ -2477,14 +2592,13 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:28:18.602171Z",
         "endretDato": "2022-11-29T11:28:18.602171Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1983-03-24",
           "foedselsaar": "1983",
@@ -2515,9 +2629,9 @@
               "kode": "posisjontype.anne",
               "kodetekst": "Kontroll på annen måte"
             },
-            "stoerrelseIntervall": null,
             "grunnlag": [],
-            "beskrivelseAnnenMaate": "Forklaring på hvilken innflytelse rettighetshaveren har"
+            "beskrivelseAnnenMaate": "Forklaring på hvilken innflytelse rettighetshaveren har",
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:28:18.602171Z",
@@ -2547,7 +2661,6 @@
           "foedselsaar": "2002",
           "navn": {
             "fornavn": "STOLT EFFEKTIV",
-            "mellomnavn": null,
             "etternavn": "PARASOLL"
           },
           "erDoed": false,
@@ -2562,7 +2675,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -2588,7 +2700,7 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:27:40.071836Z",
@@ -2601,7 +2713,6 @@
           "foedselsaar": "1971",
           "navn": {
             "fornavn": "MINIMALISTISK",
-            "mellomnavn": null,
             "etternavn": "HANDLELISTE"
           },
           "erDoed": false,
@@ -2612,7 +2723,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -2638,14 +2748,13 @@
                 "kodetekst": "Enighet eller avtale"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:27:40.071836Z",
         "endretDato": "2022-11-29T11:28:13.57471Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1989-12-24",
           "foedselsaar": "1989",
@@ -2678,14 +2787,13 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:28:13.57471Z",
         "endretDato": "2022-11-29T11:28:13.57471Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1983-03-24",
           "foedselsaar": "1983",
@@ -2716,9 +2824,9 @@
               "kode": "posisjontype.anne",
               "kodetekst": "Kontroll på annen måte"
             },
-            "stoerrelseIntervall": null,
             "grunnlag": [],
-            "beskrivelseAnnenMaate": "Forklaring på hvilken innflytelse rettighetshaveren har"
+            "beskrivelseAnnenMaate": "Forklaring på hvilken innflytelse rettighetshaveren har",
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:28:13.57471Z",
@@ -2748,7 +2856,6 @@
           "foedselsaar": "2002",
           "navn": {
             "fornavn": "STOLT EFFEKTIV",
-            "mellomnavn": null,
             "etternavn": "PARASOLL"
           },
           "erDoed": false,
@@ -2763,7 +2870,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -2789,7 +2895,7 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:27:33.892525Z",
@@ -2802,7 +2908,6 @@
           "foedselsaar": "1971",
           "navn": {
             "fornavn": "MINIMALISTISK",
-            "mellomnavn": null,
             "etternavn": "HANDLELISTE"
           },
           "erDoed": false,
@@ -2813,7 +2918,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -2839,14 +2943,13 @@
                 "kodetekst": "Enighet eller avtale"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:27:33.892525Z",
         "endretDato": "2022-11-29T11:28:21.888157Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1989-12-24",
           "foedselsaar": "1989",
@@ -2879,14 +2982,13 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:28:21.888157Z",
         "endretDato": "2022-11-29T11:28:21.888157Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1983-03-24",
           "foedselsaar": "1983",
@@ -2917,9 +3019,9 @@
               "kode": "posisjontype.anne",
               "kodetekst": "Kontroll på annen måte"
             },
-            "stoerrelseIntervall": null,
             "grunnlag": [],
-            "beskrivelseAnnenMaate": "Forklaring på hvilken innflytelse rettighetshaveren har"
+            "beskrivelseAnnenMaate": "Forklaring på hvilken innflytelse rettighetshaveren har",
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-29T11:28:21.888157Z",
@@ -2928,45 +3030,28 @@
     ]
   },
   {
-    "registreringId": "09ab7135-e909-4004-b9aa-52a0da1ac3a6",
+    "registreringId": "35e2d01b-7091-4e70-8048-8a1c06fa134f",
     "registreringStatus": {
       "kode": "registreringstatus.regi",
       "kodetekst": "Reelle rettighetshavere er registrert"
     },
-    "registrertDato": "2022-12-15T16:50:21.315687Z",
-    "reelleRettighetshavereStatus": {
-      "kode": "reellerettighetshaverestatus.rknv",
-      "kodetekst": "Virksomheten har meldt at de ikke har reelle rettighetshavere fordi en norsk offentlig virksomhet eier eller kontrollerer over 75 % av virksomheten"
-    },
-    "registreringspliktigVirksomhet": {
-      "organisasjonsnummer": "910419226"
-    },
-    "reelleRettighetshavere": []
-  },
-  {
-    "registreringId": "7abb199a-93a4-44bd-a992-35d206cda8d1",
-    "registreringStatus": {
-      "kode": "registreringstatus.regi",
-      "kodetekst": "Reelle rettighetshavere er registrert"
-    },
-    "registrertDato": "2022-12-15T16:50:13.052585Z",
+    "registrertDato": "2023-01-12T14:04:35.894441Z",
     "reelleRettighetshavereStatus": {
       "kode": "reellerettighetshaverestatus.arid",
       "kodetekst": "Virksomheten har meldt at de har reelle rettighetshavere, og at alle reelle rettighetshavere er identifisert"
     },
     "registreringspliktigVirksomhet": {
-      "organisasjonsnummer": "910418459"
+      "organisasjonsnummer": "910422618"
     },
     "reelleRettighetshavere": [
       {
         "folkeregistrertPerson": {
-          "foedselsEllerDNummer": "05910298382",
-          "foedselsdato": "2002-11-05",
-          "foedselsaar": "2002",
+          "foedselsEllerDNummer": "08810198088",
+          "foedselsdato": "2001-01-08",
+          "foedselsaar": "2001",
           "navn": {
-            "fornavn": "STOLT EFFEKTIV",
-            "mellomnavn": null,
-            "etternavn": "PARASOLL"
+            "fornavn": "TILLITSFULL RESERVERT",
+            "etternavn": "HESTEDROSJE"
           },
           "erDoed": false,
           "statsborgerskap": [
@@ -2975,39 +3060,17 @@
               "land": "Norge"
             },
             {
-              "landkode": "MEX",
-              "land": "Mexico"
+              "landkode": "GBR",
+              "land": "Storbritannia"
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
         },
         "erUnntattFraInnsyn": false,
         "posisjoner": [
-          {
-            "type": {
-              "kode": "posisjontype.eier",
-              "kodetekst": "Eierskap"
-            },
-            "stoerrelseIntervall": {
-              "kode": "stoerrelseintervall.int1",
-              "kodetekst": "25,01% - 49,99%"
-            },
-            "grunnlag": [
-              {
-                "kode": "grunnlagtype.dire",
-                "kodetekst": "Direkte"
-              },
-              {
-                "kode": "grunnlagtype.indi",
-                "kodetekst": "Indirekte"
-              }
-            ],
-            "beskrivelseAnnenMaate": null
-          },
           {
             "type": {
               "kode": "posisjontype.kont",
@@ -3019,64 +3082,24 @@
             },
             "grunnlag": [
               {
-                "kode": "grunnlagtype.enav",
-                "kodetekst": "Enighet eller avtale"
-              }
-            ],
-            "beskrivelseAnnenMaate": null
-          }
-        ],
-        "foerstRegistrertDato": "2022-12-15T16:50:12.689742Z",
-        "endretDato": "2022-12-15T16:50:12.689742Z"
-      },
-      {
-        "folkeregistrertPerson": {
-          "foedselsEllerDNummer": "58877102163",
-          "foedselsdato": "1971-07-18",
-          "foedselsaar": "1971",
-          "navn": {
-            "fornavn": "MINIMALISTISK",
-            "mellomnavn": null,
-            "etternavn": "HANDLELISTE"
-          },
-          "erDoed": false,
-          "statsborgerskap": [
-            {
-              "landkode": "MSR",
-              "land": "Montserrat"
-            }
-          ]
-        },
-        "utenlandskPerson": null,
-        "bostedsland": {
-          "landkode": "NOR",
-          "land": "Norge"
-        },
-        "erUnntattFraInnsyn": false,
-        "posisjoner": [
-          {
-            "type": {
-              "kode": "posisjontype.ruas",
-              "kodetekst": "Rett til å utpeke eller avsette minst halvparten av styremedlemmene"
-            },
-            "stoerrelseIntervall": null,
-            "grunnlag": [
+                "kode": "grunnlagtype.dire",
+                "kodetekst": "Direkte"
+              },
               {
                 "kode": "grunnlagtype.enav",
                 "kodetekst": "Enighet eller avtale"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
-        "foerstRegistrertDato": "2022-12-15T16:50:12.689742Z",
-        "endretDato": "2022-12-15T16:50:12.689742Z"
+        "foerstRegistrertDato": "2023-01-12T14:04:32.586633Z",
+        "endretDato": "2023-01-12T14:04:32.586633Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
-          "foedselsdato": "1983-12-01",
-          "foedselsaar": "1983",
+          "foedselsdato": "2004-12-31",
+          "foedselsaar": "2004",
           "fulltNavn": "TOM NELSON",
           "statsborgerskap": [
             {
@@ -3093,30 +3116,25 @@
         "posisjoner": [
           {
             "type": {
-              "kode": "posisjontype.eier",
-              "kodetekst": "Eierskap"
-            },
-            "stoerrelseIntervall": {
-              "kode": "stoerrelseintervall.int1",
-              "kodetekst": "25,01% - 49,99%"
+              "kode": "posisjontype.ruas",
+              "kodetekst": "Rett til å utpeke eller avsette minst halvparten av styremedlemmene"
             },
             "grunnlag": [
               {
-                "kode": "grunnlagtype.indi",
-                "kodetekst": "Indirekte"
+                "kode": "grunnlagtype.enav",
+                "kodetekst": "Enighet eller avtale"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
-        "foerstRegistrertDato": "2022-12-15T16:50:12.689742Z",
-        "endretDato": "2022-12-15T16:50:12.689742Z"
+        "foerstRegistrertDato": "2023-01-12T14:04:32.586633Z",
+        "endretDato": "2023-01-12T14:04:32.586633Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
-          "foedselsdato": "1983-03-24",
-          "foedselsaar": "1983",
+          "foedselsdato": "2005-01-01",
+          "foedselsaar": "2005",
           "fulltNavn": "GILL BATES",
           "statsborgerskap": [
             {
@@ -3137,30 +3155,62 @@
           "landkode": "USA",
           "land": "USA"
         },
-        "erUnntattFraInnsyn": false,
+        "erUnntattFraInnsyn": true,
         "posisjoner": [
           {
             "type": {
               "kode": "posisjontype.anne",
               "kodetekst": "Kontroll på annen måte"
             },
-            "stoerrelseIntervall": null,
             "grunnlag": [],
-            "beskrivelseAnnenMaate": "Forklaring på hvilken innflytelse rettighetshaveren har"
+            "beskrivelseAnnenMaate": "Forklaring pÃ¥ hvilken innflytelse rettighetshaveren har - annen mÃ¥te.",
+            "mellomliggendeVirksomheter": []
           }
         ],
-        "foerstRegistrertDato": "2022-12-15T16:50:12.689742Z",
-        "endretDato": "2022-12-15T16:50:12.689742Z"
+        "foerstRegistrertDato": "2023-01-12T14:04:32.586633Z",
+        "endretDato": "2023-01-12T14:04:32.586633Z"
       }
     ]
   },
   {
-    "registreringId": "0d97a9da-3a36-4978-8a8c-6e444fdfef93",
+    "registreringId": "7074a701-9563-4d18-adc4-fc8ca69cfdda",
     "registreringStatus": {
       "kode": "registreringstatus.regi",
       "kodetekst": "Reelle rettighetshavere er registrert"
     },
-    "registrertDato": "2022-12-15T16:50:03.537325Z",
+    "registrertDato": "2023-04-25T14:23:06.023461Z",
+    "reelleRettighetshavereStatus": {
+      "kode": "reellerettighetshaverestatus.rknv",
+      "kodetekst": "Virksomheten har meldt at de ikke har reelle rettighetshavere fordi en norsk offentlig virksomhet eier eller kontrollerer over 75 % av virksomheten"
+    },
+    "registreringspliktigVirksomhet": {
+      "organisasjonsnummer": "910419226"
+    },
+    "reelleRettighetshavere": []
+  },
+  {
+    "registreringId": "38d6c804-6d71-4348-80df-63efc6663bae",
+    "registreringStatus": {
+      "kode": "registreringstatus.regi",
+      "kodetekst": "Reelle rettighetshavere er registrert"
+    },
+    "registrertDato": "2023-04-25T14:22:55.039873Z",
+    "reelleRettighetshavereStatus": {
+      "kode": "reellerettighetshaverestatus.rknv",
+      "kodetekst": "Virksomheten har meldt at de ikke har reelle rettighetshavere fordi en norsk offentlig virksomhet eier eller kontrollerer over 75 % av virksomheten"
+    },
+    "registreringspliktigVirksomhet": {
+      "organisasjonsnummer": "910418459"
+    },
+    "reelleRettighetshavere": []
+  },
+  {
+    "registreringId": "e2f95073-04b2-4dbf-9231-814a9e66f05e",
+    "registreringStatus": {
+      "kode": "registreringstatus.regi",
+      "kodetekst": "Reelle rettighetshavere er registrert"
+    },
+    "registrertDato": "2023-04-25T14:22:50.87359Z",
     "reelleRettighetshavereStatus": {
       "kode": "reellerettighetshaverestatus.irki",
       "kodetekst": "Virksomheten har meldt at de har reelle rettighetshavere, men at ingen av disse kan identifiseres"
@@ -3171,12 +3221,12 @@
     "reelleRettighetshavere": []
   },
   {
-    "registreringId": "997f07d6-6bd3-42f6-a5c2-44ae4ab6f238",
+    "registreringId": "45501d76-73fc-4837-aa47-2eba9573a016",
     "registreringStatus": {
       "kode": "registreringstatus.regi",
       "kodetekst": "Reelle rettighetshavere er registrert"
     },
-    "registrertDato": "2022-12-15T16:49:54.50989Z",
+    "registrertDato": "2023-03-03T20:34:06.341952Z",
     "reelleRettighetshavereStatus": {
       "kode": "reellerettighetshaverestatus.arid",
       "kodetekst": "Virksomheten har meldt at de har reelle rettighetshavere, og at alle reelle rettighetshavere er identifisert"
@@ -3192,7 +3242,6 @@
           "foedselsaar": "2002",
           "navn": {
             "fornavn": "STOLT EFFEKTIV",
-            "mellomnavn": null,
             "etternavn": "PARASOLL"
           },
           "erDoed": false,
@@ -3207,7 +3256,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -3233,11 +3281,11 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
-        "foerstRegistrertDato": "2022-12-15T16:49:50.711977Z",
-        "endretDato": "2022-12-15T16:49:54.120813Z"
+        "foerstRegistrertDato": "2023-03-03T20:33:49.149455Z",
+        "endretDato": "2023-03-03T20:34:05.77961Z"
       },
       {
         "folkeregistrertPerson": {
@@ -3246,7 +3294,6 @@
           "foedselsaar": "1971",
           "navn": {
             "fornavn": "MINIMALISTISK",
-            "mellomnavn": null,
             "etternavn": "HANDLELISTE"
           },
           "erDoed": false,
@@ -3257,7 +3304,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -3283,14 +3329,13 @@
                 "kodetekst": "Enighet eller avtale"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
-        "foerstRegistrertDato": "2022-12-15T16:49:50.711977Z",
-        "endretDato": "2022-12-15T16:49:54.120813Z"
+        "foerstRegistrertDato": "2023-03-03T20:33:49.149455Z",
+        "endretDato": "2023-03-03T20:34:05.77961Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1989-12-24",
           "foedselsaar": "1989",
@@ -3323,14 +3368,13 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
-        "foerstRegistrertDato": "2022-12-15T16:49:54.120813Z",
-        "endretDato": "2022-12-15T16:49:54.120813Z"
+        "foerstRegistrertDato": "2023-03-03T20:34:05.77961Z",
+        "endretDato": "2023-03-03T20:34:05.77961Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1983-03-24",
           "foedselsaar": "1983",
@@ -3361,13 +3405,13 @@
               "kode": "posisjontype.anne",
               "kodetekst": "Kontroll på annen måte"
             },
-            "stoerrelseIntervall": null,
             "grunnlag": [],
-            "beskrivelseAnnenMaate": "Forklaring på hvilken innflytelse rettighetshaveren har"
+            "beskrivelseAnnenMaate": "Forklaring på hvilken innflytelse rettighetshaveren har",
+            "mellomliggendeVirksomheter": []
           }
         ],
-        "foerstRegistrertDato": "2022-12-15T16:49:54.120813Z",
-        "endretDato": "2022-12-15T16:49:54.120813Z"
+        "foerstRegistrertDato": "2023-03-03T20:34:05.77961Z",
+        "endretDato": "2023-03-03T20:34:05.77961Z"
       }
     ]
   },
@@ -3393,7 +3437,6 @@
           "foedselsaar": "1971",
           "navn": {
             "fornavn": "MINIMALISTISK",
-            "mellomnavn": null,
             "etternavn": "HANDLELISTE"
           },
           "erDoed": false,
@@ -3404,7 +3447,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -3430,14 +3472,13 @@
                 "kodetekst": "Enighet eller avtale"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-15T13:50:44.657929Z",
         "endretDato": "2022-11-15T13:50:44.657929Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1983-12-01",
           "foedselsaar": "1983",
@@ -3460,21 +3501,19 @@
               "kode": "posisjontype.ruas",
               "kodetekst": "Rett til å utpeke eller avsette minst halvparten av styremedlemmene"
             },
-            "stoerrelseIntervall": null,
             "grunnlag": [
               {
                 "kode": "grunnlagtype.enav",
                 "kodetekst": "Enighet eller avtale"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-15T13:50:44.657929Z",
         "endretDato": "2022-11-15T13:50:44.657929Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1983-03-24",
           "foedselsaar": "1983",
@@ -3505,9 +3544,9 @@
               "kode": "posisjontype.anne",
               "kodetekst": "Kontroll på annen måte"
             },
-            "stoerrelseIntervall": null,
             "grunnlag": [],
-            "beskrivelseAnnenMaate": "Forklaring pÃ¥ hvilken innflytelse rettighetshaveren har - annen mÃ¥te."
+            "beskrivelseAnnenMaate": "Forklaring pÃ¥ hvilken innflytelse rettighetshaveren har - annen mÃ¥te.",
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-15T13:50:44.657929Z",
@@ -3520,7 +3559,6 @@
           "foedselsaar": "1943",
           "navn": {
             "fornavn": "RETTFERDIG",
-            "mellomnavn": null,
             "etternavn": "RIST"
           },
           "erDoed": true,
@@ -3531,7 +3569,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -3557,7 +3594,7 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-15T13:50:44.657929Z",
@@ -3566,12 +3603,12 @@
     ]
   },
   {
-    "registreringId": "76631c79-c39d-450f-ae6b-eee8ce90cccd",
+    "registreringId": "b29262fe-d109-45b6-80ac-22f652fb486c",
     "registreringStatus": {
       "kode": "registreringstatus.regi",
       "kodetekst": "Reelle rettighetshavere er registrert"
     },
-    "registrertDato": "2022-12-15T16:49:43.604149Z",
+    "registrertDato": "2023-04-25T14:23:30.730939Z",
     "reelleRettighetshavereStatus": {
       "kode": "reellerettighetshaverestatus.rikv",
       "kodetekst": "Virksomheten har meldt at de ikke har reelle rettighetshavere, og at de ikke er eid eller kontrollert av offentlig virksomhet"
@@ -3582,12 +3619,12 @@
     "reelleRettighetshavere": []
   },
   {
-    "registreringId": "48504edb-3eac-4b4e-8761-0c2ec088e1fc",
+    "registreringId": "5dc3fe99-437f-4479-8909-7991f78a17a6",
     "registreringStatus": {
       "kode": "registreringstatus.regi",
       "kodetekst": "Reelle rettighetshavere er registrert"
     },
-    "registrertDato": "2022-12-15T16:49:37.181163Z",
+    "registrertDato": "2023-04-25T14:23:26.630159Z",
     "reelleRettighetshavereStatus": {
       "kode": "reellerettighetshaverestatus.rknv",
       "kodetekst": "Virksomheten har meldt at de ikke har reelle rettighetshavere fordi en norsk offentlig virksomhet eier eller kontrollerer over 75 % av virksomheten"
@@ -3598,12 +3635,12 @@
     "reelleRettighetshavere": []
   },
   {
-    "registreringId": "ce2d68fb-764c-420b-9a1b-e339114a6772",
+    "registreringId": "c9fd8da3-1aaf-4fc7-8e07-dc0a36273bfb",
     "registreringStatus": {
       "kode": "registreringstatus.regi",
       "kodetekst": "Reelle rettighetshavere er registrert"
     },
-    "registrertDato": "2022-12-15T16:49:28.574021Z",
+    "registrertDato": "2023-04-25T14:23:22.574218Z",
     "reelleRettighetshavereStatus": {
       "kode": "reellerettighetshaverestatus.rknv",
       "kodetekst": "Virksomheten har meldt at de ikke har reelle rettighetshavere fordi en norsk offentlig virksomhet eier eller kontrollerer over 75 % av virksomheten"
@@ -3650,7 +3687,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -3662,21 +3698,19 @@
               "kode": "posisjontype.ruas",
               "kodetekst": "Rett til å utpeke eller avsette minst halvparten av styremedlemmene"
             },
-            "stoerrelseIntervall": null,
             "grunnlag": [
               {
                 "kode": "grunnlagtype.enav",
                 "kodetekst": "Enighet eller avtale"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-23T14:14:34.702721Z",
         "endretDato": "2022-11-23T14:14:34.702721Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "2010-07-18",
           "foedselsaar": "2010",
@@ -3713,11 +3747,287 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-23T14:14:34.702721Z",
         "endretDato": "2022-11-23T14:14:34.702721Z"
+      }
+    ]
+  },
+  {
+    "registreringId": "38597b18-06b1-4ff6-ba67-0f11a43251a7",
+    "registreringStatus": {
+      "kode": "registreringstatus.regi",
+      "kodetekst": "Reelle rettighetshavere er registrert"
+    },
+    "registrertDato": "2023-02-02T12:42:34.199989Z",
+    "reelleRettighetshavereStatus": {
+      "kode": "reellerettighetshaverestatus.arid",
+      "kodetekst": "Virksomheten har meldt at de har reelle rettighetshavere, og at alle reelle rettighetshavere er identifisert"
+    },
+    "registreringspliktigVirksomhet": {
+      "organisasjonsnummer": "910168509"
+    },
+    "reelleRettighetshavere": [
+      {
+        "folkeregistrertPerson": {
+          "foedselsEllerDNummer": "41887801795",
+          "foedselsdato": "1978-08-01",
+          "foedselsaar": "1978",
+          "navn": {
+            "fornavn": "SPISS",
+            "etternavn": "STØVEL"
+          },
+          "erDoed": false,
+          "statsborgerskap": [
+            {
+              "landkode": "JOR",
+              "land": "Jordan"
+            }
+          ]
+        },
+        "bostedsland": {
+          "landkode": "GBR",
+          "land": "Storbritannia"
+        },
+        "erUnntattFraInnsyn": false,
+        "posisjoner": [
+          {
+            "type": {
+              "kode": "posisjontype.eier",
+              "kodetekst": "Eierskap"
+            },
+            "stoerrelseIntervall": {
+              "kode": "stoerrelseintervall.int3",
+              "kodetekst": "75% - 100%"
+            },
+            "grunnlag": [
+              {
+                "kode": "grunnlagtype.dire",
+                "kodetekst": "Direkte"
+              }
+            ],
+            "mellomliggendeVirksomheter": []
+          }
+        ],
+        "foerstRegistrertDato": "2023-02-02T12:42:33.599056Z",
+        "endretDato": "2023-02-02T12:42:33.599056Z"
+      }
+    ]
+  },
+  {
+    "registreringId": "da368266-0250-4c72-905e-285229da1d04",
+    "registreringStatus": {
+      "kode": "registreringstatus.regi",
+      "kodetekst": "Reelle rettighetshavere er registrert"
+    },
+    "registrertDato": "2023-02-02T12:46:59.3057Z",
+    "reelleRettighetshavereStatus": {
+      "kode": "reellerettighetshaverestatus.arid",
+      "kodetekst": "Virksomheten har meldt at de har reelle rettighetshavere, og at alle reelle rettighetshavere er identifisert"
+    },
+    "registreringspliktigVirksomhet": {
+      "organisasjonsnummer": "910168096"
+    },
+    "reelleRettighetshavere": [
+      {
+        "utenlandskPerson": {
+          "foedselsdato": "2015-03-24",
+          "foedselsaar": "2015",
+          "fulltNavn": "DILL HATES",
+          "statsborgerskap": [
+            {
+              "landkode": "DEU",
+              "land": "Tyskland"
+            },
+            {
+              "landkode": "SWE",
+              "land": "Sverige"
+            },
+            {
+              "landkode": "USA",
+              "land": "USA"
+            }
+          ]
+        },
+        "bostedsland": {
+          "landkode": "USA",
+          "land": "USA"
+        },
+        "erUnntattFraInnsyn": true,
+        "posisjoner": [
+          {
+            "type": {
+              "kode": "posisjontype.anne",
+              "kodetekst": "Kontroll på annen måte"
+            },
+            "grunnlag": [],
+            "beskrivelseAnnenMaate": "Forklaring pÃ¥ hvilken innflytelse rettighetshaveren har - annen mÃ¥te.",
+            "mellomliggendeVirksomheter": []
+          }
+        ],
+        "foerstRegistrertDato": "2023-02-02T12:46:58.766079Z",
+        "endretDato": "2023-02-02T12:46:58.766079Z"
+      }
+    ]
+  },
+  {
+    "registreringId": "e32221bc-ee62-4089-8343-6329260f4c4b",
+    "registreringStatus": {
+      "kode": "registreringstatus.regi",
+      "kodetekst": "Reelle rettighetshavere er registrert"
+    },
+    "registrertDato": "2023-02-02T12:51:06.182612Z",
+    "reelleRettighetshavereStatus": {
+      "kode": "reellerettighetshaverestatus.rkuv",
+      "kodetekst": "Virksomhet har meldt at de ikke har reelle rettighetshavere fordi en utenlandsk offentlig virksomhet eier eller kontrollerer over 75 % av virksomheten"
+    },
+    "registreringspliktigVirksomhet": {
+      "organisasjonsnummer": "910167286"
+    },
+    "reelleRettighetshavere": []
+  },
+  {
+    "registreringId": "eae63ed1-49cb-4556-bc36-02de9002bdfc",
+    "registreringStatus": {
+      "kode": "registreringstatus.regi",
+      "kodetekst": "Reelle rettighetshavere er registrert"
+    },
+    "registrertDato": "2023-01-13T13:40:44.100622Z",
+    "reelleRettighetshavereStatus": {
+      "kode": "reellerettighetshaverestatus.arid",
+      "kodetekst": "Virksomheten har meldt at de har reelle rettighetshavere, og at alle reelle rettighetshavere er identifisert"
+    },
+    "registreringspliktigVirksomhet": {
+      "organisasjonsnummer": "910064347"
+    },
+    "reelleRettighetshavere": [
+      {
+        "folkeregistrertPerson": {
+          "foedselsEllerDNummer": "08810198088",
+          "foedselsdato": "2001-01-08",
+          "foedselsaar": "2001",
+          "navn": {
+            "fornavn": "TILLITSFULL RESERVERT",
+            "etternavn": "HESTEDROSJE"
+          },
+          "erDoed": false,
+          "statsborgerskap": [
+            {
+              "landkode": "NOR",
+              "land": "Norge"
+            },
+            {
+              "landkode": "GBR",
+              "land": "Storbritannia"
+            }
+          ]
+        },
+        "bostedsland": {
+          "landkode": "NOR",
+          "land": "Norge"
+        },
+        "erUnntattFraInnsyn": false,
+        "posisjoner": [
+          {
+            "type": {
+              "kode": "posisjontype.kont",
+              "kodetekst": "Kontroll over stemmerettigheter"
+            },
+            "stoerrelseIntervall": {
+              "kode": "stoerrelseintervall.int3",
+              "kodetekst": "75% - 100%"
+            },
+            "grunnlag": [
+              {
+                "kode": "grunnlagtype.dire",
+                "kodetekst": "Direkte"
+              },
+              {
+                "kode": "grunnlagtype.enav",
+                "kodetekst": "Enighet eller avtale"
+              }
+            ],
+            "mellomliggendeVirksomheter": []
+          }
+        ],
+        "foerstRegistrertDato": "2023-01-13T13:40:43.315248Z",
+        "endretDato": "2023-01-13T13:40:43.315248Z"
+      },
+      {
+        "utenlandskPerson": {
+          "foedselsdato": "2004-12-31",
+          "foedselsaar": "2004",
+          "fulltNavn": "TOM NELSON",
+          "statsborgerskap": [
+            {
+              "landkode": "SWE",
+              "land": "Sverige"
+            }
+          ]
+        },
+        "bostedsland": {
+          "landkode": "SWE",
+          "land": "Sverige"
+        },
+        "erUnntattFraInnsyn": false,
+        "posisjoner": [
+          {
+            "type": {
+              "kode": "posisjontype.ruas",
+              "kodetekst": "Rett til å utpeke eller avsette minst halvparten av styremedlemmene"
+            },
+            "grunnlag": [
+              {
+                "kode": "grunnlagtype.enav",
+                "kodetekst": "Enighet eller avtale"
+              }
+            ],
+            "mellomliggendeVirksomheter": []
+          }
+        ],
+        "foerstRegistrertDato": "2023-01-13T13:40:43.315248Z",
+        "endretDato": "2023-01-13T13:40:43.315248Z"
+      },
+      {
+        "utenlandskPerson": {
+          "foedselsdato": "2005-01-01",
+          "foedselsaar": "2005",
+          "fulltNavn": "GILL BATES",
+          "statsborgerskap": [
+            {
+              "landkode": "DEU",
+              "land": "Tyskland"
+            },
+            {
+              "landkode": "SWE",
+              "land": "Sverige"
+            },
+            {
+              "landkode": "USA",
+              "land": "USA"
+            }
+          ]
+        },
+        "bostedsland": {
+          "landkode": "USA",
+          "land": "USA"
+        },
+        "erUnntattFraInnsyn": true,
+        "posisjoner": [
+          {
+            "type": {
+              "kode": "posisjontype.anne",
+              "kodetekst": "Kontroll på annen måte"
+            },
+            "grunnlag": [],
+            "beskrivelseAnnenMaate": "Forklaring pÃ¥ hvilken innflytelse rettighetshaveren har - annen mÃ¥te.",
+            "mellomliggendeVirksomheter": []
+          }
+        ],
+        "foerstRegistrertDato": "2023-01-13T13:40:43.315248Z",
+        "endretDato": "2023-01-13T13:40:43.315248Z"
       }
     ]
   },
@@ -3743,7 +4053,6 @@
           "foedselsaar": "1940",
           "navn": {
             "fornavn": "HEVNGJERRIG",
-            "mellomnavn": null,
             "etternavn": "SERVIETT"
           },
           "erDoed": false,
@@ -3754,7 +4063,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -3776,7 +4084,7 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-16T07:33:09.647147Z",
@@ -3789,7 +4097,6 @@
           "foedselsaar": "1971",
           "navn": {
             "fornavn": "MINIMALISTISK",
-            "mellomnavn": null,
             "etternavn": "HANDLELISTE"
           },
           "erDoed": false,
@@ -3800,7 +4107,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "SWE",
           "land": "Sverige"
@@ -3826,7 +4132,7 @@
                 "kodetekst": "Direkte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           },
           {
             "type": {
@@ -3847,7 +4153,7 @@
                 "kodetekst": "Enighet eller avtale"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-16T07:33:09.647147Z",
@@ -3877,7 +4183,6 @@
           "foedselsaar": "2002",
           "navn": {
             "fornavn": "STOLT EFFEKTIV",
-            "mellomnavn": null,
             "etternavn": "PARASOLL"
           },
           "erDoed": false,
@@ -3892,7 +4197,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -3914,7 +4218,7 @@
                 "kodetekst": "Direkte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-16T06:59:43.034334Z",
@@ -3927,7 +4231,6 @@
           "foedselsaar": "1940",
           "navn": {
             "fornavn": "HEVNGJERRIG",
-            "mellomnavn": null,
             "etternavn": "SERVIETT"
           },
           "erDoed": false,
@@ -3938,7 +4241,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -3960,7 +4262,7 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-16T06:59:43.034334Z",
@@ -4006,7 +4308,6 @@
           "foedselsaar": "1931",
           "navn": {
             "fornavn": "BESTEMT",
-            "mellomnavn": null,
             "etternavn": "PLASMA"
           },
           "erDoed": false,
@@ -4017,7 +4318,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -4039,7 +4339,7 @@
                 "kodetekst": "Direkte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-16T07:13:07.161536Z",
@@ -4069,7 +4369,6 @@
           "foedselsaar": "2006",
           "navn": {
             "fornavn": "KRITISK",
-            "mellomnavn": null,
             "etternavn": "ORM"
           },
           "erDoed": false,
@@ -4080,7 +4379,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -4102,7 +4400,7 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-22T14:15:36.122582Z",
@@ -4115,7 +4413,6 @@
           "foedselsaar": "1936",
           "navn": {
             "fornavn": "LYSELILLA",
-            "mellomnavn": null,
             "etternavn": "BIL"
           },
           "erDoed": true,
@@ -4126,7 +4423,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -4152,7 +4448,7 @@
                 "kodetekst": "Enighet eller avtale"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-22T14:15:36.122582Z",
@@ -4165,7 +4461,6 @@
           "foedselsaar": "2000",
           "navn": {
             "fornavn": "KOMPATIBEL GJESTFRI",
-            "mellomnavn": null,
             "etternavn": "NIESE"
           },
           "erDoed": false,
@@ -4180,7 +4475,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -4206,7 +4500,7 @@
                 "kodetekst": "Direkte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           },
           {
             "type": {
@@ -4227,7 +4521,7 @@
                 "kodetekst": "Enighet eller avtale"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
         "foerstRegistrertDato": "2022-11-22T14:15:36.122582Z",
@@ -4268,12 +4562,236 @@
     "reelleRettighetshavere": []
   },
   {
-    "registreringId": "8421d3ca-7192-4c92-a2c8-5bc700f84dab",
+    "registreringId": "440c51a3-1229-4bc6-80f0-05ffc1118111",
     "registreringStatus": {
       "kode": "registreringstatus.regi",
       "kodetekst": "Reelle rettighetshavere er registrert"
     },
-    "registrertDato": "2022-12-15T16:49:12.490537Z",
+    "registrertDato": "2023-03-22T14:03:17.993887Z",
+    "reelleRettighetshavereStatus": {
+      "kode": "reellerettighetshaverestatus.nrki",
+      "kodetekst": "Virksomheten har meldt at de har reelle rettighetshavere, men at det i tillegg finnes noen reelle rettighetshavere som ikke kan identifiseres"
+    },
+    "registreringspliktigVirksomhet": {
+      "organisasjonsnummer": "810017903"
+    },
+    "reelleRettighetshavere": [
+      {
+        "folkeregistrertPerson": {
+          "foedselsEllerDNummer": "05910298382",
+          "foedselsdato": "2002-11-05",
+          "foedselsaar": "2002",
+          "navn": {
+            "fornavn": "STOLT EFFEKTIV",
+            "etternavn": "PARASOLL"
+          },
+          "erDoed": false,
+          "statsborgerskap": [
+            {
+              "landkode": "XBA",
+              "land": "Kanari�yene (UTGÅTT)"
+            },
+            {
+              "landkode": "MEX",
+              "land": "Mexico"
+            }
+          ]
+        },
+        "bostedsland": {
+          "landkode": "XBA",
+          "land": "Kanari�yene (UTGÅTT)"
+        },
+        "erUnntattFraInnsyn": false,
+        "posisjoner": [
+          {
+            "type": {
+              "kode": "posisjontype.eier",
+              "kodetekst": "Eierskap"
+            },
+            "stoerrelseIntervall": {
+              "kode": "stoerrelseintervall.int1",
+              "kodetekst": "25,01% - 49,99%"
+            },
+            "grunnlag": [
+              {
+                "kode": "grunnlagtype.dire",
+                "kodetekst": "Direkte"
+              },
+              {
+                "kode": "grunnlagtype.indi",
+                "kodetekst": "Indirekte"
+              }
+            ],
+            "mellomliggendeVirksomheter": [
+              {
+                "utenlandskVirksomhet": {
+                  "registreringsnummerIHjemlandet": "alfa.net",
+                  "navn": "Alfa",
+                  "internasjonalAdresse": {
+                    "friAdressetekst": "Andeby 11",
+                    "landkode": {
+                      "landkode": "DKK",
+                      "land": "UKJENT"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": {
+              "kode": "posisjontype.kont",
+              "kodetekst": "Kontroll over stemmerettigheter"
+            },
+            "stoerrelseIntervall": {
+              "kode": "stoerrelseintervall.int3",
+              "kodetekst": "75% - 100%"
+            },
+            "grunnlag": [
+              {
+                "kode": "grunnlagtype.enav",
+                "kodetekst": "Enighet eller avtale"
+              }
+            ],
+            "mellomliggendeVirksomheter": []
+          }
+        ],
+        "foerstRegistrertDato": "2023-03-22T14:03:17.690215Z",
+        "endretDato": "2023-03-22T14:03:17.690215Z"
+      },
+      {
+        "folkeregistrertPerson": {
+          "foedselsEllerDNummer": "58877102163",
+          "foedselsdato": "1971-07-18",
+          "foedselsaar": "1971",
+          "navn": {
+            "fornavn": "MINIMALISTISK",
+            "etternavn": "HANDLELISTE"
+          },
+          "erDoed": false,
+          "statsborgerskap": [
+            {
+              "landkode": "MSR",
+              "land": "Montserrat"
+            }
+          ]
+        },
+        "bostedsland": {
+          "landkode": "AUT",
+          "land": "Østerrike"
+        },
+        "erUnntattFraInnsyn": false,
+        "posisjoner": [
+          {
+            "type": {
+              "kode": "posisjontype.ruas",
+              "kodetekst": "Rett til å utpeke eller avsette minst halvparten av styremedlemmene"
+            },
+            "grunnlag": [
+              {
+                "kode": "grunnlagtype.enav",
+                "kodetekst": "Enighet eller avtale"
+              }
+            ],
+            "mellomliggendeVirksomheter": []
+          }
+        ],
+        "foerstRegistrertDato": "2023-03-22T14:03:17.690215Z",
+        "endretDato": "2023-03-22T14:03:17.690215Z"
+      },
+      {
+        "utenlandskPerson": {
+          "foedselsdato": "1983-12-01",
+          "foedselsaar": "1983",
+          "fulltNavn": "TOM NELSON",
+          "statsborgerskap": [
+            {
+              "landkode": "SWE",
+              "land": "Sverige"
+            }
+          ]
+        },
+        "bostedsland": {
+          "landkode": "DKK",
+          "land": "UKJENT"
+        },
+        "erUnntattFraInnsyn": false,
+        "posisjoner": [
+          {
+            "type": {
+              "kode": "posisjontype.eier",
+              "kodetekst": "Eierskap"
+            },
+            "stoerrelseIntervall": {
+              "kode": "stoerrelseintervall.int1",
+              "kodetekst": "25,01% - 49,99%"
+            },
+            "grunnlag": [
+              {
+                "kode": "grunnlagtype.indi",
+                "kodetekst": "Indirekte"
+              }
+            ],
+            "mellomliggendeVirksomheter": [
+              {
+                "virksomhet": {
+                  "organisasjonsnummer": "910065238"
+                }
+              }
+            ]
+          }
+        ],
+        "foerstRegistrertDato": "2023-03-22T14:03:17.690215Z",
+        "endretDato": "2023-03-22T14:03:17.690215Z"
+      },
+      {
+        "utenlandskPerson": {
+          "foedselsdato": "1983-03-24",
+          "foedselsaar": "1983",
+          "fulltNavn": "GILL BATES",
+          "statsborgerskap": [
+            {
+              "landkode": "DEU",
+              "land": "Tyskland"
+            },
+            {
+              "landkode": "SWE",
+              "land": "Sverige"
+            },
+            {
+              "landkode": "USA",
+              "land": "USA"
+            }
+          ]
+        },
+        "bostedsland": {
+          "landkode": "USA",
+          "land": "USA"
+        },
+        "erUnntattFraInnsyn": false,
+        "posisjoner": [
+          {
+            "type": {
+              "kode": "posisjontype.anne",
+              "kodetekst": "Kontroll på annen måte"
+            },
+            "grunnlag": [],
+            "beskrivelseAnnenMaate": "Forklaring på hvilken innflytelse rettighetshaveren har",
+            "mellomliggendeVirksomheter": []
+          }
+        ],
+        "foerstRegistrertDato": "2023-03-22T14:03:17.690215Z",
+        "endretDato": "2023-03-22T14:03:17.690215Z"
+      }
+    ]
+  },
+  {
+    "registreringId": "f31b5394-bc1a-4893-8406-cff06abbe1a1",
+    "registreringStatus": {
+      "kode": "registreringstatus.regi",
+      "kodetekst": "Reelle rettighetshavere er registrert"
+    },
+    "registrertDato": "2023-03-03T20:10:16.056501Z",
     "reelleRettighetshavereStatus": {
       "kode": "reellerettighetshaverestatus.nrki",
       "kodetekst": "Virksomheten har meldt at de har reelle rettighetshavere, men at det i tillegg finnes noen reelle rettighetshavere som ikke kan identifiseres"
@@ -4289,7 +4807,6 @@
           "foedselsaar": "2002",
           "navn": {
             "fornavn": "STOLT EFFEKTIV",
-            "mellomnavn": null,
             "etternavn": "PARASOLL"
           },
           "erDoed": false,
@@ -4304,7 +4821,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -4330,7 +4846,7 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           },
           {
             "type": {
@@ -4347,11 +4863,11 @@
                 "kodetekst": "Enighet eller avtale"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
-        "foerstRegistrertDato": "2022-12-15T16:49:11.985432Z",
-        "endretDato": "2022-12-15T16:49:11.985432Z"
+        "foerstRegistrertDato": "2023-03-03T20:10:15.576939Z",
+        "endretDato": "2023-03-03T20:10:15.576939Z"
       },
       {
         "folkeregistrertPerson": {
@@ -4360,7 +4876,6 @@
           "foedselsaar": "1971",
           "navn": {
             "fornavn": "MINIMALISTISK",
-            "mellomnavn": null,
             "etternavn": "HANDLELISTE"
           },
           "erDoed": false,
@@ -4371,7 +4886,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "NOR",
           "land": "Norge"
@@ -4383,21 +4897,19 @@
               "kode": "posisjontype.ruas",
               "kodetekst": "Rett til å utpeke eller avsette minst halvparten av styremedlemmene"
             },
-            "stoerrelseIntervall": null,
             "grunnlag": [
               {
                 "kode": "grunnlagtype.enav",
                 "kodetekst": "Enighet eller avtale"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
-        "foerstRegistrertDato": "2022-12-15T16:49:11.985432Z",
-        "endretDato": "2022-12-15T16:49:11.985432Z"
+        "foerstRegistrertDato": "2023-03-03T20:10:15.576939Z",
+        "endretDato": "2023-03-03T20:10:15.576939Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1983-12-01",
           "foedselsaar": "1983",
@@ -4430,14 +4942,13 @@
                 "kodetekst": "Indirekte"
               }
             ],
-            "beskrivelseAnnenMaate": null
+            "mellomliggendeVirksomheter": []
           }
         ],
-        "foerstRegistrertDato": "2022-12-15T16:49:11.985432Z",
-        "endretDato": "2022-12-15T16:49:11.985432Z"
+        "foerstRegistrertDato": "2023-03-03T20:10:15.576939Z",
+        "endretDato": "2023-03-03T20:10:15.576939Z"
       },
       {
-        "folkeregistrertPerson": null,
         "utenlandskPerson": {
           "foedselsdato": "1983-03-24",
           "foedselsaar": "1983",
@@ -4468,23 +4979,23 @@
               "kode": "posisjontype.anne",
               "kodetekst": "Kontroll på annen måte"
             },
-            "stoerrelseIntervall": null,
             "grunnlag": [],
-            "beskrivelseAnnenMaate": "Forklaring på hvilken innflytelse rettighetshaveren har"
+            "beskrivelseAnnenMaate": "Forklaring på hvilken innflytelse rettighetshaveren har",
+            "mellomliggendeVirksomheter": []
           }
         ],
-        "foerstRegistrertDato": "2022-12-15T16:49:11.985432Z",
-        "endretDato": "2022-12-15T16:49:11.985432Z"
+        "foerstRegistrertDato": "2023-03-03T20:10:15.576939Z",
+        "endretDato": "2023-03-03T20:10:15.576939Z"
       }
     ]
   },
   {
-    "registreringId": "b446e05a-7275-4e18-b82c-7d19535e8386",
+    "registreringId": "3811379a-0920-44d7-bdf5-8ef25da34310",
     "registreringStatus": {
       "kode": "registreringstatus.regi",
       "kodetekst": "Reelle rettighetshavere er registrert"
     },
-    "registrertDato": "2022-12-14T12:25:19.23044Z",
+    "registrertDato": "2023-03-30T07:31:03.905809Z",
     "reelleRettighetshavereStatus": {
       "kode": "reellerettighetshaverestatus.arid",
       "kodetekst": "Virksomheten har meldt at de har reelle rettighetshavere, og at alle reelle rettighetshavere er identifisert"
@@ -4500,7 +5011,6 @@
           "foedselsaar": "1978",
           "navn": {
             "fornavn": "SPISS",
-            "mellomnavn": null,
             "etternavn": "STØVEL"
           },
           "erDoed": false,
@@ -4511,7 +5021,6 @@
             }
           ]
         },
-        "utenlandskPerson": null,
         "bostedsland": {
           "landkode": "GBR",
           "land": "Storbritannia"
@@ -4520,16 +5029,231 @@
         "posisjoner": [
           {
             "type": {
-              "kode": "posisjontype.anne",
-              "kodetekst": "Kontroll på annen måte"
+              "kode": "posisjontype.eier",
+              "kodetekst": "Eierskap"
             },
-            "stoerrelseIntervall": null,
-            "grunnlag": [],
-            "beskrivelseAnnenMaate": "\n                    Dette er linje1\n                    Dette er linje2\n                    Dette er linje3\n\n"
+            "stoerrelseIntervall": {
+              "kode": "stoerrelseintervall.int1",
+              "kodetekst": "25,01% - 49,99%"
+            },
+            "grunnlag": [
+              {
+                "kode": "grunnlagtype.indi",
+                "kodetekst": "Indirekte"
+              }
+            ],
+            "mellomliggendeVirksomheter": [
+              {
+                "virksomhet": {
+                  "organisasjonsnummer": "910443461"
+                }
+              },
+              {
+                "utenlandskVirksomhet": {
+                  "registreringsnummerIHjemlandet": "1133550099887766",
+                  "navn": "Sydligere Breddegrader Inc.",
+                  "internasjonalAdresse": {
+                    "friAdressetekst": "Syden",
+                    "landkode": {
+                      "landkode": "ESP",
+                      "land": "Spania"
+                    }
+                  }
+                }
+              }
+            ]
           }
         ],
         "foerstRegistrertDato": "2022-11-16T14:36:29.300758Z",
-        "endretDato": "2022-12-14T12:25:18.609126Z"
+        "endretDato": "2023-03-30T07:31:03.422088Z"
+      }
+    ]
+  },
+  {
+    "registreringId": "ca7613fb-6a02-4761-a64c-9f2514eae283",
+    "registreringStatus": {
+      "kode": "registreringstatus.regi",
+      "kodetekst": "Reelle rettighetshavere er registrert"
+    },
+    "registrertDato": "2022-03-28T11:18:41.867822Z",
+    "reelleRettighetshavereStatus": {
+      "kode": "reellerettighetshaverestatus.arid",
+      "kodetekst": "Virksomheten har meldt at de har reelle rettighetshavere, og at alle reelle rettighetshavere er identifisert"
+    },
+    "registreringspliktigVirksomhet": {
+      "organisasjonsnummer": "000000000"
+    },
+    "reelleRettighetshavere": [
+      {
+        "utenlandskPerson": {
+          "foedselsdato": "1983-03-24",
+          "foedselsaar": "1983",
+          "fulltNavn": "Gill Bates",
+          "statsborgerskap": [
+            {
+              "landkode": "DNK",
+              "land": "Danmark"
+            },
+            {
+              "landkode": "NOR",
+              "land": "Norge"
+            },
+            {
+              "landkode": "SWE",
+              "land": "Sverige"
+            }
+          ]
+        },
+        "bostedsland": {
+          "landkode": "USA",
+          "land": "USA"
+        },
+        "erUnntattFraInnsyn": false,
+        "posisjoner": [
+          {
+            "type": {
+              "kode": "posisjontype.eier",
+              "kodetekst": "Eierskap"
+            },
+            "stoerrelseIntervall": {
+              "kode": "stoerrelseintervall.int2",
+              "kodetekst": "50% - 74,99%"
+            },
+            "grunnlag": [
+              {
+                "kode": "grunnlagtype.dire",
+                "kodetekst": "Direkte"
+              }
+            ],
+            "mellomliggendeVirksomheter": []
+          },
+          {
+            "type": {
+              "kode": "posisjontype.kont",
+              "kodetekst": "Kontroll over stemmerettigheter"
+            },
+            "stoerrelseIntervall": {
+              "kode": "stoerrelseintervall.int1",
+              "kodetekst": "25,01% - 49,99%"
+            },
+            "grunnlag": [
+              {
+                "kode": "grunnlagtype.dire",
+                "kodetekst": "Direkte"
+              },
+              {
+                "kode": "grunnlagtype.enav",
+                "kodetekst": "Enighet eller avtale"
+              }
+            ],
+            "mellomliggendeVirksomheter": []
+          },
+          {
+            "type": {
+              "kode": "posisjontype.ruas",
+              "kodetekst": "Rett til å utpeke eller avsette minst halvparten av styremedlemmene"
+            },
+            "grunnlag": [
+              {
+                "kode": "grunnlagtype.enav",
+                "kodetekst": "Enighet eller avtale"
+              }
+            ],
+            "mellomliggendeVirksomheter": []
+          },
+          {
+            "type": {
+              "kode": "posisjontype.anne",
+              "kodetekst": "Kontroll på annen måte"
+            },
+            "grunnlag": [],
+            "beskrivelseAnnenMaate": "Vedkommende utøver kontroll over virksomheten pga bla bla",
+            "mellomliggendeVirksomheter": []
+          }
+        ],
+        "foerstRegistrertDato": "2022-03-28T11:18:41.814559Z",
+        "endretDato": "2022-03-28T11:18:41.814559Z"
+      },
+      {
+        "folkeregistrertPerson": {
+          "foedselsEllerDNummer": "16846895403",
+          "foedselsdato": "1968-04-16",
+          "foedselsaar": "1968",
+          "navn": {
+            "fornavn": "TØFF",
+            "etternavn": "SYSTEM"
+          },
+          "erDoed": false,
+          "statsborgerskap": [
+            {
+              "landkode": "NOR",
+              "land": "Norge"
+            }
+          ]
+        },
+        "bostedsland": {
+          "landkode": "SWE",
+          "land": "Sverige"
+        },
+        "erUnntattFraInnsyn": false,
+        "posisjoner": [
+          {
+            "type": {
+              "kode": "grunnlagtype.anne"
+            },
+            "grunnlag": [],
+            "beskrivelseAnnenMaate": "Vedkommende utøver kontroll over virksomheten pga bla bla",
+            "mellomliggendeVirksomheter": []
+          },
+          {
+            "type": {
+              "kode": "posisjontype.kont",
+              "kodetekst": "Kontroll over stemmerettigheter"
+            },
+            "stoerrelseIntervall": {
+              "kode": "stoerrelseintervall.int1",
+              "kodetekst": "25,01% - 49,99%"
+            },
+            "grunnlag": [
+              {
+                "kode": "grunnlagtype.indi",
+                "kodetekst": "Indirekte"
+              }
+            ],
+            "mellomliggendeVirksomheter": [
+              {
+                "virksomhet": {
+                  "organisasjonsnummer": "800554334"
+                }
+              },
+              {
+                "virksomhet": {
+                  "organisasjonsnummer": "800536637"
+                }
+              },
+              {
+                "virksomhet": {
+                  "organisasjonsnummer": "800367910"
+                }
+              }
+            ]
+          },
+          {
+            "type": {
+              "kode": "posisjontype.ruas",
+              "kodetekst": "Rett til å utpeke eller avsette minst halvparten av styremedlemmene"
+            },
+            "grunnlag": [
+              {
+                "kode": "grunnlagtype.enav",
+                "kodetekst": "Enighet eller avtale"
+              }
+            ],
+            "mellomliggendeVirksomheter": []
+          }
+        ],
+        "foerstRegistrertDato": "2022-03-28T11:18:41.814559Z",
+        "endretDato": "2022-03-28T11:18:41.814559Z"
       }
     ]
   }
