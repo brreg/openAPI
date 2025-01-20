@@ -1,6 +1,6 @@
 openapi: 3.0.0
 servers:
-  - url: https://data.brreg.no/enhetsregisteret/api
+  - url: 'https://data.brreg.no/enhetsregisteret/api'
     description: Produksjon
 info:
   description: |
@@ -47,7 +47,7 @@ info:
         </tr>
         <tr>
           <td>/organisasjonsformer</td>
-          <td>application/vnd.enhetsregisteret.organisasjonsform.v1+json</td>
+          <td>application/vnd.brreg.enhetsregisteret.organisasjonsform.v1+json</td>
         </tr>
       </tbody>
     </table>
@@ -78,37 +78,14 @@ info:
 
     ---
 
-    ## Endringslogg
-    <table>
-      <thead>
-        <tr>
-          <th>Versjon</th>
-          <th>Dato</th>
-          <th>Endring</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1.1.0</td>
-          <td>14. august 2018</td>
-          <td>Ny tjeneste /oppdateringer/enheter og /oppdateringer/underenheter</td>
-        </tr>
-        <tr>
-          <td>1.0.0</td>
-          <td>6. april 2018</td>
-          <td>Produksjonssetting av ny åpne data tjeneste for Enhetsregisteret</td>
-        </tr>
-      </tbody>
-    </table>
-
-  version: "1.0.0"
+  version: 1.0.0
   title: Åpne Data fra Enhetsregisteret - API Dokumentasjon
   contact:
     name: Forenkling og Brukerdialog hos Brønnøysundregistrene
     email: opendata@brreg.no
   license:
     name: Norsk lisens for offentlige data (NLOD)
-    url: https://data.norge.no/nlod/no/
+    url: 'https://data.norge.no/nlod/no/'
 paths:
   /:
     get:
@@ -119,6 +96,9 @@ paths:
           description: Tjenester mot åpne data fra Enhetsregisteret
           content:
             application/json:
+              schema:
+                type: string
+            application/vnd.brreg.enhetsregisteret.v1+json:
               schema:
                 type: string
         default:
@@ -346,12 +326,15 @@ paths:
           content:
             application/json:
               schema:
-                type: string
+                $ref: '#/components/schemas/_Enheter'
+            application/vnd.brreg.enhetsregisteret.enhet.v1+json:
+              schema:
+                $ref: '#/components/schemas/_Enheter'
         '400':
           description: Ugyldig forespørsel
         default:
           description: Udefinert feil
-  /enheter/{organisasjonsnummer}:
+  '/enheter/{organisasjonsnummer}':
     parameters:
       - name: organisasjonsnummer
         in: path
@@ -369,7 +352,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Enhet'
-            application/vnd.enhetsregisteret.enhet.v1+json:
+            application/vnd.brreg.enhetsregisteret.enhet.v1+json:
               schema:
                 $ref: '#/components/schemas/Enhet'
         '404':
@@ -575,10 +558,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
+                $ref: '#/components/schemas/_Underenheter'
+            application/vnd.brreg.enhetsregisteret.underenhet.v1+json:
+              schema:
+                $ref: '#/components/schemas/_Underenheter'
         default:
           description: Udefinert feil
-  /underenheter/{organisasjonsnummer}:
+  '/underenheter/{organisasjonsnummer}':
     parameters:
       - name: organisasjonsnummer
         in: path
@@ -595,7 +581,10 @@ paths:
           content:
             application/json:
               schema:
-                type: string
+                $ref: '#/components/schemas/Underenhet'
+            application/vnd.brreg.enhetsregisteret.underenhet.v1+json:
+              schema:
+                $ref: '#/components/schemas/Underenhet'
         '404':
           description: Underenhet finnes ikke
         '410':
@@ -606,7 +595,7 @@ paths:
     parameters:
       - name: dato
         in: query
-        description: "Tidligste tidsstempel for når enheten ble oppdatert. På format Datetime (ISO-8601): yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        description: 'Tidligste tidsstempel for når enheten ble oppdatert. På format Datetime (ISO-8601): yyyy-MM-dd''T''HH:mm:ss.SSS''Z'''
         required: false
         schema:
           type: string
@@ -627,9 +616,12 @@ paths:
       description: Hent oppdateringer på enheter
       responses:
         '200':
-          description:  Oppdateringer på enheter fra Enhetsregisteret
+          description: Oppdateringer på enheter fra Enhetsregisteret
           content:
             application/json:
+              schema:
+                $ref: '#/components/schemas/Enhet'
+            application/vnd.brreg.enhetsregisteret.oppdatering.enhet.v1+json:
               schema:
                 type: string
         default:
@@ -638,7 +630,7 @@ paths:
     parameters:
       - name: dato
         in: query
-        description: "Tidligste tidsstempel for når enheten ble oppdatert. På format Datetime (ISO-8601): yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        description: 'Tidligste tidsstempel for når enheten ble oppdatert. På format Datetime (ISO-8601): yyyy-MM-dd''T''HH:mm:ss.SSS''Z'''
         required: false
         schema:
           type: string
@@ -659,9 +651,12 @@ paths:
       description: Hent oppdateringer på underenheter
       responses:
         '200':
-          description:  Oppdateringer på underenheter fra Enhetsregisteret
+          description: Oppdateringer på underenheter fra Enhetsregisteret
           content:
             application/json:
+              schema:
+                $ref: '#/components/schemas/Enhet'
+            application/vnd.brreg.enhetsregisteret.oppdatering.underenhet.v1+json:
               schema:
                 type: string
         default:
@@ -677,12 +672,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/_Organisasjonsformer'
-            application/vnd.enhetsregisteret.organisasjonsform.v1+json:
+            application/vnd.brreg.enhetsregisteret.organisasjonsform.v1+json:
               schema:
                 $ref: '#/components/schemas/_Organisasjonsformer'
         default:
           description: Udefinert feil
-  /organisasjonsformer/{orgformKode}:
+  '/organisasjonsformer/{orgformKode}':
     parameters:
       - name: orgformKode
         in: path
@@ -704,7 +699,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Organisasjonsform'
-            application/vnd.enhetsregisteret.organisasjonsform.v1+json:
+            application/vnd.brreg.enhetsregisteret.organisasjonsform.v1+json:
               schema:
                 $ref: '#/components/schemas/Organisasjonsform'
         '404':
@@ -721,7 +716,10 @@ paths:
           content:
             application/json:
               schema:
-                type: string
+                $ref: '#/components/schemas/_Organisasjonsformer'
+            application/vnd.brreg.enhetsregisteret.organisasjonsform.v1+json:
+              schema:
+                $ref: '#/components/schemas/_Organisasjonsformer'
         default:
           description: Udefinert feil
   /organisasjonsformer/underenheter:
@@ -734,12 +732,15 @@ paths:
           content:
             application/json:
               schema:
-                type: string
+                $ref: '#/components/schemas/_Organisasjonsformer'
+            application/vnd.brreg.enhetsregisteret.organisasjonsform.v1+json:
+              schema:
+                $ref: '#/components/schemas/_Organisasjonsformer'
         default:
           description: Udefinert feil
 components:
   schemas:
-    Enhet:
+    Underenhet:
       properties:
         organisasjonsnummer:
           type: string
@@ -747,6 +748,8 @@ components:
           type: string
         organisasjonsform:
           $ref: '#/components/schemas/Organisasjonsform'
+        postadresse:
+          $ref: '#/components/schemas/Adresse'
         registreringsdatoEnhetsregisteret:
           type: string
         registrertIMvaregisteret:
@@ -759,6 +762,44 @@ components:
           $ref: '#/components/schemas/Naeringskode'
         antallAnsatte:
           type: integer
+        overordnetEnhet:
+          type: string
+        oppstartsdato:
+          type: string
+        beliggenhetsadresse:
+          $ref: '#/components/schemas/Adresse'
+        _links:
+          $ref: '#/components/schemas/_Links'
+    Enhet:
+      properties:
+        organisasjonsnummer:
+          type: string
+        navn:
+          type: string
+        organisasjonsform:
+          $ref: '#/components/schemas/Organisasjonsform'
+        hjemmeside:
+          type: string
+        postadresse:
+          $ref: '#/components/schemas/Adresse'
+        registreringsdatoEnhetsregisteret:
+          type: string
+        registrertIMvaregisteret:
+          type: boolean
+        frivilligMvaRegistrertBeskrivelser:
+          type: array
+          items: 
+            type: string
+        naeringskode1:
+          $ref: '#/components/schemas/Naeringskode'
+        naeringskode2:
+          $ref: '#/components/schemas/Naeringskode'
+        naeringskode3:
+          $ref: '#/components/schemas/Naeringskode'
+        antallAnsatte:
+          type: integer
+        forretningsadresse:
+          $ref: '#/components/schemas/Adresse'
         stiftelsedato:
           type: string
         institusjonellSektorkode:
@@ -780,7 +821,25 @@ components:
         maalform:
           type: string
         _links:
-          $ref: '#/components/schemas/Self'
+          $ref: '#/components/schemas/_Links'
+    Adresse:
+      properties:
+        land:
+          type: string
+        landkode:
+          type: string
+        postnummer:
+          type: string
+        poststed:
+          type: string
+        adresse:
+          type: array
+          items: 
+            type: string
+        kommune:
+          type: string
+        kommunenummer:
+          type: string
     Naeringskode:
       properties:
         kode:
@@ -793,6 +852,26 @@ components:
           type: string
         beskrivelse:
           type: string
+    _Enheter:
+      properties:
+        embedded:
+          $ref: '#/components/schemas/Enheter'
+    Enheter:
+      properties:
+        enheter:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enhet'
+    _Underenheter:
+      properties:
+        embedded:
+          $ref: '#/components/schemas/Underenheter'
+    Underenheter:
+      properties:
+        enheter:
+          type: array
+          items:
+            $ref: '#/components/schemas/Underenhet'
     _Organisasjonsformer:
       properties:
         embedded:
@@ -814,6 +893,12 @@ components:
     Self:
       properties:
         self:
+          $ref: '#/components/schemas/Href'
+    _Links:
+      properties:
+        self:
+          $ref: '#/components/schemas/Href'
+        overordnetEnhet:
           $ref: '#/components/schemas/Href'
     Href:
       properties:
